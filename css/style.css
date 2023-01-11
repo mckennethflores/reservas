@@ -956,7 +956,75 @@ section.banner {
     .titulo h4 {
         text-shadow: 2px 2px black;
     }
-
+    /*Pagina Seleccione */
+    .capaSeleccione h1 {
+        text-align: center;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-style: italic;
+        font-weight: bold;
+        color: var(--primary);
+    }
+    .availability-breadcrumb li:before {
+     
+        display: inline-block;
+        margin-right: 8px;
+        content: "\25CF";
+        font-family: FontAwesome;
+        color: var(--primary);
+        font-size: 1.3rem;
+    }
+    ul.availability-breadcrumb {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul.availability-breadcrumb li {
+        display: inline-block;
+    }
+    .availability-breadcrumb li {
+        color: #b3b3b3;
+        vertical-align: middle;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    li.line::before {
+        content: none;
+    }
+    .availability-breadcrumb li.line {
+        width: 70px;
+        height: 1px;
+        background: #b3b3b3;
+        margin-right: -16px;
+    }
+    .availability-breadcrumb li.active {
+        color: #6a8b2d;
+        color: #3b3b3b;
+        font-weight: 600;
+    }
+    .container-fluid.barraSeleccione {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .col-md-6.divProgL img {
+        width: 80%;
+        height: 390px;
+    }
+    .col-md-6.divProgR h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        vertical-align: top;
+    }
+    .col-md-6.divProgR h2 {
+        font-size: 1.4rem;
+    }
+    label.divRad {
+        width: 90%;
+        border: 1px solid #8b8b8b;
+        border-radius: 4px;
+        padding: 6px;
+    }
 
 @media only screen and (max-width: 768px) {
     #mobile{
@@ -1002,9 +1070,9 @@ section.banner {
     ul li {
         padding-left: 24px;
     }
-    li.active {
+    /* li.active {
         background: black;
-    }
+    } */
     .bi-list::before {
         content: "\f479";
         color: white;
@@ -1126,6 +1194,44 @@ section.banner {
         margin-top: 1rem;
         font-size: 1.2rem !important;
     }
+
+
+    .availability-breadcrumb li {
+
+        margin-right: 10px;
+        font-size: 12px;
+    }
+    .availability-breadcrumb li.line {
+        width: 16px;
+        margin-right: -15px;
+    }
+    .availability-breadcrumb li.active {
+    
+        padding: 0;
+        margin: 0;
+    }
+    
+    .availability-breadcrumb li:before {
+    
+        margin: 0;
+    }
+    .availability-breadcrumb li.line {
+        width: 6px;
+        margin-right: 0;
+    }
+    
+    .availability-breadcrumb li.active {
+    
+        font-weight: 400;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    ul.availability-breadcrumb li {
+        padding: 0;
+        margin: 0;
+        font-size: 9px;
+    }
+    
 
 }
 
