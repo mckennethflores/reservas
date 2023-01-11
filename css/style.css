@@ -699,9 +699,12 @@ section.banner {
         text-align: center;
  
      }
-
+legend {
+    color: red;
+    padding: 0px 0px 8px 0px;
+}
      /* Contacto */
-     label {
+     .frmInputCont {
         width: 100%;
         font-size: .8rem;
     }.required{
@@ -860,7 +863,7 @@ section.banner {
     }
     
      /* Contacto */
-     label {
+     .frmInputCont {
         width: 100%;
         font-size: .8rem;
     }.required{
