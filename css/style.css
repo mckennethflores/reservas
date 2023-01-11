@@ -1025,8 +1025,85 @@ section.banner {
         border-radius: 4px;
         padding: 6px;
     }
+    .dBck a{
+        color: var(--primary);
+        text-decoration: none;
+    }
+    .dProg {
+        color: var(--primary);
+    
+        font-weight: bold;
+    }
+    body > div:nth-child(7) > div > div.col-md-6 > div > div:nth-child(1) {
+        display: flex;
+        justify-content: end;
+    }
+    .habCont{
+        padding: 0;
+        margin: 0;
+border: 1px solid #B1B1B1;
+filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+border-radius: 8px;
+margin-bottom: 24px;
+    }
+    .bodRDown {
+        display: flex;
+    }
+    .tit h2 {
+        color: var(--primary);
+        font-size: 1.7rem;
+        padding-top: 7px;
+    }
+    .bodLPrice{
+        color: var(--primary);
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    .bodLCab {
+        margin-top: 10%;
+    }
+    .habDis {
+        margin-top: 16px;
+        font-size: .8rem;
+        display: block;
+    }
+    .bodR {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    input.inpCal {
+        text-align: center;
+        font-size: 1.5rem;
+        border: none;
+    }
+    .btnCalc {
+        background: #4caf50;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font-weight: bold;
+    }
+    .habContL img {
+        width: 100%;
+    }
+    .prTot .priceReservation {
+        color: var(--primary);
+    }
+    .prTot {
+        color: red;
+        font-weight: bold;
+    }
+    .btn1Center {
+        display: flex;
+        justify-content: center;
+    }
+    .habitacion.disabled {
+        opacity: 0.2;
+    }
 
 @media only screen and (max-width: 768px) {
+
+    
     #mobile{
         display: inline-block;
     }
@@ -1231,7 +1308,25 @@ section.banner {
         margin: 0;
         font-size: 9px;
     }
-    
+    .col-md-6.divProgL img {
+        margin: 0 auto;
+        display: block;
+        height: auto !important;
+        width: 50%;
+    }
+    .col-md-6.divProgR h3 {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 1rem;
+    }
+    .col-md-6.divProgR h2 {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .col-md-3.divBox {
+        margin-bottom: 2%;
+    }
+
 
 }
 
