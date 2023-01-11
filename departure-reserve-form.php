@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -405,7 +408,7 @@
 		</div>
 	</div>
 	<div class="contenedor2">
-		<div class="compa"> <span>ARAPAIMA EXPEDITIONS  © | All rights reserved 2022</span></div>
+		<div class="compa"> <span>ARAPAIMA EXPEDITIONS  © | All rights reserved 2023</span></div>
 		<div class="copyr"> <a href="#">Powered By FR SYSTEM S.A.C.</a></div>
 
 

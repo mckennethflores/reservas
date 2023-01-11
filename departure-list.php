@@ -239,7 +239,7 @@ RESERVA PACAYA SAMIRIA</h2>
 		</div>
 	</div>
 	<div class="contenedor2">
-		<div class="compa"> <span>ARAPAIMA EXPEDITIONS  © | All rights reserved 2022</span></div>
+		<div class="compa"> <span>ARAPAIMA EXPEDITIONS  © | All rights reserved 2023</span></div>
 		<div class="copyr"> <a href="#">Powered By FR SYSTEM S.A.C.</a></div>
 
 

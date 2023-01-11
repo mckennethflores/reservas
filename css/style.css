@@ -26,9 +26,16 @@
    font-family: 'Racing Sans One', serif;
 }
  */
+ :root {
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+    --primary: #008566;
+  }
 
-.container-fluid.header {
-    background: #008566;
+ .container-fluid.header {
+    background: var(--primary);
+
 }
 ul.menu li {
     list-style: none;
@@ -166,17 +173,126 @@ input#btnSearch {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    position: relative;
+    display: flex;
+    /* width: 100%; */
+    height: 3em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    background: var(--primary);
 }
+/* select */
+
+.optMonth {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--primary);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  .optMonth::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .mdown {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    background: var(--primary);
+}
+  /* Arrow */
+
+  .mdown::after {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #ff9800;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .mdown:hover::after {
+    color: #ffffff;
+  }
+  
+/*   select 2 */
+
+.optYear {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--primary);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  .optYear::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .ydown {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    background: var(--primary);
+}
+  /* Arrow */
+
+  .ydown::after {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #ff9800;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .ydown:hover::after {
+    color: #ffffff;
+  }
+
 .search {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
+.month {
+    padding-left: 4%;
+}
 /* /Portada */
 
 /* section */
 .staticData {
+    padding: 32px 20% 32px 20%;
+}
+.staticDataHome {
     padding: 32px 20% 32px 20%;
 }
 .staticData h1{
@@ -187,6 +303,18 @@ input#btnSearch {
     font-style: italic;
 }
 .staticData p{
+    text-align: justify;
+    line-height: 30px;
+    font-size: 1.1rem;
+}
+.staticDataHome h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.staticDataHome p{
     text-align: justify;
     line-height: 30px;
     font-size: 1.1rem;
@@ -534,6 +662,302 @@ section#departureList1 img {
 .btnStyle {
     width: 100% !important;
 }
+.dI2left p {
+    color: transparent;
+}
+#btnSearch2{
+    display: none;
+}
+
+
+/* Detalle Pagina */
+section.banner {
+    background: url(../img/slide1.jpg);
+    height: 300px;
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000d9;
+}
+.capa {
+    width: 100%;
+    height: 100%;
+    background: #00000075;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bannerTit{
+    font-weight:bold;
+    color: white;
+    text-align: center;
+    }
+    .callToActiond h2{
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+ 
+     }
+
+     /* Contacto */
+     label {
+        width: 100%;
+        font-size: .8rem;
+    }.required{
+        color: red;
+    }
+    textarea {
+        width: 100%;
+        
+        padding: 3px 7px;
+        border-radius: 8px;
+    }
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        border: 1px solid #666;
+        border-radius: 8px;
+        padding: 4px 8px;
+    }
+    ul.linksocialc {
+        padding-top: 24px;
+        margin: 0;
+        padding-left: 0px;
+    }
+    ul.linksocialc li i {
+        color: black;
+        text-align: left !important;
+    }
+
+    #desktop > div > div.col-md-9 > nav > ul > li:nth-child(6) {
+        padding-right: 0;
+    }
+    .staticData {
+        padding: 0 !important;
+      }
+      .containerSer {
+        border: 1px solid #8bc34a;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 4px;
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    article.col-md-3.sProduct h3 {
+        font-size: 1.2rem;
+        text-align: center;
+        color: green;
+    }
+article.col-md-3.sProduct img {
+          display: block;
+          margin: 0 auto;
+}
+/* Detalle Pagina */
+section.banner {
+    background: url(../img/slide1.jpg);
+    height: 300px;
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000d9;
+}
+.capa {
+    width: 100%;
+    height: 100%;
+    background: #00000075;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bannerTit{
+    font-weight:bold;
+    color: white;
+    text-align: center;
+    }
+    .callToActiond h2{
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+ 
+     }
+     body > footer > div.contenedor1 > div:nth-child(1) {
+        margin-top: 0px;
+    }
+    ul.links li {
+        text-decoration: none;
+        color: #fff;
+        list-style: none;
+    }
+    ul.links li a {
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 29px;
+        text-decoration: none;
+    }
+    ul.linksCont li {
+        text-decoration: none;
+        color: #fff;
+        list-style: none;
+    }
+    ul.linksCont li a {
+        color: #fff;
+        font-size: 1rem;
+        line-height: 29px;
+        text-decoration: none;
+    }
+    ul.linksocial {
+        padding-top: 32px;
+    }
+    ul.linksocial li, ul.linksocial2 li, ul.linksocial3 li  {
+        text-decoration: none;
+        color: #fff;
+        list-style: none;
+        display: inline-block;
+    }
+    ul.linksocialc li, ul.linksocial2 li, ul.linksocial3 li  {
+        text-decoration: none;
+        color: #fff;
+        list-style: none;
+        display: inline-block;
+    }
+    body > footer > div.contenedor1 > div:nth-child(4) > ul > li:nth-child(4) > a {
+        display: flex;
+    }
+    ul.linksocial li a {
+        color: #FFBE02;
+        font-size: 1.5rem;
+        line-height: 29px;
+        padding: 8px;
+        font-size:1.3em;
+    }
+    ul.linksocialc li a {
+        color: #FFBE02;
+        font-size: 1.5rem;
+        line-height: 29px;
+        padding: 8px;
+        font-size:1.3em;
+    }
+    ul.linksocial2 li a {
+        color: #FFBE02;
+        font-size: 1.5rem;
+        line-height: 29px;
+        padding: 8px;
+        font-size:1.1em;
+    }
+    ul.linksocial3 li a {
+        color: #FFBE02;
+        font-size: 1.5rem;
+        line-height: 29px;
+        padding: 8px;
+        font-size:1.1em;
+    }
+    ul.linksocial3 {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+     /* Contacto */
+     label {
+        width: 100%;
+        font-size: .8rem;
+    }.required{
+        color: red;
+    }
+    textarea {
+        width: 100%;
+        
+        padding: 3px 7px;
+        border-radius: 8px;
+    }
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        border: 1px solid #666;
+        border-radius: 8px;
+        padding: 4px 8px;
+    }
+    ul.linksocialc {
+        padding-top: 24px;
+        margin: 0;
+        padding-left: 0px;
+    }
+    ul.linksocialc li i {
+        color: black;
+        text-align: left !important;
+    }
+
+    #desktop > div > div.col-md-9 > nav > ul > li:nth-child(6) {
+        padding-right: 0;
+    }
+
+    .container-fluid ul li a {
+        /* color: white; */
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0px 8px 0px 0px;
+        text-transform: uppercase;
+    }
+    img.logo {
+        height: 112px;
+    }
+    li.active {
+        padding: 0px 0px 0px 8px;
+    }
+    .precio.precio_detalle {
+        text-align: left;
+    }
+    .containerSer {
+        border: 1px solid #8bc34a;
+        border-radius: 8px;
+        padding: 17px;
+        margin: 8px !important;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+      article.col-md-3.sProduct h3 {
+          font-size: 1.2rem;
+          text-align: center;
+          color: green;
+      }
+      article.col-md-3.sProduct img {
+          display: block;
+          margin: 0 auto;
+      }
+      .btnCenter {
+        text-align: center !important;
+        display: block;
+        margin: 5% auto;
+        width: 80%;
+        padding: 10px 15px;
+    }
+     .detalle {
+        width: 100%;
+        /* background: peru; */
+        padding: 10px 0px 1px 5%;
+    }
+    .staticData h1, .staticData h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        font-style: italic;
+    }
+    .staticDataHome h1, .staticDataHome h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        font-style: italic;
+    }
+
+    .titulo h4 {
+        text-shadow: 2px 2px black;
+    }
+
+
 @media only screen and (max-width: 768px) {
     #mobile{
         display: inline-block;
@@ -656,7 +1080,6 @@ section#departureList1 img {
     }
     #btnSearch2 {
         width: 100%;
- 
     }
     section#ourActivities {
         background: #fff;
@@ -691,6 +1114,19 @@ section#departureList1 img {
     ul.linksocial2 {
         text-align: center;
     }
+    header {
+        height: 56px;
+    }
+    div#mobile {
+        background: #008566;
+        z-index: 2;
+        position: relative;
+    }
+    div#layerUp h1 {
+        margin-top: 1rem;
+        font-size: 1.2rem !important;
+    }
+
 }
 
 @media only screen and (max-width: 425px) {
@@ -708,5 +1144,11 @@ section#departureList1 img {
 
     ul.linksocial li a {
         font-size: 1.1em;
+    }
+    div#layerUp {
+        height: 230px;
+    }
+    .portada {
+        height: 230px;
     }
 }
