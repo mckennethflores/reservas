@@ -703,6 +703,12 @@ legend {
     color: red;
     padding: 0px 0px 8px 0px;
 }
+.tit{
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
      /* Contacto */
      .frmInputCont {
         width: 100%;
