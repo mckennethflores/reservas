@@ -1,8 +1,10 @@
 <?php
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
     $Month = $_POST['month'];
     $year = $_POST['year'];
     $program = $_POST['program'];
+    $fec = $_POST['fec'];
 
     // echo $Month."-".$year."-".$program;
 
@@ -16,8 +18,7 @@
   
    mysqli_close($conexion);
   
-   echo "
-   <script> alert('La reserva temporal se inserto'); </script>";
+
  }
 
 

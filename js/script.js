@@ -46,21 +46,3 @@ function carrouselRev(val){
 /*    var t1 = document.querySelector("#text1"); */
 
 }
-
-// SEARCH PACKAGE
-var btnSearch = document.getElementById('btnSearch');
-btnSearch.onclick = function() {
-    // do something....
-    
-    var optmonth = $('#optMonth').find(":selected").val();
-    var optyear = $('#optYear').find(":selected").val();
-
-   
-    /* console.log(url); */
-    window.location.assign("departure-list.php?month="+optmonth+"&year="+optyear); 
- 
-};
-
-
-
-

@@ -12,9 +12,6 @@ if(isset($_SESSION['languague_'])){
     //session_destroy();
 }
 
-require_once("departure-reserve-form_fun.php");
-
-$conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
 ?>
 <!doctype html>
 <html lang="es-ES">
@@ -86,17 +83,25 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
     <!-- *************************  /cabecera  ************************* -->
     <!-- ************************************************************** -->
 
-    
+
+
+    <!-- ************************************************************** -->
+    <!-- *************************  portada  ************************* -->
+    <!-- ************************************************************** -->
     <div class="espacio-25"></div>
 <section class="bnSeleccione">
     <div class="capaSeleccione">
         <h1 class="bannerTitSeleccione">arapaima expeditions</h1>
     </div>
 </section>
+    <!-- ************************************************************** -->
+    <!-- *************************  /portada  ************************* -->
+    <!-- ************************************************************** -->
 
     <!-- ************************************************************** -->
-    <!-- *************************  departure reserve form  ************************* -->
-    <!-- ************************************************************** -->
+    <!-- *************************  informacion statica  ************************* -->
+    <!-- ************************************************************** -->    
+
 
     <div class="container-fluid barraSeleccione">
         <ul class="availability-breadcrumb">
@@ -105,129 +110,106 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
             <li class="active">Selecciona la fecha</li>
             <li class="line active"></li>
             <li class="active">Seleccione habitación</li>
-            <li class="line"></li>
-            <li>Confirmation</li>
+            <li class="line active"></li>
+            <li class="active">Confirmation</li>
             </ul>
     </div>
 
     <div class="espacio"></div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 dBck">
-           <a href="">< Atras</a> 
-        </div>
-        <div class="col-md-9"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-6 dProg">Programa 1</div>
-                <div class="col-md-6 dProg"> Fecha de Salida:  <span>28 ene - 31 ene</span></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 dBck">
+               <a href="">< Atras</a> 
             </div>
+            <div class="col-md-9"></div>
         </div>
-        <div class="col-md-3"></div>
     </div>
-</div>
+   
 <div class="espacio-25"></div>
-<form action="" id="frmDepRes" name="frmDepRes" method="POST">
-<div class="container">
-    <div class="row">
-<?php
-      $registros = mysqli_query($conexion, "SELECT * FROM tipo_habitacion") or
-die("Problemas en el select:" . mysqli_error($conexion));
-
-while ($reg = mysqli_fetch_array($registros)) {
-$id = $reg['id'];
-
-
-$nombre = $reg['nombre'];
-$nombre_en = $reg['en'];
-
-$imagen = $reg['imagen'];
-$precio = $reg['precio'];
-$cabana_disp = $reg['cabana_disp'];
-
-
-?>
-     <!-- ************************************************************************-->
-<!-- *************************    Habitaion    ***************************-->
-<!-- ************************************************************************-->
+<form action="transferencia-bank.php" method="post">
+    <div class="container">
+        <div class="row">
         
-<div class="col-md-6 ">
-    <div class="habCont">
-        <div class="row responProg">
-            <div class="col-md-4 habContL">
-                <img src="img/<?= $imagen ?>" alt="">
-            </div>
-            <div class="col-md-8 habContR">
-                <div class="tit">
-                    <h2><?= $lang == 'es' ? $nombre : $nombre_en ?></h2>
-                </div>
-                <div class="bod">
-                    <div class="row">
-                        <div class="col-md-6 bodL">
-                            <div class="bodLPrice"><span id="divPrice"><?= $precio ?></span> <?= $lang == 'es' ? D_1_ES : D_1_EN ?></div>
-                            <div class="bodLCab"><?= $lang == 'es' ? D_2_ES : D_2_EN ?> <span id="divCabanas"><?= $cabana_disp ?></span> </div>
-                            <span class="habDis"><?= $lang == 'es' ? D_3_ES : D_3_EN ?></span>
-                        </div>
-                        <div class="col-md-6 bodR">
-                                <div class="bodRUp"><?= $lang == 'es' ? D_4_ES : D_4_EN ?></div>
-                                <div class="bodRDown">
-                                    <input class="btnCalc" type="button" value="-">
-                                    <input class="inpCal" type="text" value="0">
-                                    <input class="btnCalc" type="button" value="+">
-                                </div>
 
-                        </div>
-                    </div>
-                </div>
+
+
+    <!-- ************************************************************************-->
+    <!-- *************************    Confirmacion    ***************************-->
+    <!-- ************************************************************************-->
+
+    <div class="col-md-6 ConfL">
+        <fieldset>
+            <legend>Enter your personal information:</legend>
+
+        
+
+
+            <div class="form-group">
+                    <label for="formGroupExampleInput">Nombre</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Juan P.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Celular</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="987654321">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Ciudad</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Lima">
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="col-md-6 ConfR">
+
+    <fieldset>
+        <legend>Elegir metodo de pago</legend>
+
+        <div>
+        <input type="radio" id="huey" name="drone" value="huey"
+                checked>
+        <label for="huey">Transferencia Bancaria</label>
+        </div>
+
+        <div>
+        <input type="radio" id="dewey" name="drone" value="dewey">
+        <label for="dewey">Pago con VISA</label>
+        </div>
+
+        <div>
+        <input type="radio" id="louie" name="drone" value="louie">
+        <label for="louie">Pago con Paypal</label>
+        </div>
+    </fieldset>
+    </div>
+                
+    <!-- ************************************************************************-->
+    <!-- *************************    /Confirmacion    ***************************-->
+    <!-- ************************************************************************-->
+
+
+    </div>
+    </div>
+    <div class="espacio"></div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 btn1Center">
+                <input class="btn btn-primary" id="" type="submit" value="CONTINUAR">
             </div>
         </div>
     </div>
-</div>
-            
-<!-- ************************************************************************-->
-<!-- *************************    /Habitaion    ***************************-->
-<!-- ************************************************************************-->
-<?php
-}
-
-mysqli_close($conexion);
-?>
-
-
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="prTot">
-                Total precio de reservación <span class="priceReservation">$ 8000</span></div>
-            </div>
-            
-        <div class="col-md-6"></div>
-    </div>
-    <div class="rwo">
-        <div class="col-md-12 btn1Center">
-            <input class="btn btn-success" id="btnDepResFrm" type="button" value="CONTINUAR">
-        </div>
-    </div>
-</div>
-
-<input type="hidden" name="month" id="month">
-<input type="hidden" name="year" id="year">
-<input type="hidden" name="program" id="program">
-<input type="hidden" name="fec" id="fec">
-
-</form>
-
-
+</form> 
+    <!-- ************************************************************** -->
+    <!-- *************************  /informacion statica  ************************* -->
+    <!-- ************************************************************** -->    
+   
     <!-- ************************************************************** -->
     <!-- *************************  informacion statica  ************************* -->
     <!-- ************************************************************** -->    
@@ -284,9 +266,7 @@ mysqli_close($conexion);
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src="js/general.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/departure-reserve-form.js"></script>
    <script src="js/bootstrap.min.js"></script>
 <!--    <script src="js/bootstrap.min.js.map"></script> -->
 </body>

@@ -1,13 +1,18 @@
+<?php
+
+?>
 <!doctype html>
-<html lang="es-ES">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arapaima Expeditions</title>
    
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <?php require_once("departure-reserve-form_fun.php"); ?>
   </head>
   <body>
     <!-- ************************************************************** -->
@@ -17,25 +22,27 @@
         <div id="desktop" class="container-fluid header text-center">
             <div class="row align-items-center">
                 <div class="col-md-2">
-                    <a href="index.html"><img class="logo" src="img/logo.png" alt="Arapaima Expeditions"></a>
+                    <a href="https://arapaimaexpeditions.com/"><img class="logo" src="img/logo.png" alt="Arapaima Expeditions"></a>
                 </div>
                 <div class="col-md-8">
                     <ul class="menu ">
                         <li><a href="index.html">INICIO</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="">PLANES</a></li>
                         <li><a href="">CRUCERO</a></li>
                         <li><a href="">ACTIVIDADES</a></li>
                         <li><a href="">TARIFAS</a></li>
                         <li><a href="">BLOG</a></li>
-                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="">CONTACTO</a></li>
                         <li><a href="">FAQ</a></li>
     
                     </ul>
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51992034855&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 992 034 855</a></li>
-                  </ul>
+                        <li><a href=""><i class="bi bi-facebook"></i></a></li>
+                        <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                        <li><a href=""><i class="bi bi-whatsapp"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -43,18 +50,18 @@
 
             <div class="header-mb">
                 <img class="logo-mb" src="img/logo-small.png" alt="Arapaima Expeditions">
-                <i id="hamburguer" class="fa fa-bars" aria-hidden="true"></i>
-                <i  id="close" class="hidden fa fa-times" aria-hidden="true"></i>
+                <i id="hamburguer" class="bi bi-list"></i>
+                <i id="close"  class="hidden bi bi-x"></i>
             </div>
             <div class="body-mb">
                 <ul id="menu-mb" class="hidden">
-                        <li class="active"><a href="index.html">INICIO</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="">CRUCERO</a></li>
+                    <li ><a href="">INICIO</a></li>
+                        <li><a href="">PLANES</a></li>
+                        <li class="active"><a href="">CRUCERO</a></li>
                         <li><a href="">ACTIVIDADES</a></li>
                         <li><a href="">TARIFAS</a></li>
                         <li><a href="">BLOG</a></li>
-                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="">CONTACTO</a></li>
                         <li><a href="">FAQ</a></li>
                 </ul>
             </div>
@@ -66,69 +73,114 @@
     <!-- ************************************************************** -->
 
     <!-- ************************************************************** -->
-    <!-- *************************  portada  ************************* -->
+    <!-- *************************  departure reserve form  ************************* -->
     <!-- ************************************************************** -->
+    <div class="espacio"></div>
+    <section id="departureReserve" class="container">
+        <div class="row">
+            <h3>Reserva tus cabinas</h3>
+            <div class="espacio-25"></div>
+            <div class="container">
+            <form id="frmDepRes" name="frmDepRes" method="POST">
+                <!-- ************************************************************** -->
+                <!-- ************************ ELEMENTOS OCULTOS ******************* -->
+                <!-- ************************************************************** -->
+                <input type="hidden" id="month" name="month" value="">
+                <input type="hidden" id="year" name="year" value="">
+                <input type="hidden" id="program" name="program" value="">
+                <!-- ************************************************************** -->
+                <!-- ************************ /ELEMENTOS OCULTOS ******************* -->
+                <!-- ************************************************************** -->
+               <div class="row">
+                <!-- item -->
+                    <div class="col-md-6 bordeCabina">
+                           <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/arapaima-img.jpg" width="100%" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h2>Habitación Standar</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus,</p>
+                                <span>Precio $ 1700</span>
+                                <input type="text" name="amount1" id="amount1" value="1">
+                            </div>
+                           </div>
+                    </div>
+                <!-- /item -->
+                <!-- item -->
+                    <div class="col-md-6 bordeCabina">
+                           <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/arapaima-img.jpg" width="100%" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h2>Habitación Doble</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus,</p>
+                                <span>Precio $ 2700</span>
+                                <input type="text" name="amount2" id="amount2" value="">
+                            </div>
+                           </div>
+                    </div>
+                <!-- /item -->
+                <!-- item -->
+                    <div class="col-md-6 bordeCabina">
+                           <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/arapaima-img.jpg" width="100%" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h2>Habitación Standar</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus,</p>
+                                <span>Precio $ 1700</span>
+                                <input type="text" value="">
+                            </div>
+                           </div>
+                    </div>
+                <!-- /item -->
+                <!-- item -->
+                    <div class="col-md-6 bordeCabina">
+                           <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/arapaima-img.jpg" width="100%" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h2>Habitación Standar</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus,</p>
+                                <span>Precio $ 1700</span>
+                                <input type="text" value="1">
+                            </div>
+                           </div>
+                    </div>
+                <!-- /item -->
+               </div>
+               <hr>
+               <div class="row">
+                    <div class="col-md-6">
+                        <p>Total Reservation Price: <span>$8000</span> </p> <input type="text" id="price" name="price" value="8000">
+                    </div>
+                    <div class="col-md-12">
+                         <input class="fullwidth btn btn-success" type="button" id="btnDepResFrm" name="btnDepResFrm" value="Continuar comprando">
+                    </div>
+               </div>
 
-    <div class="portada">
-        <div id="layerUp">
-          <div class="layerUp">
-            <h1>"Embargate en una aventura única en la vida por el rio amazonas"</h1>
-          </div>
-          <div class="layerDown">
-            <div class="month">
-              <div class="mup">
-                <span>MES</span>
-              </div>
-              <div class="mdown">
-                <select class="optMonth" name="optMonth" id="optMonth">
-                  <option value="1">ENERO</option>
-                  <option value="2">FEBRERO</option>
-                  <option value="3">MARZO</option>
-                  <option value="4">ABRIL</option>
-                  <option value="5">MAYO</option>
-                  <option value="6">JUNIO</option>
-                  <option value="7">JULIO</option>
-                  <option value="8">AGOSTO</option>
-                  <option value="9">SETIEMBRE</option>
-                  <option value="10">OCTUBRE</option>
-                  <option value="11">NOVIEMBRE</option>
-                  <option value="12">DICIEMBRE</option>
-                </select>
-              </div>
-            </div>
-            <div class="year">
-              <div class="yup">
-                <span>AÑO</span>
-              </div>
-              <div class="ydown">
-                <select class="optYear" name="optYear" id="optYear">
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                </select>
-              </div>
+               <input type="hidden" name="volante" id="volante" value="">
+               
 
+               </form>
             </div>
-            <div class="search">
-              <input id="btnSearch" type="button" value="BUSCAR">
-            </div>
-          </div>
         </div>
-        <video id="video" width="100%"  autoplay muted>
-          <source src="img/Video2.mp4" type="video/mp4">
-          <source src="img/video2.wmv" type="video/wmv">
-        Your browser does not support the video tag.
-        </video>
-      </div>
+    </section>
+
+        
 
     <!-- ************************************************************** -->
-    <!-- *************************  /portada  ************************* -->
+    <!-- *************************  /departure reserve form  ************************* -->
     <!-- ************************************************************** -->
 
     <!-- ************************************************************** -->
     <!-- *************************  informacion statica  ************************* -->
     <!-- ************************************************************** -->    
-<section class="staticDataHome">
+<section class="staticData">
     <h1>arapaima expeditions</h1>
     <p>Nuestro viaje es una oportunidad única de ver algunos de los paisajes más
         impresionantes y disfrutar de la naturaleza en todo su esplendor. Los
@@ -152,7 +204,7 @@
         <div class="dIright"></div>
     </div>
     <div class="divImageText2">
-        <div class="dI2left ">
+        <div class="dI2left">
             <p>Nuestra embarcación el arapaima, ofrece a los huéspedes 
 
                 la oportunidad de sumergirse en la belleza y la maravilla 
@@ -297,9 +349,13 @@
                     el Amazonas Peruano.</p>
             </div>
             <div class="bullets">
+                
                 <ul class="linksocial3">
                     <i onclick="carrouselRev(1)" id="c_btn1" class="fa fa-circle" aria-hidden="true"></i>
                     <i onclick="carrouselRev(2)" id="c_btn2" class="fa fa-circle-o" aria-hidden="true"></i>
+                 
+
+                    
                 </ul>
             </div>
 
@@ -315,7 +371,7 @@
     <div class="espacio"></div>
 	<div class="contenedor1">
 		<div class="box1">
-		<a href="#"><img src="img/logo.png" alt=""></a>
+		<a href="#"><img src="img/logo-small.png" alt=""></a>
         <span>Explore y surque las aguas <br> del rio Amazonas a bordo del <br>
             Crucero Arapaima Expeditions. <br> Vive la experiencia!
 
@@ -358,11 +414,10 @@
 
 	</div>
 </footer>
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-<!--    <script src="js/bootstrap.min.js.map"></script> -->
-</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/departure-reserve-form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>

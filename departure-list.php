@@ -1,15 +1,31 @@
+<?php
+require_once("Config/Config.php");
+
+if (isset($_GET['lang'])){
+    $languague = $_GET['lang'];
+  $languague_ = trim($languague);
+
+  $_SESSION['languague_'] = $languague_;
+}
+if(isset($_SESSION['languague_'])){
+    $lang = $_SESSION['languague_'];
+    //session_destroy();
+}
+
+
+$conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
+
+?>
 <!doctype html>
-<html lang="es">
+<html lang="es-ES">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arapaima Expeditions</title>
    
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-
     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/font-awesome.min.css">
   </head>
   <body>
     <!-- ************************************************************** -->
@@ -19,27 +35,26 @@
         <div id="desktop" class="container-fluid header text-center">
             <div class="row align-items-center">
                 <div class="col-md-2">
-                    <a href="https://arapaimaexpeditions.com/"><img class="logo" src="img/logo.png" alt="Arapaima Expeditions"></a>
+                    <a href="index.php"><img class="logo" src="img/logo.png" alt="Arapaima Expeditions"></a>
                 </div>
                 <div class="col-md-8">
                     <ul class="menu ">
-                        <li><a href="index.html">INICIO</a></li>
-                        <li><a href="">PLANES</a></li>
-                        <li><a href="">CRUCERO</a></li>
-                        <li><a href="">ACTIVIDADES</a></li>
-                        <li><a href="">TARIFAS</a></li>
-                        <li><a href="">BLOG</a></li>
-                        <li><a href="">CONTACTO</a></li>
-                        <li><a href="">FAQ</a></li>
-    
+                    <li><a href="index.php"><?= $lang == 'es' ? NAV_HOME_ES : NAV_HOME_EN ?></a></li>
+                        <li><a href="nosotros.php"><?= $lang == 'es' ? NAV_ABOUT_ES : NAV_ABOUT_EN ?></a></li>
+                        <li><a href=""><?= $lang == 'es' ? NAV_SERVICE1_ES : NAV_SERVICE1_EN ?></a></li>
+                        <li><a href=""><?= $lang == 'es' ? NAV_SERVICE2_ES : NAV_SERVICE2_EN ?></a></li>
+                        <li><a href=""><?= $lang == 'es' ? NAV_SERVICE3_ES : NAV_SERVICE3_EN ?></a></li>
+                        <li><a href="contacto.php"><?= $lang == 'es' ? NAV_CONTACT_ES : NAV_CONTACT_EN ?></a></li>
                     </ul>
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a href=""><i class="bi bi-facebook"></i></a></li>
-                        <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                        <li><a href=""><i class="bi bi-whatsapp"></i></a></li>
-                    </ul>
+                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51992034855&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 992 034 855</a></li>
+                  </ul>
+                  <ul class="idioma">
+                    <li><a href="index.php?lang=en">Engish</a></li>
+                    <li><a href="index.php?lang=es">Español</a></li>
+                  </ul>
                 </div>
             </div>
         </div>
@@ -47,19 +62,21 @@
 
             <div class="header-mb">
                 <img class="logo-mb" src="img/logo-small.png" alt="Arapaima Expeditions">
-                <i id="hamburguer" class="bi bi-list"></i>
-                <i id="close"  class="hidden bi bi-x"></i>
+                <ul class="eng">
+                        <li><a href="index.php?lang=en">Engish</a></li>
+                        <li><a href="index.php?lang=es">Español</a></li>
+                </ul>
+                <i id="hamburguer" class="fa fa-bars" aria-hidden="true"></i>
+                <i  id="close" class="hidden fa fa-times" aria-hidden="true"></i>
             </div>
             <div class="body-mb">
                 <ul id="menu-mb" class="hidden">
-                    <li ><a href="">INICIO</a></li>
-                        <li><a href="">PLANES</a></li>
-                        <li class="active"><a href="">CRUCERO</a></li>
-                        <li><a href="">ACTIVIDADES</a></li>
-                        <li><a href="">TARIFAS</a></li>
-                        <li><a href="">BLOG</a></li>
-                        <li><a href="">CONTACTO</a></li>
-                        <li><a href="">FAQ</a></li>
+                        <li class="active"><a href="index.php"><?= $lang == 'es' ? NAV_HOME_ES : NAV_HOME_EN ?></a></li>
+                        <li><a href="nosotros.php"><?= $lang == 'es' ? NAV_ABOUT_ES : NAV_ABOUT_EN ?></a></li>
+                        <li><a href=""><?= $lang == 'es' ? NAV_SERVICE1_ES : NAV_SERVICE1_EN ?></a></li>
+                        <li><a href=""><?= $lang == 'es' ? NAV_SERVICE2_ES : NAV_SERVICE2_EN ?></a></li>
+                        <li><a href=""><?= $lang == 'es' ? NAV_SERVICE3_ES : NAV_SERVICE3_EN ?></a></li>
+                        <li><a href="contacto.php"><?= $lang == 'es' ? NAV_CONTACT_ES : NAV_CONTACT_EN ?></a></li>
                 </ul>
             </div>
         </div>
@@ -68,159 +85,147 @@
     <!-- ************************************************************** -->
     <!-- *************************  /cabecera  ************************* -->
     <!-- ************************************************************** -->
-<div class="espacio"></div>
-    <!-- ************************************************************** -->
-    <!-- *************************  departure list  ************************* -->
-    <!-- ************************************************************** -->
-    <section id="departureList1" class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="img/departure1.jpg" alt="">
-            </div>
-            <div class="col-md-6">
-                <h2>PROGRAMA 4 DIAS – 3 NOCHES / RESERVA PACAYA SAMIRIA</h2>
-                <p>*Consulte con nuestros agentes de reservas para conocer la disponibilidad de cambios de reserva
-                </p>
-                <span>Por favor, seleccione la fecha de salida</span>
-            <form id="frmDepList" action="POST">
-                <!-- botones -->
-                               <p>
-                        <span>
-                            <label for="pack1" class="radio-label ">3 ENERO - 7 ENERO</label>
-                            <input required type="radio"  id="mes1" name="program" 
-                            value="001" checked>
-                        </span>
-                        <span>
-                            <label for="pack2" class="radio-label ">14 ENERO - 19 ENERO</label>
-                            <input required type="radio"  id="mes2" name="program" value="002">
-                        </span>
-                        <span>
-                            <label for="pack3" class="radio-label ">28 ENERO - 31 ENERO</label>
-                            <input required type="radio"  id="mes3" name="program" value="003">
-                        </span>
-                       
-                    </p>
-                    <div class="espacio-25"></div>
-                    <input class="btnStyle" id="btnSearch2" type="button" value="CONTINUAR">
-                <!-- /botones -->
-            </form>
-            </div>
-        </div>
-    </section>
-    <div class="espacio"></div>
-    <section id="departureList1" class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="img/departure1.jpg" alt="">
-            </div>
-            <div class="col-md-6">
-                <h2>PROGRAMA 5 DIAS 4 NOCHES /
-RESERVA PACAYA SAMIRIA</h2>
-                <p>*Consulte con nuestros agentes de reservas para conocer la disponibilidad de cambios de reserva
-                </p>
-                <span>Por favor, seleccione la fecha de salida</span>
-            <form id="frmDepList" action="POST">
-                <!-- botones -->
-                               <p>
-                        <span>
-                            <label for="pack1" class="radio-label ">3 ENERO - 7 ENERO</label>
-                            <input required type="radio"  id="mes1" name="program" 
-                            value="001" checked>
-                        </span>
-                        <span>
-                            <label for="pack2" class="radio-label ">14 ENERO - 19 ENERO</label>
-                            <input required type="radio"  id="mes2" name="program" value="002">
-                        </span>
-                        <span>
-                            <label for="pack3" class="radio-label ">28 ENERO - 31 ENERO</label>
-                            <input required type="radio"  id="mes3" name="program" value="003">
-                        </span>
-                       
-                    </p>
-                    <div class="espacio-25"></div>
-                    <input class="btnStyle" id="btnSearch2" type="button" value="CONTINUAR">
-                <!-- /botones -->
-            </form>
-            </div>
-        </div>
-    </section>
-    <div class="espacio"></div>
-    <section id="departureList1" class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="img/departure1.jpg" alt="">
-            </div>
-            <div class="col-md-6">
-                <h2>PROGRAMA 4 DIAS – 3 NOCHES / RESERVA PACAYA SAMIRIA</h2>
-                <p>*Consulte con nuestros agentes de reservas para conocer la disponibilidad de cambios de reserva
-                </p>
-                <span>Por favor, seleccione la fecha de salida</span>
-            <form id="frmDepList" action="POST">
-                <!-- botones -->
-                               <p>
-                        <span>
-                            <label for="pack1" class="radio-label ">3 ENERO - 7 ENERO</label>
-                            <input required type="radio"  id="mes1" name="program" 
-                            value="001" checked>
-                        </span>
-                        <span>
-                            <label for="pack2" class="radio-label ">14 ENERO - 19 ENERO</label>
-                            <input required type="radio"  id="mes2" name="program" value="002">
-                        </span>
-                        <span>
-                            <label for="pack3" class="radio-label ">28 ENERO - 31 ENERO</label>
-                            <input required type="radio"  id="mes3" name="program" value="003">
-                        </span>
-                       
-                    </p>
-                    <div class="espacio-25"></div>
-                    <input class="btnStyle" id="btnSearch2" type="button" value="CONTINUAR">
-                <!-- /botones -->
-            </form>
-            </div>
-        </div>
-    </section>
-
-        
 
     <!-- ************************************************************** -->
-    <!-- *************************  /departure list  ************************* -->
+    <!-- *************************  portada  ************************* -->
+    <!-- ************************************************************** -->
+    <div class="espacio-25"></div>
+<section class="bnSeleccione">
+    <div class="capaSeleccione">
+        <h1 class="bannerTitSeleccione">arapaima expeditions</h1>
+    </div>
+</section>
+    <!-- ************************************************************** -->
+    <!-- *************************  /portada  ************************* -->
     <!-- ************************************************************** -->
 
-    <!-- ************************************************************** -->
+        <!-- ************************************************************** -->
     <!-- *************************  informacion statica  ************************* -->
     <!-- ************************************************************** -->    
 
 
+    <div class="container-fluid barraSeleccione">
+        <ul class="availability-breadcrumb">
+            <li class="active">Encuentra tu crucero</li>
+            <li class="line active"></li>
+            <li class="active">Selecciona la fecha</li>
+            <li class="line "></li>
+            <li class="">Seleccione habitación</li>
+            <li class="line"></li>
+            <li>Confirmation</li>
+            </ul>
+    </div>
 
-    <!-- ************************************************************** -->
-    <!-- *************************  /informacion statica  ************************* -->
-    <!-- ************************************************************** -->    
+    <div class="espacio"></div>
 
+
+    <div class="container">
+        <div class="row">
+<?php
+      $registros = mysqli_query($conexion, "SELECT * FROM paquete") or
+die("Problemas en el select:" . mysqli_error($conexion));
+
+while ($reg = mysqli_fetch_array($registros)) {
+$id = $reg['id'];
+
+$programa = $reg['programa'];
+$programa_en = $reg['programa_en'];
+
+$nombre = $reg['nombre'];
+$nombre_en = $reg['nombre_en'];
+
+$imagen = $reg['imagen'];
+
+
+?>
+<!-- ************************************************************************-->
+<!-- *************************    Progrmaas    ***************************-->
+<!-- ************************************************************************-->
+
+<div class="col-md-6 col-xs-12 divProgL">
+    <img src="img/<?= $imagen ?>" alt="">
+</div>
+<div class="col-md-6 col-xs-12 divProgR">
+    <h3><?= $lang == 'es' ? $programa : $programa_en ?></h3>
+    <h2><?= $lang == 'es' ? $nombre : $nombre_en ?></h2>
+    
+        <div class="row">
+            <div class="col-md-4">
+                <ul>
+                    <li>Gym</li>
+                    <li>boutique</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li>Dining room</li>
+                    <li>Lounge</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li>Rainforest spa</li>
+                    <li>Sun deck & pool</li>
+                </ul>
+            </div>
+        </div>
+ 
+    <span><?= $lang == 'es' ? F_S_ES : F_S_EN ?></span>
+    <div class="espacio-25"></div>
+    <div class="row ">
+        <div class="col-md-3 divBox">
+            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">20 DE ENERO AL 24 DE ENERO</label>
+        </div>
+        <div class="col-md-3 divBox">
+            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">24 DE ENERO AL 28 DE ENERO</label>
+        </div>
+        <div class="col-md-3 divBox">
+            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">20 DE ENERO AL 24 DE ENERO</label>
+        </div>
+        <div class="col-md-3 divBox">
+            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">24 DE ENERO AL 28 DE ENERO</label>
+        </div>
+    </div>
+    <div class="espacio-25"></div>
+    <input class="btn btn-success" onclick="btnProgramas(<?= $id ?>,1)"  type="button" value="<?= $lang == 'es' ? BT_F_S_ES : BT_F_S_EN ?>">
+</div>
+
+<div class="espacio"></div>
+
+<!-- ************************************************************************-->
+<!-- *************************    /Progrmaas    ***************************-->
+<!-- ************************************************************************-->
+<?php
+}
+
+mysqli_close($conexion);
+?>
+        </div>
+    </div>
+    
     <div class="espacio"></div>
 <footer>
     <div class="espacio"></div>
 	<div class="contenedor1">
 		<div class="box1">
-		<a href="#"><img src="img/logo-small.png" alt=""></a>
-        <span>Explore y surque las aguas <br> del rio Amazonas a bordo del <br>
-            Crucero Arapaima Expeditions. <br> Vive la experiencia!
+		<a href="#"><img src="img/logo.png" alt=""></a>
+        <span><?= $lang == 'es' ? F_ES : F_EN ?>
 
         </span>
 		</div>
 		<div class="box1">
 			<h3>Arapaima</h3>
 			<ul class="links">
-				<li><a href="#">Nosotros</a></li>
-				<li><a href="#">Paquetes</a></li>
-				<li><a href="#">Contacto</a></li>
+            <li><a href="nosotros.php"><?= $lang == 'es' ? NAV_ABOUT_ES : NAV_ABOUT_EN ?></a></li>
+
+				<li><a href="contacto.php"><?= $lang == 'es' ? NAV_CONTACT_ES : NAV_CONTACT_EN ?></a></li>
  
 			</ul>
 		</div>
 		<div class="box1">
-			<h3>Contact</h3>
+			<h3><?= $lang == 'es' ? F_2_ES : F_2_EN ?></h3>
 			<ul class="linksCont">
-				<li><a href="#">Calle Alfonso Ugarte N°547 Iquitos Perú
+				<li><a href="#"><?= $lang == 'es' ? F_ADR_ES : F_ADR_EN ?>
                 </a></li>
 				<li><a href="#"> +51 992 034 855</a></li>
              
@@ -229,7 +234,7 @@ RESERVA PACAYA SAMIRIA</h2>
 			</ul>
 		</div>
 		<div class="box1">
-			<h3>Redes sociales</h3>
+			<h3><?= $lang == 'es' ? F_T_ES : F_T_EN ?></h3>
 			<ul class="linksocial">
 				<li><a href="#"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-instagram " aria-hidden="true"></i></a></li>
@@ -245,10 +250,13 @@ RESERVA PACAYA SAMIRIA</h2>
 
 	</div>
 </footer>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/general.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/departure-list.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </body>
+   <script src="js/bootstrap.min.js"></script>
+<!--    <script src="js/bootstrap.min.js.map"></script> -->
+</body>
 </html>

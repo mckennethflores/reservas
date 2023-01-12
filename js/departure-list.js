@@ -48,7 +48,15 @@ function carrouselRev(val){
 }
 
 
-var btnSearch2 = document.getElementById('btnSearch2');
+function btnProgramas(id,fec){
+    var month = getParameterByName('month');
+    var year = getParameterByName('year');
+    var id_= id;
+    var fec_= fec;
+    window.location.assign("departure-reserve-form.php?month="+month+"&year="+year+"&program="+id_+"&fec="+fec_); 
+}
+
+/* var btnSearch2 = document.getElementById('btnSearch2');
 btnSearch2.onclick = function() {
     // do something....
     var month = getParameterByName('month');
@@ -60,11 +68,11 @@ btnSearch2.onclick = function() {
 
     window.location.assign("departure-reserve-form.php?month="+month+"&year="+year+"&program="+program); 
     
-    /* document.getElementById("frmDepList").submit(); */
+     document.getElementById("frmDepList").submit(); 
 
-    /* console.log(program,month,year); */
+     console.log(program,month,year); 
 
  
 };
-
+ */
 
