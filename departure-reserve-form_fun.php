@@ -8,8 +8,7 @@
 
     // echo $Month."-".$year."-".$program;
 
-     $conexion = mysqli_connect("localhost", "root", "", "arapaima") or
-     die("Problemas con la conexión");
+    $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
   
    mysqli_query($conexion, "INSERT INTO `temporal` (`id`, `clienteid`, `paqueteid`, `tipo_habitacionid`, `diaid`, `fecha`, `date_created`, `date_updated`) VALUES 
    

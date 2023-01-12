@@ -5,10 +5,15 @@ const BASE_URL = "http://localhost/arapaima";
 session_start();
 date_default_timezone_set('America/Lima');
 
-const DB_HOST = "localhost";
+/* const DB_HOST = "localhost";
 const DB_NAME = "arapaima";
 const DB_USER = "root";
-const DB_PASSWORD = "";
+const DB_PASSWORD = ""; */
+ 
+const DB_HOST = "localhost";
+const DB_NAME = "kenneth2_arapaimadb";
+const DB_USER = "kenneth2_arapaimaus";
+const DB_PASSWORD = "t.zY8;Su89v@";
 
 const DB_CHARSET = "utf8";
 
@@ -163,4 +168,34 @@ const D_3_EN = "Max. 2 people per room";
 
 const D_4_ES = "Numero de cabañas";
 const D_4_EN = "number of cabins";
+
+
+
+const C_ES = "Contacto";
+const C_EN = "Contact-us";
+
+
+const N_ES = "Nosotros";
+const N_EN = "About-us";
+
+
+/* Form */
+
+ 
+const FRM_N_ES = "Nombre";
+const FRM_N_EN = "Name";
+
+const FRM_E_ES = "Email";
+const FRM_E_EN = "Email ";
+
+const FRM_C_ES = "Celular";
+const FRM_C_EN = "Phone ";
+
+const FRM_M_ES = "Mensaje";
+const FRM_M_EN = "Message ";
+
+
+const FRM_BT_ES = "Enviar Mensaje";
+const FRM_BT_EN = "Send Message ";
+
 ?>
