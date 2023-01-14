@@ -5,15 +5,15 @@ const BASE_URL = "http://localhost/arapaima";
 session_start();
 date_default_timezone_set('America/Lima');
 
-/* const DB_HOST = "localhost";
+const DB_HOST = "localhost";
 const DB_NAME = "arapaima";
 const DB_USER = "root";
-const DB_PASSWORD = ""; */
+const DB_PASSWORD = "";
  
-const DB_HOST = "localhost";
+/* const DB_HOST = "localhost";
 const DB_NAME = "kenneth2_arapaimadb";
 const DB_USER = "kenneth2_arapaimaus";
-const DB_PASSWORD = "t.zY8;Su89v@";
+const DB_PASSWORD = "t.zY8;Su89v@"; */
 
 const DB_CHARSET = "utf8";
 
