@@ -6,12 +6,13 @@ if (isset($_GET['lang'])){
   $languague_ = trim($languague);
 
   $_SESSION['languague_'] = $languague_;
+}else{
+    $lang = "es";
 }
 if(isset($_SESSION['languague_'])){
     $lang = $_SESSION['languague_'];
     //session_destroy();
 }
-
 ?>
 <!doctype html>
 <html lang="es-ES">
@@ -339,7 +340,7 @@ if(isset($_SESSION['languague_'])){
 
 	</div>
 </footer>
-<div class="wsp">987654321</div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/general.js"></script>

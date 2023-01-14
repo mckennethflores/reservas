@@ -1,7 +1,14 @@
 <?php
 require_once("Config/Config.php");
 
-$lang = $_SESSION['languague_'];
+
+if(isset($_SESSION['languague_'])){
+    
+    $lang = $_SESSION['languague_'];
+}else{
+    $_SESSION['languague_'] = "es";
+    $lang = $_SESSION['languague_'];
+}
 
 ?>
 
