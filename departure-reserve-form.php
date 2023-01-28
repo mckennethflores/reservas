@@ -8,6 +8,12 @@ if(isset($_SESSION['languague_'])){
     $_SESSION['languague_'] = "es";
     $lang = $_SESSION['languague_'];
 }
+//
+$month = $_GET['month'];
+$year = $_GET['year'];
+$program = $_GET['program'];
+$fechasalidaid = $_GET['fechasalidaid'];
+ 
 
 require_once("departure-reserve-form_fun.php");
 
@@ -138,7 +144,7 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
 die("Problemas en el select:" . mysqli_error($conexion));
 
 while ($reg = mysqli_fetch_array($registros)) {
-$id = $reg['id'];
+$habid = $reg['id'];
 
 
 $nombre = $reg['nombre'];
@@ -176,7 +182,8 @@ $cabana_disp = $reg['cabana_disp'];
                                 <div class="bodRDown">
                                     <input class="btnCalc" type="button" value="-">
                                     <input class="inpCal" type="text" value="0">
-                                    <input class="btnCalc" type="button" value="+">
+                                    <input class="" type="button" value="+">
+                                    <button type="button" class="btnCalc incrementar<?php $habid; ?>" onclick="incrementar('<?php $habid; ?>')"><i class="fas fa-plus-circle"></i></button>
                                 </div>
 
                         </div>
@@ -186,7 +193,7 @@ $cabana_disp = $reg['cabana_disp'];
         </div>
     </div>
 </div>
-            
+
 <!-- ************************************************************************-->
 <!-- *************************    /Habitaion    ***************************-->
 <!-- ************************************************************************-->
@@ -217,10 +224,10 @@ mysqli_close($conexion);
     </div>
 </div>
 
-<input type="hidden" name="month" id="month">
-<input type="hidden" name="year" id="year">
-<input type="hidden" name="program" id="program">
-<input type="hidden" name="fec" id="fec">
+    <input type="text" name="month" id="month" value="<?= $month ?>">
+    <input type="text" name="year" id="year" value="<?= $year ?>">
+    <input type="text" name="program" id="program" value="<?= $program ?>">
+    <input type="text" name="fec" id="fec" value="<?= $fechasalidaid ?>">
 
 </form>
 

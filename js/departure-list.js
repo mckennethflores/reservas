@@ -48,12 +48,21 @@ function carrouselRev(val){
 }
 
 
-function btnProgramas(id,fec){
-    var month = getParameterByName('month');
-    var year = getParameterByName('year');
-    var id_= id;
-    var fec_= fec;
-    window.location.assign("departure-reserve-form.php?month="+month+"&year="+year+"&program="+id_+"&fec="+fec_); 
+function btnProgramas(programaid){
+    //console.log("demo"); return;
+    var Month = getParameterByName('month');
+    var Year = getParameterByName('year');
+    var Programaid= programaid;
+ 
+   // var fec_= fec;
+
+   // capturar valor del value y eso pasarlo a un input
+   let Fechadesalidaid = $('input[name="fechadesalida_name"]:checked').val();
+   // console.log(Fechadesalidaid);
+
+    document.querySelector("#fechadesalidaid").value = Fechadesalidaid;
+ 
+   window.location.assign("departure-reserve-form.php?month="+Month+"&year="+Year+"&program="+Programaid+"&fechasalidaid="+Fechadesalidaid); 
 }
 
 /* var btnSearch2 = document.getElementById('btnSearch2');

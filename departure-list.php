@@ -8,9 +8,15 @@ if(isset($_SESSION['languague_'])){
     $_SESSION['languague_'] = "es";
     $lang = $_SESSION['languague_'];
 }
+// Recojo los datos del inicio.php
 
+$month = isset($_GET['month']);
+$year = isset($_GET['year']);
+$id = microtime(true);
+//echo "$month $year $id";
 
 $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
+$conexion2 = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
 
 ?>
 <!doctype html>
@@ -119,11 +125,12 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
     <div class="container">
         <div class="row">
 <?php
-      $registros = mysqli_query($conexion, "SELECT * FROM paquete") or
+$registros = mysqli_query($conexion, "SELECT * FROM paquete") or
 die("Problemas en el select:" . mysqli_error($conexion));
 
 while ($reg = mysqli_fetch_array($registros)) {
-$id = $reg['id'];
+
+$programaid = $reg['id'];
 
 $programa = $reg['programa'];
 $programa_en = $reg['programa_en'];
@@ -170,21 +177,28 @@ $imagen = $reg['imagen'];
     <span><?= $lang == 'es' ? F_S_ES : F_S_EN ?></span>
     <div class="espacio-25"></div>
     <div class="row ">
+        
+    <?php
+
+    $fecsal = mysqli_query($conexion2, "SELECT `id` AS fechasalidaid, `nombre`, `paqueteid` FROM `fechasalida` WHERE paqueteid = $programaid") or
+    die("Problemas en el select:" . mysqli_error($conexion));
+
+    while ($reg2 = mysqli_fetch_array($fecsal)) {
+
+        $fechasalidaid = $reg2['fechasalidaid'];
+    ?>
         <div class="col-md-3 divBox">
-            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">20 DE ENERO AL 24 DE ENERO</label>
+            <label class="divRad" for="sds">
+                 <input type="radio" name="fechadesalida_name" id="fecsal_<?= $reg2['fechasalidaid']; ?>" value="<?= $fechasalidaid; ?>"><?= $reg2['nombre']; ?>
+            </label>
         </div>
-        <div class="col-md-3 divBox">
-            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">24 DE ENERO AL 28 DE ENERO</label>
-        </div>
-        <div class="col-md-3 divBox">
-            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">20 DE ENERO AL 24 DE ENERO</label>
-        </div>
-        <div class="col-md-3 divBox">
-            <label class="divRad" for="sds"> <input type="radio" name="demo" id="">24 DE ENERO AL 28 DE ENERO</label>
-        </div>
+    <?php
+        }
+    ?>
     </div>
     <div class="espacio-25"></div>
-    <input class="btn btn-success" onclick="btnProgramas(<?= $id ?>,1)"  type="button" value="<?= $lang == 'es' ? BT_F_S_ES : BT_F_S_EN ?>">
+    <input type="text" name="fechadesalidaid" id="fechadesalidaid">
+    <input class="btn btn-success" onclick="btnProgramas(<?= $programaid ?>)"  type="button" value="<?= $lang == 'es' ? BT_F_S_ES : BT_F_S_EN ?>">
 </div>
 
 <div class="espacio"></div>
