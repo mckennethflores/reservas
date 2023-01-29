@@ -138,97 +138,132 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
 </div>
 <div class="espacio-25"></div>
 <form action="" id="frmDepRes" name="frmDepRes" method="POST">
-<div class="container">
-    <div class="row">
-<?php
-      $registros = mysqli_query($conexion, "SELECT * FROM tipo_habitacion") or
-die("Problemas en el select:" . mysqli_error($conexion));
 
-while ($reg = mysqli_fetch_array($registros)) {
-$habid = $reg['id'];
+                    <input type="text" name="month" id="month" value="<?= $month ?>">
+                    <input type="text" name="year" id="year" value="<?= $year ?>">
+                    <input type="text" name="program" id="program" value="<?= $program ?>">
+                    <input type="text" name="nombre_input" id="nombre_input" value="<?= $nombreinput ?>">
+                    <input type="text" name="fec" id="fec" value="<?= $fechasalidaid ?>">
+                   <label for="cantidad">cantidad
+                   <input name="cantidad" id="cantidad_input" type="text" value="0">
+                   </label>
 
-
-$nombre = $reg['nombre'];
-$nombre_en = $reg['en'];
-
-$imagen = $reg['imagen'];
-$precio = $reg['precio'];
-$cabana_disp = $reg['cabana_disp'];
-
-
-?>
-     <!-- ************************************************************************-->
-<!-- *************************    Habitaion    ***************************-->
-<!-- ************************************************************************-->
-        
-<div class="col-md-6 ">
-    <div class="habCont">
-        <div class="row responProg">
-            <div class="col-md-4 habContL">
-                <img src="img/<?= $imagen ?>" alt="">
-            </div>
-            <div class="col-md-8 habContR">
-                <div class="tit">
-                    <h2><?= $lang == 'es' ? $nombre : $nombre_en ?></h2>
-                </div>
-                <div class="bod">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-6 bodL">
-                            <div class="bodLPrice"><span id="divPrice"><?= $precio ?></span> <?= $lang == 'es' ? D_1_ES : D_1_EN ?></div>
-                            <div class="bodLCab"><?= $lang == 'es' ? D_2_ES : D_2_EN ?> <span id="divCabanas"><?= $cabana_disp ?></span> </div>
-                            <span class="habDis"><?= $lang == 'es' ? D_3_ES : D_3_EN ?></span>
-                        </div>
-                        <div class="col-md-6 bodR">
-                                <div class="bodRUp"><?= $lang == 'es' ? D_4_ES : D_4_EN ?></div>
-                                <div class="bodRDown">
-                                    <input class="btnCalc" type="button" value="-">
-                                    <input class="inpCal" type="text" value="0">
-                                    <input class="" type="button" value="+">
-                                    <button type="button" class="btnCalc incrementar<?php $habid; ?>" onclick="incrementar('<?php $habid; ?>')"><i class="fas fa-plus-circle"></i></button>
-                                </div>
+                <?php
+                    $registros = mysqli_query($conexion, "SELECT * FROM tipo_habitacion") or
+                die("Problemas en el select:" . mysqli_error($conexion));
 
+                while ($reg = mysqli_fetch_array($registros)) {
+
+                    $habitacionid = $reg['id'];
+                    $nombre = $reg['nombre'];
+                    $nombre_en = $reg['en'];
+                    $imagen = $reg['imagen'];
+                    $precio = $reg['precio'];
+                    $cabana_disp = $reg['cabana_disp'];
+                    $personasporhabitacion = $reg['personasporhabitacion'];
+
+                ?>
+                    <!-- ************************************************************************-->
+                <!-- *************************    Habitación    ***************************-->
+                <!-- ************************************************************************-->
+                        
+                <div class="col-md-6 ">
+                    <div class="habCont">
+                        <div class="row responProg">
+                            <div class="col-md-4 habContL">
+                                <img src="img/<?= $imagen ?>" alt="">
+                            </div>
+                            <div class="col-md-8 habContR">
+                                <div class="tit">
+                                    <h2><?= $lang == 'es' ? $nombre : $nombre_en ?></h2>
+                                </div>
+                                <div class="bod">
+                                    <input type="text" name="precio<?= $habitacionid ?>" id="precio<?= $habitacionid ?>" value="<?= $precio ?>">
+                                    <input type="text" name="numerodepersonas_input_<?= $habitacionid ?>" id="numerodepersonas_input_<?= $habitacionid ?>" value="<?= $personasporhabitacion ?>">
+                                    <input type="text" class='precioOcultoCalcularJs' id="resCantPorPre<?= $habitacionid ?>" value="<?= $personasporhabitacion*$precio ?>">
+
+                                      <!--  captura el value1
+                                    captura el value2
+                                    hacer multiplicacion
+                                    luego eso lo pones en value del total 
+
+                                    if presiona el otro
+                                    obtengo el ultimo valor del total y lo guardo
+                                    capturo el value1
+                                    capturo el value2
+                                    hacer multiplicacion
+                                    el resultado lo sumo
+                                    
+                                    y lo muestro
+
+                                    if presiona el otro
+                                    obtengo el ultimo valor del total y lo guardo. 
+                                    capturo el value 1
+                                    capturo el value 2 
+                                    hacer multiplicacion
+                                    y el resultado lo sumo con value 1 y value 2
+                                    y lo muestro
+
+                                    
+                                    var valortotal == 0 -->
+
+                                    <div class="row">
+                                        <div class="col-md-6 bodL">
+                                            <div class="bodLPrice"><span id="divPrice"><?= $precio ?></span><?= $lang == 'es' ? D_1_ES : D_1_EN ?></div>
+                                            <div class="bodLCab"><?= $lang == 'es' ? D_2_ES : D_2_EN ?> <span id="divCabanas"><?= $cabana_disp ?></span> </div>
+                                            <span class="habDis">Max <span id="numerodepersonas"><?= $personasporhabitacion ?></span> <?= $lang == 'es' ? D_3_ES : D_3_EN ?></span>
+                                        </div>
+                                        <div class="col-md-6 bodR">
+                                                <div class="bodRUp"><?= $lang == 'es' ? D_4_ES : D_4_EN ?></div>
+                                                <div class="bodRDown">
+                                                    <button type="button" class="btnCalc decrementar<?= $habitacionid ?>" onclick="decrementar('<?= $habitacionid ?>')" >-</button>
+                                                        <input type="text" class="inpCal"  id="input<?= $habitacionid ?>" value="0" readonly>
+                                                    <button type="button" class="btnCalc incrementar<?= $habitacionid ?>" onclick="incrementar('<?= $habitacionid ?>')">+</button>
+                                                </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- ************************************************************************-->
-<!-- *************************    /Habitaion    ***************************-->
-<!-- ************************************************************************-->
-<?php
-}
+                <!-- ************************************************************************-->
+                <!-- *************************    /Habitación    ***************************-->
+                <!-- ************************************************************************-->
+                <?php
+                }
 
-mysqli_close($conexion);
-?>
+                //mysqli_close($conexion);
+                ?>
 
 
-    </div>
-</div>
+                    </div>
+                </div>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="prTot">
-                Total precio de reservación <span class="priceReservation">$ 8000</span></div>
-            </div>
-            
-        <div class="col-md-6"></div>
-    </div>
-    <div class="rwo">
-        <div class="col-md-12 btn1Center">
-            <input class="btn btn-success" id="btnDepResFrm" type="button" value="CONTINUAR">
-        </div>
-    </div>
-</div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="prTot">
+                                Total precio de reservación <span class="priceReservation">$ 0</span>
+                                <input type="text" id="total_input" name="total_input" >
+                            </div>
+                            </div>
+                            
+                        <div class="col-md-6"></div>
+                    </div>
+                    <div class="rwo">
+                        <div class="col-md-12 btn1Center">
+                            <input class="btn btn-success" id="btnDepResFrm" type="button" value="CONTINUAR">
+                        </div>
+                    </div>
+                </div>
 
-    <input type="text" name="month" id="month" value="<?= $month ?>">
-    <input type="text" name="year" id="year" value="<?= $year ?>">
-    <input type="text" name="program" id="program" value="<?= $program ?>">
-    <input type="text" name="fec" id="fec" value="<?= $fechasalidaid ?>">
+
 
 </form>
 

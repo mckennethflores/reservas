@@ -22,8 +22,10 @@ function isEmpty(str) {
 
 function showMessage(clase, variable, estado, mensaje) {
     $(clase + variable).prop('disabled', estado);
-    Android.showToast(mensaje);
-    console.log(mensaje);
+
+    alert(mensaje);
+   // Android.showToast(mensaje);
+  console.log(mensaje);
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
@@ -34,21 +36,68 @@ alerta: esta funcion utiliza la funcion de getIdValue() y la funcion showMessage
 function incrementar(variable) {
     var cantidad = 1;
     inputid = getIdValue(variable, 'parse_float');
+    /* Capturo el monto de las habitaciones para mostrarlo */
+    var rescantporpre  = document.querySelector("#resCantPorPre"+variable).value;
+    console.log(rescantporpre);
+   /*  document.querySelector(".priceReservation").innerHTML = rescantporpre; */
+
     if (inputid >= 6) {
-        showMessage('.incrementar', variable, true, 'Solo se permiten elegir hasta 6 Articulos');
+        showMessage('.incrementar', variable, true, 'Solo se permiten elegir hasta 6 habitaciones');
         return;
     }
     cantidad = inputid + 1;
     $('.decrementar' + variable).prop('disabled', false);
     document.getElementById('input' + variable).value = cantidad;
     document.getElementById('cantidad_input').value = cantidad;
+
+
+
+   // sumar();
 }
+
+    function sumar() {
+     //   var delivery_input = parseFloat(document.querySelector("#delivery_input").value);
+        var subtotal = 0;
+        var list = document.querySelectorAll(".precioOcultoCalcularJs");
+    
+        if (list.length == 0) {
+        var message = "No hay habitaciones";
+        // quitar para produccion
+        //Android.showToast(message);
+        console.log(message);
+        // deshabilito el boton
+        } else {
+        var values = [];
+        for (var i = 0; i < list.length; ++i) {
+            values.push(parseFloat(list[i].value));
+        }
+        subtotal = values.reduce(function (
+            previousValue,
+            currentValue,
+            index,
+            array
+        ) {
+            return parseFloat(previousValue) + parseFloat(currentValue);
+        });
+      //  var subtotal_format = subtotal.toFixed(2);
+/*         document.querySelector(".subtotal_span").innerHTML = subtotal_format;
+        document.querySelector("#subtotal_input").value = subtotal_format; */
+    
+     //   var total = subtotal;
+       // console.log(total);
+        var total_format = subtotal.toFixed(2);
+/*         document.querySelector(".total_span").innerHTML = total_format;
+        document.querySelector("#total_input").value = total_format; */
+        document.querySelector(".priceReservation").innerHTML = total_format; 
+        document.querySelector("#total_input").value = total_format;
+        }
+    }
 
 function decrementar(variable) {
     var cantidad = 1;
     inputid = getIdValue(variable, 'parse_float');
-    if (inputid == 1) {
-        showMessage('.decrementar', variable, true, 'Como minimo puede elegir 1 Articulo');
+    if (inputid == 0) {
+        showMessage('.decrementar', variable, true, 'Como minimo puede elegir 1 habitaciones');
         return;
     }
     cantidad = inputid - 1;

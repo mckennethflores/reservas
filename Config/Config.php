@@ -163,8 +163,8 @@ const D_1_EN = "per person";
 const D_2_ES = "Cabañas disponibles:";
 const D_2_EN = "Available cabins:";
 
-const D_3_ES = "Max. 2 personas por hab.";
-const D_3_EN = "Max. 2 people per room";
+const D_3_ES = "personas por hab.";
+const D_3_EN = "people per room";
 
 const D_4_ES = "Numero de cabañas";
 const D_4_EN = "number of cabins";

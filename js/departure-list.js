@@ -57,11 +57,11 @@ function btnProgramas(programaid){
    // var fec_= fec;
 
    // capturar valor del value y eso pasarlo a un input
-  // let Fechadesalidaid = $('input[name="fechadesalida_name"]:checked').val();
+   let fechasalidaid = $('input[name="fecha_salida"]:checked').val();
    // console.log(Fechadesalidaid);
 
-    var fechasalidaid  = document.querySelector("#input_program_fec_"+programaid).value;
-   // var nombre_input  = document.querySelector("#nombre_input"+programaid).value;
+  //  var fechasalidaid  = document.querySelector("#input_program_fec_"+programaid).value;
+    var nombre_input  = document.querySelector("#nombre_input"+programaid).value;
 // console.log(fechasalidaid, "#input_program_fec_"+programaid);
     window.location.assign("departure-reserve-form.php?month="+Month+"&year="+Year+"&program="+programaid+"&fechasalidaid="+fechasalidaid+"&nombre_input="+nombre_input); 
 }
@@ -86,14 +86,11 @@ btnSearch2.onclick = function() {
 };
  */
 function focusBtn(fechasalidaid,programaid, nombre){
-
- console.log(fechasalidaid);  
+    //vconsole.log(fechasalidaid);
 
     document.querySelector("#input_program_fec_"+programaid).value = fechasalidaid;
+
     document.querySelector("#nombre_input"+programaid).value = nombre;
-
-
-
 }
 
 

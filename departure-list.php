@@ -190,11 +190,12 @@ $imagen = $reg['imagen'];
         $fechasalidaid = $reg2['fechasalidaid'];
         $nombre = $reg2['nombre'];
     ?> 
-        <div class="col-md-3 divBox"  >
+    
+        <div class="col-md-3 divBox">
             <span>
-            <label for="for_<?= $fechasalidaid; ?>" class="divRad radio-label btnLogin  label_<?= $fechasalidaid; ?> ">
-                 <input  type="radio" onchange="focusBtn(<?= $fechasalidaid?>,<?= $programaid ?>, <?= $nombre ?>)" required name="fechadesalida_name" id="fecsal_<?= $reg2['fechasalidaid']; ?>" value="value_<?= $fechasalidaid; ?>" class="radio" ><?= $reg2['nombre']; ?>
-            </label>
+                <label for="fecha_salida_<?= $fechasalidaid; ?>" class="">
+                    <input  type="radio" name="fecha_salida" id="fecha_salida_<?= $fechasalidaid; ?>" value="value_<?= $fechasalidaid; ?>" onchange="focusBtn(<?= $fechasalidaid?>,<?= $programaid ?>, '<?= $nombre ?>')" class="radio" required ><?= $reg2['nombre']; ?>
+                </label>
             </span>
         </div>
     <?php
