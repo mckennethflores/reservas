@@ -10,7 +10,9 @@ function getIdValue(variable, tipodedato) {
     if (tipodedato = 'parse_float') {
         return parseFloat(document.getElementById('input' + variable).value);
 
-    } else {
+    } else if (tipodedato = 'parse_int'){
+        return parseInt(document.getElementById('input' + variable).value);
+    }else{
         return document.getElementById('input' + variable).value;
     }
 
@@ -33,26 +35,35 @@ Funcion para incrementar y decrementar el item del producto
 alerta: esta funcion utiliza la funcion de getIdValue() y la funcion showMessage
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
-function incrementar(variable) {
+function incrementar(variable,cabdisponi) {
+
+    var  inputid = getIdValue(variable, 'parse_float');
     var cantidad = 1;
-    inputid = getIdValue(variable, 'parse_float');
+/*   var  inputid = getIdValue(variable, 'parse_float');
+
     /* Capturo el monto de las habitaciones para mostrarlo */
     var rescantporpre  = document.querySelector("#resCantPorPre"+variable).value;
-    console.log(rescantporpre);
+  //  console.log(inputid,cabdisponi); 
    /*  document.querySelector(".priceReservation").innerHTML = rescantporpre; */
 
-    if (inputid >= 6) {
-        showMessage('.incrementar', variable, true, 'Solo se permiten elegir hasta 6 habitaciones');
+    if (inputid >= cabdisponi) {
+      //  showMessage('.incrementar', variable, true, 'No se pueden elegir mas habitaciones');
         return;
     }
     cantidad = inputid + 1;
+
+
+    var total = cantidad * rescantporpre;
+    console.log(total);
     $('.decrementar' + variable).prop('disabled', false);
     document.getElementById('input' + variable).value = cantidad;
     document.getElementById('cantidad_input').value = cantidad;
 
+    document.getElementById('montoTotalCadaHabtacion'+variable).value = total;
 
 
-   // sumar();
+
+    sumar();
 }
 
     function sumar() {
@@ -67,6 +78,7 @@ function incrementar(variable) {
         console.log(message);
         // deshabilito el boton
         } else {
+
         var values = [];
         for (var i = 0; i < list.length; ++i) {
             values.push(parseFloat(list[i].value));
@@ -86,6 +98,7 @@ function incrementar(variable) {
      //   var total = subtotal;
        // console.log(total);
         var total_format = subtotal.toFixed(2);
+        
 /*         document.querySelector(".total_span").innerHTML = total_format;
         document.querySelector("#total_input").value = total_format; */
         document.querySelector(".priceReservation").innerHTML = total_format; 
@@ -93,17 +106,36 @@ function incrementar(variable) {
         }
     }
 
-function decrementar(variable) {
-    var cantidad = 1;
+function decrementar(variable,cabdisponi) {
     inputid = getIdValue(variable, 'parse_float');
+  //  var cantidad = 0;
+    var total = 0;
     if (inputid == 0) {
-        showMessage('.decrementar', variable, true, 'Como minimo puede elegir 1 habitaciones');
+      //  showMessage('.decrementar', variable, true, 'Como minimo puede elegir 1 habitaciones');
         return;
     }
+    /* Capturo el monto de las habitaciones para mostrarlo */
+   var rescantporpre  = parseInt(document.querySelector("#resCantPorPre"+variable).value);
+
+    var totalporitem = parseInt(document.getElementById('montoTotalCadaHabtacion'+variable).value);
+
+   
+
+ // var cantidad = parseInt(document.getElementById('cantidad_input').value);
+  var cantidad = parseInt(document.getElementById('input' + variable).value);
+    //parseint
+    total = totalporitem - rescantporpre;
+    console.log(totalporitem, cantidad,rescantporpre); 
+    console.log(total); 
+
     cantidad = inputid - 1;
     $('.incrementar' + variable).prop('disabled', false);
     document.getElementById('input' + variable).value = cantidad;
     document.getElementById('cantidad_input').value = cantidad;
+
+    document.getElementById('montoTotalCadaHabtacion'+variable).value = total;
+
+    sumar();
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 

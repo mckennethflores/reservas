@@ -182,7 +182,8 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                                 <div class="bod">
                                     <input type="text" name="precio<?= $habitacionid ?>" id="precio<?= $habitacionid ?>" value="<?= $precio ?>">
                                     <input type="text" name="numerodepersonas_input_<?= $habitacionid ?>" id="numerodepersonas_input_<?= $habitacionid ?>" value="<?= $personasporhabitacion ?>">
-                                    <input type="text" class='precioOcultoCalcularJs' id="resCantPorPre<?= $habitacionid ?>" value="<?= $personasporhabitacion*$precio ?>">
+                                    <input type="text"  id="resCantPorPre<?= $habitacionid ?>" value="<?= $personasporhabitacion*$precio ?>">
+                                    <input type="text"  class='precioOcultoCalcularJs' id="montoTotalCadaHabtacion<?= $habitacionid ?>" value="0">
 
                                       <!--  captura el value1
                                     captura el value2
@@ -218,9 +219,9 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                                         <div class="col-md-6 bodR">
                                                 <div class="bodRUp"><?= $lang == 'es' ? D_4_ES : D_4_EN ?></div>
                                                 <div class="bodRDown">
-                                                    <button type="button" class="btnCalc decrementar<?= $habitacionid ?>" onclick="decrementar('<?= $habitacionid ?>')" >-</button>
+                                                    <button type="button" class="btnCalc decrementar<?= $habitacionid ?>" onclick="decrementar('<?= $habitacionid ?>','<?= $cabana_disp ?>')" >-</button>
                                                         <input type="text" class="inpCal"  id="input<?= $habitacionid ?>" value="0" readonly>
-                                                    <button type="button" class="btnCalc incrementar<?= $habitacionid ?>" onclick="incrementar('<?= $habitacionid ?>')">+</button>
+                                                    <button type="button" class="btnCalc incrementar<?= $habitacionid ?>" onclick="incrementar('<?= $habitacionid ?>','<?= $cabana_disp ?>')">+</button>
                                                 </div>
 
                                         </div>
