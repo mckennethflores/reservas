@@ -198,4 +198,12 @@ const FRM_M_EN = "Message ";
 const FRM_BT_ES = "Enviar Mensaje";
 const FRM_BT_EN = "Send Message ";
 
+
+
+//Retorla la url del proyecto
+function base_url()
+{
+	return BASE_URL;
+}
+
 ?>

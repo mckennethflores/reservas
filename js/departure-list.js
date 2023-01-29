@@ -52,17 +52,18 @@ function btnProgramas(programaid){
     //console.log("demo"); return;
     var Month = getParameterByName('month');
     var Year = getParameterByName('year');
-    var Programaid= programaid;
+  //  var programaid= programaid;
  
    // var fec_= fec;
 
    // capturar valor del value y eso pasarlo a un input
-   let Fechadesalidaid = $('input[name="fechadesalida_name"]:checked').val();
+  // let Fechadesalidaid = $('input[name="fechadesalida_name"]:checked').val();
    // console.log(Fechadesalidaid);
 
-    document.querySelector("#fechadesalidaid").value = Fechadesalidaid;
- 
-   window.location.assign("departure-reserve-form.php?month="+Month+"&year="+Year+"&program="+Programaid+"&fechasalidaid="+Fechadesalidaid); 
+    var fechasalidaid  = document.querySelector("#input_program_fec_"+programaid).value;
+   // var nombre_input  = document.querySelector("#nombre_input"+programaid).value;
+// console.log(fechasalidaid, "#input_program_fec_"+programaid);
+    window.location.assign("departure-reserve-form.php?month="+Month+"&year="+Year+"&program="+programaid+"&fechasalidaid="+fechasalidaid+"&nombre_input="+nombre_input); 
 }
 
 /* var btnSearch2 = document.getElementById('btnSearch2');
@@ -84,4 +85,72 @@ btnSearch2.onclick = function() {
  
 };
  */
+function focusBtn(fechasalidaid,programaid, nombre){
 
+ console.log(fechasalidaid);  
+
+    document.querySelector("#input_program_fec_"+programaid).value = fechasalidaid;
+    document.querySelector("#nombre_input"+programaid).value = nombre;
+
+
+
+}
+
+
+function focusBtn2(element,programaid){
+
+    var identificadodelPrograma = programaid;
+
+    getProductos(programaid);
+    getProductos(programaid)
+      .then(function (data) {
+        return data.json();
+      })
+      .then((data) => {
+        listadoProgramas(data);
+      });
+
+      function getProductos(programaid) {
+        return fetch(
+            base_url+"/departure-list_fun.php?op=listDateProgram" +
+          "&programaid=" + programaid
+        );
+      }
+      
+
+    // hacer un select o while de todos los for del id de servicio
+
+    function listadoProgramas(programaid) {
+        var count = 0;
+        programaid.forEach((item, index) => {
+
+        //Borrar los radio seleccionados
+
+        
+       /*  $("label[for='for_"+item.fechasalidaid+"']").removeClass("btnFocus") */
+
+        
+
+          var post = `<div class="col-md-3 divBox"  > <span>
+          <label   for="for_${item.fechasalidaid}" class="divRad radio-label btnLogin label_${item.fechasalidaid} ${item.id ? "btnFocus": ""}" >
+               <input  type="radio" onchange="focusBtn(this,${item.fechasalidaid})" required name="fechadesalida_name" id="fecsal_${item.fechasalidaid}" value="${item.fechasalidaid}" class="radio" >${item.nombre}
+          </label>
+          </span></div>`;
+          setTimeout(function () {
+        //    $(this).closest('divBox').remove();
+       // $("#container-fechas"+identificadodelPrograma).remove(post);
+            $("#container-fechas"+identificadodelPrograma).append(post);
+
+          }, 100);
+      
+          count++;
+
+
+        });
+
+        console.log("Hay " + count + " programas");
+      }
+
+    // dentro de array obtengo  el nombre del for, luego remuevo
+
+}

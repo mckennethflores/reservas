@@ -13,6 +13,7 @@ $month = $_GET['month'];
 $year = $_GET['year'];
 $program = $_GET['program'];
 $fechasalidaid = $_GET['fechasalidaid'];
+$nombreinput = $_GET['nombre_input'];
  
 
 require_once("departure-reserve-form_fun.php");
@@ -128,8 +129,8 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6 dProg">Programa 1</div>
-                <div class="col-md-6 dProg"> Fecha de Salida:  <span>28 ene - 31 ene</span></div>
+                <div class="col-md-6 dProg">Programa <?= $program ?></div>
+                <div class="col-md-6 dProg"> Fecha de Salida:  <span><?= $nombreinput ?></span></div>
             </div>
         </div>
         <div class="col-md-3"></div>

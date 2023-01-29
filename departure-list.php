@@ -18,6 +18,8 @@ $id = microtime(true);
 $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
 $conexion2 = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
 
+
+ require_once("departure-list_fun.php");
 ?>
 <!doctype html>
 <html lang="es-ES">
@@ -176,7 +178,7 @@ $imagen = $reg['imagen'];
  
     <span><?= $lang == 'es' ? F_S_ES : F_S_EN ?></span>
     <div class="espacio-25"></div>
-    <div class="row ">
+    <div class="row " id="container-fechas<?= $programaid ?>">
         
     <?php
 
@@ -186,18 +188,23 @@ $imagen = $reg['imagen'];
     while ($reg2 = mysqli_fetch_array($fecsal)) {
 
         $fechasalidaid = $reg2['fechasalidaid'];
-    ?>
-        <div class="col-md-3 divBox">
-            <label class="divRad" for="sds">
-                 <input type="radio" name="fechadesalida_name" id="fecsal_<?= $reg2['fechasalidaid']; ?>" value="<?= $fechasalidaid; ?>"><?= $reg2['nombre']; ?>
+        $nombre = $reg2['nombre'];
+    ?> 
+        <div class="col-md-3 divBox"  >
+            <span>
+            <label for="for_<?= $fechasalidaid; ?>" class="divRad radio-label btnLogin  label_<?= $fechasalidaid; ?> ">
+                 <input  type="radio" onchange="focusBtn(<?= $fechasalidaid?>,<?= $programaid ?>, <?= $nombre ?>)" required name="fechadesalida_name" id="fecsal_<?= $reg2['fechasalidaid']; ?>" value="value_<?= $fechasalidaid; ?>" class="radio" ><?= $reg2['nombre']; ?>
             </label>
+            </span>
         </div>
     <?php
         }
     ?>
-    </div>
+    </div>   
+   <!--  style="display: none;" -->
     <div class="espacio-25"></div>
-    <input type="text" name="fechadesalidaid" id="fechadesalidaid">
+    <input type="text" name="input_program_fec_<?= $programaid ?>" id="input_program_fec_<?= $programaid ?>">
+    <input type="text" name="nombre_input<?= $programaid ?>" id="nombre_input<?= $programaid ?>" value="">
     <input class="btn btn-success" onclick="btnProgramas(<?= $programaid ?>)"  type="button" value="<?= $lang == 'es' ? BT_F_S_ES : BT_F_S_EN ?>">
 </div>
 
@@ -261,7 +268,10 @@ mysqli_close($conexion);
 
 	</div>
 </footer>
-
+<script>
+        const base_url = "<?= base_url(); ?>";
+      
+    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/general.js"></script>
@@ -269,5 +279,8 @@ mysqli_close($conexion);
     <script src="js/departure-list.js"></script>
    <script src="js/bootstrap.min.js"></script>
 <!--    <script src="js/bootstrap.min.js.map"></script> -->
+
+
+ 
 </body>
 </html>
