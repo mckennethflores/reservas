@@ -144,9 +144,9 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                     <input type="text" name="program" id="program" value="<?= $program ?>">
                     <input type="text" name="nombre_input" id="nombre_input" value="<?= $nombreinput ?>">
                     <input type="text" name="fec" id="fec" value="<?= $fechasalidaid ?>">
-                   <label for="cantidad">cantidad
+                   <!-- <label for="cantidad">cantidad -->
                    <input name="cantidad" id="cantidad_input" type="text" value="0">
-                   </label>
+                   <!-- </label> -->
 
                 <div class="container">
                     <div class="row">

@@ -9,7 +9,28 @@ if(isset($_SESSION['languague_'])){
     $lang = $_SESSION['languague_'];
 }
 
+
+$month = $_GET['month'];
+$year = $_GET['year'];
+$program = $_GET['program'];
+$fec = $_GET['fec'];
+$total_input = $_GET['total_input'];
+
+/*  $array = [
+    'month' => $month,
+    'year' => $year,
+    'program' => $program,
+    'fec' => $fec,
+    'total_input' => $total_input];
+
+ var_dump($array); */
+
+ require_once("confirmacion_fun.php");
+
 ?>
+
+ 
+
 <!doctype html>
 <html lang="es-ES">
   <head>
@@ -124,63 +145,68 @@ if(isset($_SESSION['languague_'])){
     </div>
    
 <div class="espacio-25"></div>
-<form action="transferencia-bank.php" method="post">
+<form action="" id="formulario" name="formulario" method="post">
     <div class="container">
         <div class="row">
         
-
-
+                    <input type="text" name="month" id="month" value="<?= $month ?>">
+                    <input type="text" name="year" id="year" value="<?= $year ?>">
+                    <input type="text" name="program" id="program" value="<?= $program ?>">
+                    <input type="text" name="fec" id="fec" value="<?= $fec ?>">
+                    <input name="total_input" id="total_input" type="text" value="<?= $total_input ?>">
+                    <input  type="text" name="idusuario" id="idusuario" value="">
+                    <input  type="text" name="tipodepago" id="tipodepago" value="">
 
     <!-- ************************************************************************-->
     <!-- *************************    Confirmacion    ***************************-->
     <!-- ************************************************************************-->
 
-    <div class="col-md-6 ConfL">
+    <div class="col-md-6 ConfL" id="divContainerDatosDelUsuario">
         <fieldset>
             <legend>Enter your personal information:</legend>
 
         
 
 
-            <div class="form-group">
+           <!--  <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Juan P.">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                <input type="email" class="form-control validEmail" id="email_input" name="email_input" aria-describedby="emailHelp" placeholder="Enter email">
+               <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
-            <div class="form-group">
+           <!--  <div class="form-group">
                 <label for="formGroupExampleInput">Celular</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="987654321">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Ciudad</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Lima">
-            </div>
+            </div> -->
         </fieldset>
 
     </div>
-    <div class="col-md-6 ConfR">
+    <div class="col-md-6 ConfR hidden" id="divContainerMetodoDePago">
 
     <fieldset>
         <legend>Elegir metodo de pago</legend>
 
         <div>
-        <input type="radio" id="huey" name="drone" value="huey"
+        <input type="radio" id="transfer" name="methodPay" value="Transferencia"
                 checked>
-        <label for="huey">Transferencia Bancaria</label>
+        <label for="transfer">Transferencia Bancaria</label>
         </div>
 
-        <div>
-        <input type="radio" id="dewey" name="drone" value="dewey">
+        <!-- <div>
+        <input type="radio" id="dewey" name="methodPay" value="dewey">
         <label for="dewey">Pago con VISA</label>
-        </div>
+        </div> -->
 
         <div>
-        <input type="radio" id="louie" name="drone" value="louie">
-        <label for="louie">Pago con Paypal</label>
+        <input type="radio" id="paypal" name="methodPay" value="Paypal">
+        <label for="paypal">Pago con Paypal</label>
         </div>
     </fieldset>
     </div>
@@ -194,19 +220,77 @@ if(isset($_SESSION['languague_'])){
     </div>
     <div class="espacio"></div>
 
-    <div class="container">
+    <div class="container" id="botnConfirmarCompra">
 
         <div class="row">
             <div class="col-md-12 btn1Center">
-                <input class="btn btn-primary" id="" type="submit" value="CONTINUAR">
+                <input class="btn btn-primary" id="btnConfirmPurcharse" onclick="confirmOrder()" type="button" value="Continuar">
             </div>
         </div>
     </div>
-</form> 
+    <div class="container hidden" id="botnConfirmarCompraDos">
+
+        <div class="row">
+            <div class="col-md-12 btn1Center">
+                <input class="btn btn-primary" id="btnConfirmPurcharse2" onclick="confirmOrderDos()" type="button" value="Continuar Compra">
+            </div>
+        </div>
+    </div>
+
+
+
+</form>
+
     <!-- ************************************************************** -->
     <!-- *************************  /informacion statica  ************************* -->
     <!-- ************************************************************** -->    
    
+
+<!-- Modal Login -->
+<div id="modal-login" class="modal" tabindex="-1" role="dialog" data-backdrop="static">
+				  <div class="modal-dialog modal-xl" role="document">
+				    <div class="modal-content ">
+				      <div class="modal-header">
+				        <h5 class="modal-title">Inicia sesión</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				      	<div class="row mb-4">
+                            <form action="" id="formLogin" name="formLogin">
+				      		<div class="col-md-12">	
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Email</label>
+                                            <input type="text" class="form-control" id="email_login" name="email_login" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Contraseña</label>
+                                            <input type="password" class="form-control" id="password_login" name="password_login" placeholder="***">
+                                        </div>
+                                        <p></p> <br>
+                                        <div class="form-group">
+                                            
+                                            <input type="button" class="form-control btn btn-info" id="btnLoginUser" name="btnLoginUser" value="Iniciar Sesión">
+                                        </div>
+							</div>
+                            </form>
+				      	</div>
+
+				      	<div class="row lista-imagenes">
+				      		
+				      	</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+<!-- /Modal Login -->
+
+
+
     <!-- ************************************************************** -->
     <!-- *************************  informacion statica  ************************* -->
     <!-- ************************************************************** -->    
@@ -260,11 +344,16 @@ if(isset($_SESSION['languague_'])){
 
 	</div>
 </footer>
-
+<script>
+        const base_url = "<?= base_url(); ?>";
+      
+    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
    <script src="js/bootstrap.min.js"></script>
+   <script src="js/confirmacion.js"></script>
 <!--    <script src="js/bootstrap.min.js.map"></script> -->
+
 </body>
 </html>

@@ -9,11 +9,17 @@ const DB_HOST = "localhost";
 const DB_NAME = "arapaima";
 const DB_USER = "root";
 const DB_PASSWORD = "";
- 
+define("DB_ENCODE","utf8");
 /* const DB_HOST = "localhost";
 const DB_NAME = "kenneth2_arapaimadb";
 const DB_USER = "kenneth2_arapaimaus";
 const DB_PASSWORD = "t.zY8;Su89v@"; */
+
+
+const P_PROCESO = 1;
+const P_FINALIZADO = 2;
+const P_ANULADO = 3;
+const P_NOPEDIDO = 4;
 
 const DB_CHARSET = "utf8";
 
@@ -204,6 +210,12 @@ const FRM_BT_EN = "Send Message ";
 function base_url()
 {
 	return BASE_URL;
+}
+
+function limpiarCadena($str){
+	global $conexion;
+	$str = mysqli_real_escape_string($conexion,trim($str));
+	return htmlspecialchars($str);
 }
 
 ?>

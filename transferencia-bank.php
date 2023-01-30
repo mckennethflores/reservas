@@ -1,5 +1,8 @@
 <?php
+/* ob_start(); */
 require_once("Config/Config.php");
+require_once("Config/Global.php");
+
 
 if(isset($_SESSION['languague_'])){
     
@@ -8,7 +11,12 @@ if(isset($_SESSION['languague_'])){
     $_SESSION['languague_'] = "es";
     $lang = $_SESSION['languague_'];
 }
+
+
+$IDUSUARIO = $_SESSION['idusuario'];
 ?>
+
+ 
 <!doctype html>
 <html lang="es-ES">
   <head>
@@ -103,11 +111,37 @@ if(isset($_SESSION['languague_'])){
 <form action="index.php" method="post">
     <div class="container">
         <div class="row">
-        <div class="congratu">
-           <p class="text-center tit"> Felicidades Su pedido se ha registrado satisfactoriamente</p>
-        </div>
+            <div class="congratu">
+            <p class="text-center tit"> Felicidades Su pedido se ha registrado satisfactoriamente</p>
+            </div>
+<?php
 
-        <p class="order text-center"><b>Pedido: N°: <span>4561</span></b> </p>
+    $fecsal = mysqli_query($conexion, "SELECT
+    pedidos.idpedido,
+    sb_usuarios.nomusuario,
+    pedidos.fechapedido,
+    DATE_FORMAT(pedidos.fechapedido, '%d-%m-%Y %H:%i') AS fecha_,
+    pedidos.recojoen,
+    pedidos.tipodepago,
+    pedidos.total,
+    pedidos.delivery,
+    pedidos.pagacon,
+    pedidos.subtotal,
+    pedidos.idstore,
+    pedidos.idusuario
+    FROM pedidos 
+           INNER JOIN sb_usuarios ON sb_usuarios.idusuario = pedidos.idusuario
+    
+    WHERE pedidos.idusuario='$IDUSUARIO' ORDER BY  pedidos.idpedido DESC LIMIT 1") or
+    die("Problemas en el select:" . mysqli_error($conexion));
+
+    while ($reg2 = mysqli_fetch_array($fecsal)) {
+
+?>
+
+
+        <p class="order text-center"><b>Pedido: N°: <span><?= $reg2["idpedido"] ?></span></b> </p>
+
 
         <p class="congr">Deposite a nuestros siguientes numeros de cuenta:</p>
 
@@ -115,46 +149,65 @@ if(isset($_SESSION['languague_'])){
     <!-- *************************    Confirmacion    ***************************-->
     <!-- ************************************************************************-->
                 <div class="col-md-6">
-                    <h5>BBVA Soles</h5>
-                    <div class="titCong">
-                        0011 12312 456456 78984
-                    </div>
-                    <div class="desCong">
-                        CCI:  456465456 789789798 789789
-                    </div>
-                </div>
-                <div class="col-md-6">
                     <h5>BBVA Dolares</h5>
                     <div class="titCong">
-                        0011 12312 456456 78984
+                        0011 0011-0301-0100142577-94
                     </div>
                     <div class="desCong">
-                        CCI:  456465456 789789798 789789
+                        CCI:  011-301-000100142577-94
                     </div>
+                    
+
+                </div>
+                <div class="col-md-6">
+                    <h5>BBVA Soles</h5>
+                    <div class="titCong">
+                    0011-0301-0100142569-91
+                    </div>
+                    <div class="desCong">
+                        CCI:  011-301-000100142569-91
+                    </div>
+                    <div class="desCong">
+                       <b>CODIGO SWIFT: BCONPEPL</b>
+                    </div>
+                     
                 </div>
     <!-- ************************************************************************-->
     <!-- *************************    /Confirmacion    ***************************-->
     <!-- ************************************************************************-->
 
 
-    </div>
+ 
+                          
+                         
+        </div>
     </div>
     <div class="espacio"></div>
 <div class="container">
     <div class="row">
-        <p>Cliente: <span>Juan Perez</span></p>
-        <p>Email: <span> jperezq@gmail.com</span></p>
+        <p>Cliente: <span><?= $reg2["nomusuario"]; ?></span></p>
+        <p>Fecha del pedido: <span>  <?= $reg2["fecha_"]; ?></span></p>
+        <div class="totalShop">
+                          Precio: S/ <?= $reg2["total"]; ?>
+                          <br>
+                          </div>
     </div>
 </div>
     <div class="container">
 
         <div class="row">
             <div class="col-md-12 btn1Center">
-                <input class="btn btn-primary" id="" type="submit" value="SALIR">
+            <!--     <input class="btn btn-primary" id="" type="submit" value="SALIR"> -->
+
+                <a class="btn btn-primary" href="index.php">SALIR</a>
             </div>
         </div>
     </div>
 </form> 
+
+<?php
+        }
+    ?>
     <!-- ************************************************************** -->
     <!-- *************************  /informacion statica  ************************* -->
     <!-- ************************************************************** -->    
