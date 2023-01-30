@@ -247,12 +247,12 @@ $total_input = $_GET['total_input'];
    
 
 <!-- Modal Login -->
-<div id="modal-login" class="modal" tabindex="-1" role="dialog" data-backdrop="static">
+<div id="modal-login" class="modal fade modal-default" tabindex="-1" role="dialog" data-backdrop="static">
 				  <div class="modal-dialog modal-xl" role="document">
 				    <div class="modal-content ">
 				      <div class="modal-header">
 				        <h5 class="modal-title">Inicia sesión</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				        <button type="button" class="close" data-dismiss="modal" onclick="closeModal('login')" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
 				      </div>
@@ -282,12 +282,61 @@ $total_input = $_GET['total_input'];
 				      	</div>
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+				        <button type="button" class="btn btn-danger" onclick="closeModal('login')" data-dismiss="modal">Cerrar</button>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 <!-- /Modal Login -->
+
+
+<!-- Modal Register -->
+    <div id="modal-register"  class="modal fade modal-default" >
+				  <div class="modal-dialog modal-xl" role="document">
+				    <div class="modal-content ">
+				      <div class="modal-header">
+				        <h5 class="modal-title">Registrate</h5>
+				        <button type="button" class="close" data-dismiss="modal" onclick="closeModal('register')" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+                        
+				      </div>
+				      <div class="modal-body">
+				      	<div class="row mb-4">
+                            <form action="" id="formRegister" name="formRegister">
+				      		<div class="col-md-12">	
+                                        <div class="form-group hidden">
+                                            <label for="formGroupExampleInput">Email</label>
+                                            <input type="text" class="form-control" id="email_register" name="email_register" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Password</label>
+                                            <input type="password" class="form-control" id="password_register" name="password_register" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Re-Password</label>
+                                            <input type="password" class="form-control" id="rpassword_register" name="rpassword_register" placeholder="">
+                                        </div>
+                                        <p></p> <br>
+                                        <div class="form-group">
+                                            
+                                            <input type="button" class="form-control btn btn-info" id="btnRegister" name="btnRegister" value="Registrarse">
+                                        </div>
+							</div>
+                            </form>
+				      	</div>
+
+				      	<div class="row lista-imagenes">
+				      		
+				      	</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" onclick="closeModal('register')" data-dismiss="modal">Cerrar</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+<!-- /Modal Register -->
 
 
 
@@ -348,6 +397,7 @@ $total_input = $_GET['total_input'];
         const base_url = "<?= base_url(); ?>";
       
     </script>
+    <script src="js/general.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>

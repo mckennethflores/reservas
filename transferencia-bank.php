@@ -13,7 +13,7 @@ if(isset($_SESSION['languague_'])){
 }
 
 
-$IDUSUARIO = $_SESSION['idusuario'];
+$IDUSUARIO = $_GET['idusuario'];
 ?>
 
  

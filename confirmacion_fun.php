@@ -18,28 +18,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET["email_input"])) {
 
 
             case "validateEmail":
-                // $rspta = $calculatedelivery->listarDistritos($programaid);
 
-                $fecsal = mysqli_query($conexion, "SELECT * FROM sb_usuarios WHERE emailusuario = '$email_input';") or
-                die("Problemas en el select:" . mysqli_error($conexion));
+                function verificarEmail($email_input,$conexion)
+                {
+                    $email_input = $_POST["email_input"];
+                    // $clavehash=hash("SHA256",$claveusuario);
+                    $fecsal = mysqli_query($conexion, "SELECT * FROM sb_usuarios WHERE emailusuario = '$email_input' AND condicionusuario='1' AND idperfil=5;") or
+            
+                    die("Problemas en el select:" . mysqli_error($conexion));
 
-                //   $data= Array();
-                while ($reg = mysqli_fetch_array($fecsal)) {
+                    return $fecsal;
+                }
 
-                
-                    $idusuario = $reg['idusuario'];
-                    $nomusuario = $reg['nomusuario'];
-                    $emailusuario = $reg['emailusuario'];
+                $rspta=verificarEmail($email_input,$conexion);
+
+                $fetch=$rspta->fetch_object();
+        
+                if (isset($fetch))
+                {
+                    $resultado = array();
+                    $resultado["login"] = array();
+
+                     $_SESSION['idusuario']=$fetch->idusuario;
+                   
+                    array_push($resultado["login"],$fetch);
                     
-                        /* $data[]=array(
-                            "idusuario" => $idusuario,
-                            "nomusuario" => $nomusuario
-                        ); */
-                        $data= Array("idusuario" => $idusuario,
-                        "nomusuario" => $nomusuario,
-                        "emailusuario" => $emailusuario);
-                    }
-                    echo json_encode($data);
+                    $resultado["success"] = "1";
+                    $resultado["message"] = "success";
+                    echo json_encode($resultado);
+    
+                }else{
+                    $resultado["success"] = "0";
+                    $resultado["message"] = "error";
+                    echo json_encode($resultado);
+                }
+
             break;
 
         }
@@ -97,27 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["email_login"]) && iss
                 return;
 
 
-               /*  $fecsal = mysqli_query($conexion, "SELECT * FROM sb_usuarios WHERE emailusuario = '$email_login' and claveusuario = '$password_login' AND condicionusuario='1' AND idperfil=5;") or
-                
-                die("Problemas en el select:" . mysqli_error($conexion)); */
-
-                
-                while ($reg = mysqli_fetch_array($fecsal)) {
-
-                
-                    $idusuario = $reg['idusuario'];
-                    $nomusuario = $reg['nomusuario'];
-                    $emailusuario = $reg['emailusuario'];
-                    
-                        /* $data[]=array(
-                            "idusuario" => $idusuario,
-                            "nomusuario" => $nomusuario
-                        ); */
-                        $data= Array("idusuario" => $idusuario,
-                        "nomusuario" => $nomusuario,
-                        "emailusuario" => $emailusuario);
-                    }
-                    echo json_encode($data);
+              
             break;
         }
 }
@@ -246,5 +239,103 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["idusuario"])) {
     }
 }
 
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["email_register"]) && isset($_POST["password_register"])) {
+
+    $email_register=isset($_POST["email_register"])? limpiarCadena($_POST["email_register"]):"";
+    $password_register=isset($_POST["password_register"])? limpiarCadena($_POST["password_register"]):"";
+ 
+
+    switch ($_GET["op"]){
+
+
+        case 'userRegister':
+
+             function userRegister($dniusuario, $nomusuario , $sexousuario, $telusuario, $dirusuario, $imagenusuario, $idperfil, $idtienda, $email_register,$password_register)
+            {
+
+                $sql="INSERT INTO sb_usuarios (`dniusuario`, `nomusuario`, `sexousuario`, `telusuario`,`emailusuario`,`dirusuario`,`claveusuario`,`condicionusuario`,`imagenusuario`,`idperfil`,`idtienda`) 
+                VALUES('$dniusuario','$nomusuario','$sexousuario','$telusuario','$email_register','$dirusuario','$password_register','1','$imagenusuario','$idperfil','$idtienda')";
+                
+                $idpedidonew=ejecutarConsulta_retornarID($sql);
+
+               // ejecutarConsulta($sql);
+
+                echo $idpedidonew;
+
+            }
+
+                $rspta=userRegister($dniusuario = "", $nomusuario = "", $sexousuario = "", $telusuario = "", $dirusuario = "", $imagenusuario = "noimage.jpg", $idperfil = "5", $idtienda = "321314", $email_register,$password_register);
+                
+               // echo  var_dump($rspta);
+                //echo $rspta ? "Usuario registrado": "Usuario no se pudo registrar";
+                /* $fetch=$rspta->fetch_object();
+
+                if (isset($fetch))
+                {
+                    $resultado = array();
+
+                    $resultado["success"] = "1";
+                    $resultado["message"] = "success";
+                    echo json_encode($resultado);
+    
+                }else{
+                    $resultado["success"] = "0";
+                    $resultado["message"] = "error";
+                    echo json_encode($resultado);
+                } */
+
+                // echo $rspta ? "Usuario Registrado satisfactoriamente": "Usuario no se puedo registrar";
+
+        break;
+
+
+        case 'listarproductostemporales':
+
+            function listarproductostemporales($idusuario,$tipodepago,$recojoen,$total,$pagacon,$idstore,$subtotal,$delivery,$razonsocial,$ruc,$direccion,$vuelto)
+           {
+                $sql7="SELECT idpedido, idestadopedido FROM pedidos WHERE idusuario = '$idusuario' ORDER BY  idpedido DESC LIMIT 1";
+                $verifyExistOrdersPending=ejecutarConsulta($sql7);
+                $idestadopedido = P_NOPEDIDO;
+                while ($reg=$verifyExistOrdersPending->fetch_object()){
+                    $idestadopedido=$reg->idestadopedido;
+                }
+              //  echo $info = "info: $idestadopedido";
+            if($idestadopedido != P_PROCESO)
+            {
+        
+                $fecha = date('Y-m-d H:i:s');
+
+
+                $sql2="INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `idestadopedido`, `tipodepago`, `recojoen`, `total`, `pagacon`, `idstore`, `subtotal`, `delivery`, `razonsocial`, `ruc`, `direccion`, `vuelto`)
+                     VALUES (NULL, 'ORD-$idusuario','$idusuario','$fecha','1','$tipodepago','$recojoen','$total','$pagacon','$idstore','$subtotal','$delivery','$razonsocial','$ruc','$direccion','$vuelto')";
+               ejecutarConsulta($sql2);
+               return;
+
+                $sql="SELECT * FROM paprotemp WHERE idusuario = $idusuario LIMIT 1";
+                $productoscliente=ejecutarConsulta($sql);
+                while ($reg=$productoscliente->fetch_object()){
+                    $reg->idusuario;
+        
+                    $sql2="INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `idestadopedido`, `tipodepago`, `recojoen`, `total`, `pagacon`, `idstore`, `subtotal`, `delivery`, `razonsocial`, `ruc`, `direccion`, `vuelto`)
+                     VALUES (NULL, 'PTV00-$reg->idusuario','$reg->idusuario','$fecha','1','$tipodepago','$recojoen','$total','$pagacon','$idstore','$subtotal','$delivery','$razonsocial','$ruc','$direccion','$vuelto')";
+                   
+                  return ejecutarConsulta($sql2);
+
+                }
+
+            }
+           }
+
+                       //   if($pagacon==''){    $pagacon = '0.00';  }  if($vuelto==''){    $vuelto = '0.00';  }
+               $rspta=listarproductostemporales($idusuario,$tipodepago, $recojoen ="PedidoOnline",$total,$pagacon = "0.00","321314",$subtotal = "0.00",$delivery= "0.00",$razonsoc = "-",$ruc = "-",$direccion = "-",$vuelto = "0.00");
+               echo $rspta ? "Pedido registrado": "Pedido no se puedo registrar";
+
+       break;
+
+     
+    }
+}
 
 ?>

@@ -31,6 +31,43 @@ function fntEmailValidate(email){
     }
 }
 
+    let btnRegister = document.querySelector("#btnRegister");
+    btnRegister.addEventListener('click', function(){
+
+        var email = gv("email_register");
+        var pass = gv("password_register");
+        var rpass = gv("rpassword_register");
+       // console.log(pass,rpass);
+        if(pass != rpass){
+            alert("Las contraseñas ingresadas no coinciden");
+        }
+        registrarUsuario(email,pass);
+    });
+
+function registrarUsuario(email,pass){
+     console.log(email,pass);
+
+      $.post(base_url+"/confirmacion_fun.php?op=userRegister", {
+                    "email_register": email,
+                    "password_register": pass
+                },
+                function (data) {
+                    
+                   
+                   document.querySelector("#idusuario").value = data;
+                   $("#modal-register").modal('hide');
+
+                   $('#divContainerDatosDelUsuario').addClass("hidden");
+                   $('#botnConfirmarCompra').addClass("hidden");
+                   $('#divContainerMetodoDePago').removeClass("hidden");
+                   $('#botnConfirmarCompraDos').removeClass("hidden");
+
+
+
+                });
+
+}
+
 function confirmOrder(){
 
     // valido si el usuario existe
@@ -49,13 +86,36 @@ function confirmOrder(){
         processData: false,
         beforeSend: function () {},
         success: function (data) {
+
+
             var objeto = JSON.parse(data);
+                   if(objeto.message == 'success' && objeto.success == '1'){
+
+                  /*   para acceder a los valores de un array es necesario utilizar corchetes */
+                  //  console.log(objeto.login[0].idusuario); return;
+                  console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+                  document.querySelector("#email_login").value = objeto.login[0].emailusuario;
+                  $("#modal-login").modal('show');
+
+                   }else if (objeto.message == 'error' && objeto.success == '0'){
+
+                    $("#modal-register").modal('show');
+                   var email_input = document.querySelector("#email_input").value;
+                   document.querySelector("#email_register").value = email_input;
+                   }else{
+                    alert("El sistema no responde, vuelva a ingresar en unos segundos...");
+                   }
+
+
+           /*  var objeto = JSON.parse(data);
             if(objeto.idusuario != null || objeto.idusuario != ''){
                 console.log("Bienvenido de nuevo "+objeto.nomusuario);
                 
                 document.querySelector("#email_login").value = objeto.emailusuario;
                 $("#modal-login").modal('show');
-            }
+            }else{
+                console.log(data);
+            } */
         
         },
         error: function () {
@@ -89,7 +149,7 @@ function confirmOrderDos(){
 
 
      guardaryeditar();
-   $(location).attr("href", "transferencia-bank.php");
+   $(location).attr("href", "transferencia-bank.php?idusuario=".idusuario);
 }
 
     function guardaryeditar() {
@@ -113,7 +173,9 @@ function confirmOrderDos(){
         });
     }
 
-  
+  function closeModal(value){
+     $("#modal-"+value).modal('hide');
+  }
 let btnLoginUser = document.querySelector("#btnLoginUser");
    
         btnLoginUser.addEventListener('click', function(){
@@ -131,7 +193,7 @@ let btnLoginUser = document.querySelector("#btnLoginUser");
                 },
                 function (data) {
                     
-                   //console.log(data); 
+              //     console.log(data); return;
                    var objeto = JSON.parse(data);
                    if(objeto.message == 'success' && objeto.success == '1'){
 

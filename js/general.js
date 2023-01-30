@@ -176,6 +176,13 @@ function getParamUrl() {
     return $_GET["idstore"];
 }
 
+//Obtiene la propiedad value de un elemento
+function gv(v){
+    var vv  = document.querySelector("#"+v).value;
+
+    return vv.trim();
+}
+
 // Funcion que obtiene los parametros url
 let getParameterByName = function () {
     let queries = location.search.substring(1).split('&'),
