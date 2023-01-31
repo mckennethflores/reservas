@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 30, 2023 at 06:04 AM
+-- Generation Time: Jan 31, 2023 at 04:24 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   `direccion` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
   `vuelto` decimal(11,2) DEFAULT NULL,
   PRIMARY KEY (`idpedido`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Dumping data for table `pedidos`
@@ -182,14 +182,63 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 
 INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `idestadopedido`, `tipodepago`, `recojoen`, `total`, `pagacon`, `idstore`, `subtotal`, `delivery`, `razonsocial`, `ruc`, `direccion`, `vuelto`) VALUES
 (15, 'PTV00-29', '29', '2023-01-27 16:03:50', '4', 'Pagoefectivo', 'Envio delivery', '107.20', '0.00', '321314', '112.20', '5.00', '', '', '', '0.00'),
-(16, 'ORD-519', '519', '2023-01-29 21:14:23', '4', 'Transferencia', 'PedidoOnline', '7500.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(17, 'ORD-519', '519', '2023-01-29 21:17:47', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(18, 'ORD-519', '519', '2023-01-29 21:25:12', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(19, 'ORD-519', '519', '2023-01-29 21:26:12', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(20, 'ORD-519', '519', '2023-01-29 21:57:32', '4', 'Transferencia', 'PedidoOnline', '7500.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(21, 'ORD-535', '535', '2023-01-30 00:54:34', '14', 'Transferencia', 'PedidoOnline', '7500.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(22, 'ORD-536', '536', '2023-01-30 00:59:40', '4', 'Transferencia', 'PedidoOnline', '7500.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(23, 'ORD-537', '537', '2023-01-30 01:02:01', '1', 'Transferencia', 'PedidoOnline', '7500.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00');
+(39, 'ORD-554', '554', '2023-01-30 14:48:28', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(38, 'ORD-553', '553', '2023-01-30 14:42:24', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(37, 'ORD-550', '550', '2023-01-30 14:38:41', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(36, 'ORD-549', '549', '2023-01-30 14:36:06', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(35, 'ORD-548', '548', '2023-01-30 14:34:01', '1', 'Transferencia', 'PedidoOnline', '20700.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(34, 'ORD-547', '547', '2023-01-30 14:31:40', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(33, 'ORD-546', '546', '2023-01-30 14:25:31', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(32, 'ORD-545', '545', '2023-01-30 13:17:00', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(31, 'ORD-544', '544', '2023-01-30 13:15:43', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(30, 'ORD-543', '543', '2023-01-30 12:34:23', '4', 'Transferencia', 'PedidoOnline', '13200.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(29, 'ORD-519', '519', '2023-01-30 08:35:47', '4', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permiso`
+--
+
+DROP TABLE IF EXISTS `permiso`;
+CREATE TABLE IF NOT EXISTS `permiso` (
+  `idpermiso` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci DEFAULT '',
+  PRIMARY KEY (`idpermiso`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `permiso`
+--
+
+INSERT INTO `permiso` (`idpermiso`, `nombre`) VALUES
+(1, 'Usuarios'),
+(2, 'Productos'),
+(3, 'Pedidos'),
+(4, 'Pedidos Tiendas'),
+(5, 'Zonas');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `productoestado`
+--
+
+DROP TABLE IF EXISTS `productoestado`;
+CREATE TABLE IF NOT EXISTS `productoestado` (
+  `idproductoestado` int(11) NOT NULL AUTO_INCREMENT,
+  `nomproductoestado` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`idproductoestado`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `productoestado`
+--
+
+INSERT INTO `productoestado` (`idproductoestado`, `nomproductoestado`) VALUES
+(1, 'En proceso'),
+(2, 'Finalizado'),
+(3, 'Anulado');
 
 -- --------------------------------------------------------
 
@@ -214,6 +263,33 @@ CREATE TABLE IF NOT EXISTS `reservas` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sb_aux`
+--
+
+DROP TABLE IF EXISTS `sb_aux`;
+CREATE TABLE IF NOT EXISTS `sb_aux` (
+  `id` int(11) NOT NULL,
+  `v` varchar(50) NOT NULL,
+  `t` varchar(50) NOT NULL,
+  `o` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sb_aux`
+--
+
+INSERT INTO `sb_aux` (`id`, `v`, `t`, `o`) VALUES
+(3, 'Masculino', 'sexo', 3),
+(4, 'Femenino', 'sexo', 4),
+(1, 'Habilitado', 'hab', 1),
+(2, 'Deshabilitado', 'hab', 2),
+(5, 'Cliente', 'perfil', 5),
+(6, 'Empleado', 'perfil', 6);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sb_usuarios`
 --
 
@@ -234,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `sb_usuarios` (
   `tokenusuario` varchar(6) DEFAULT NULL,
   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idusuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=538 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=555 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sb_usuarios`
@@ -242,15 +318,19 @@ CREATE TABLE IF NOT EXISTS `sb_usuarios` (
 
 INSERT INTO `sb_usuarios` (`idusuario`, `dniusuario`, `nomusuario`, `sexousuario`, `telusuario`, `emailusuario`, `dirusuario`, `claveusuario`, `condicionusuario`, `imagenusuario`, `idtienda`, `idperfil`, `tokenusuario`, `date_created`) VALUES
 (519, '12345678', 'Juan Perez', '', '938222552', 'oswaldoelflori@gmail.com', 'Lima', '123456', 1, 'perfil_default.jpg', 0, 5, NULL, '2023-01-29 23:09:37'),
-(537, '', '', '', '', 'mflores@frsystem.com.pe', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 01:01:59'),
-(536, '', '', '', '', 'carlos@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:59:33'),
-(535, '', '', '', '', 'wewewedoraxyz@gmail.com', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:54:09'),
-(534, '', '', '', '', 'qwqwqw@frsystem.com.pe', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:51:56'),
-(533, '', '', '', '', 'asasassaraxyz@gmail.com', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:50:53'),
-(532, '', '', '', '', 'oswaldaslflori@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:50:04'),
-(531, '', '', '', '', 'sads@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:48:08'),
-(530, '', '', '', '', 'distwribuidoraxyz@gmail.com', '', '1234', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:47:00'),
-(529, '', '', '', '', 'qw@gmail.com', '', '1234', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 00:47:00');
+(552, '', '', '', '', 'dfds@gd.com', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:39:38'),
+(551, '', '', '', '', 'sdfasdfasdfres@frsystem.com.pe', '', '12', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:39:04'),
+(550, '', '', '', '', 'owseflori@gmail.com', '', '1232', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:38:28'),
+(549, '', '', '', '', 'sdasdasdsdasdsadsad@f.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:36:05'),
+(548, '', '', '', '', 'poioide@gma.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:34:00'),
+(547, '', '', '', '', 'oswaldoelflorifrfrfr@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:31:38'),
+(546, '', '', '', '', 'juanperez@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:25:29'),
+(545, '', '', '', '', 'oswaldasasas@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 13:16:59'),
+(544, '', '', '', '', 'sdfasdfoelflori@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 13:15:41'),
+(543, '', '', '', '', 'oswaldgergregregreoelflori@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 12:34:22'),
+(542, '48039852', 'Wilson Gatica', 'M', '1', 'info@arapaimaexpeditions.com', 'lima', '123456', 1, 'perfil_default.jpg', 321314, 6, NULL, '2023-01-30 11:07:18'),
+(553, '', 'Jose', '', '147852639', 'oswsri@gmdfasdafdsail.com', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:42:14'),
+(554, '', 'Juan Perez P', '', '968574231', 'juanperez1@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:48:26');
 
 -- --------------------------------------------------------
 
@@ -334,6 +414,55 @@ INSERT INTO `tipo_habitacion` (`id`, `paqueteid`, `nombre`, `en`, `precio`, `ima
 (1, 1, 'Habitacion doble', 'Double Room', '1700', 'paq1.jpg', '2', '2', '2023-01-02 17:21:34', '2023-01-02 17:21:34'),
 (2, 1, 'Suite Esquina', 'Corner Suite', '2500', 'paq2.JPG', '4', '3', '2023-01-11 22:29:32', '2023-01-11 22:29:32'),
 (3, 3, 'Suite Arriba ', 'Upper Suite', '4900', 'paq1.jpg', '3', '2', '2023-01-29 14:17:39', '2023-01-29 14:17:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario_permiso`
+--
+
+DROP TABLE IF EXISTS `usuario_permiso`;
+CREATE TABLE IF NOT EXISTS `usuario_permiso` (
+  `idusuario_permiso` int(11) NOT NULL AUTO_INCREMENT,
+  `idusuario` int(11) NOT NULL,
+  `idpermiso` int(11) NOT NULL,
+  PRIMARY KEY (`idusuario_permiso`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usuario_permiso`
+--
+
+INSERT INTO `usuario_permiso` (`idusuario_permiso`, `idusuario`, `idpermiso`) VALUES
+(4, 13, 0),
+(18, 542, 1),
+(19, 542, 2),
+(20, 542, 3),
+(21, 542, 4),
+(22, 542, 5),
+(25, 79, 0),
+(26, 79, 0),
+(29, 2, 0),
+(30, 2, 0),
+(31, 2, 3),
+(32, 78, 0),
+(33, 9, 0),
+(34, 9, 0),
+(35, 9, 3),
+(36, 87, 3),
+(37, 87, 0),
+(38, 87, 0),
+(39, 92, 0),
+(40, 92, 3),
+(41, 93, 3),
+(44, 98, 3),
+(45, 99, 3),
+(46, 101, 3),
+(47, 102, 3),
+(48, 137, 4),
+(49, 137, 5),
+(50, 36, 2),
+(51, 390, 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
