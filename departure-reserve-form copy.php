@@ -391,7 +391,7 @@
 			<ul class="linksCont">
 				<li><a href="#">Calle Alfonso Ugarte N°547 Iquitos Perú
                 </a></li>
-				<li><a href="#"> +51 992 034 855</a></li>
+				<li><a href="#"> +51 963 332 647</a></li>
              
 				<li><a href="#">info@arapaimaexpeditions.com</a></li>
 			 

@@ -64,7 +64,7 @@ $total_input = $_GET['total_input'];
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51992034855&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 992 034 855</a></li>
+                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647</a></li>
                   </ul>
                   <ul class="idioma">
                     <li><a href="index.php?lang=en">Engish</a></li>
@@ -149,13 +149,13 @@ $total_input = $_GET['total_input'];
     <div class="container">
         <div class="row">
         
-                    <input type="text" name="month" id="month" value="<?= $month ?>">
-                    <input type="text" name="year" id="year" value="<?= $year ?>">
-                    <input type="text" name="program" id="program" value="<?= $program ?>">
-                    <input type="text" name="fec" id="fec" value="<?= $fec ?>">
-                    <input name="total_input" id="total_input" type="text" value="<?= $total_input ?>">
-                    <input  type="text" name="idusuario" id="idusuario" value="">
-                    <input  type="text" name="tipodepago" id="tipodepago" value="">
+                    <input type="hidden" name="month" id="month" value="<?= $month ?>">
+                    <input type="hidden" name="year" id="year" value="<?= $year ?>">
+                    <input type="hidden" name="program" id="program" value="<?= $program ?>">
+                    <input type="hidden" name="fec" id="fec" value="<?= $fec ?>">
+                    <input type="hidden" name="total_input" id="total_input" value="<?= $total_input ?>">
+                    <input type="hidden" name="idusuario" id="idusuario" value="">
+                    <input type="hidden" name="tipodepago" id="tipodepago" value="">
 
     <!-- ************************************************************************-->
     <!-- *************************    Confirmacion    ***************************-->
@@ -163,10 +163,7 @@ $total_input = $_GET['total_input'];
 
     <div class="col-md-6 ConfL" id="divContainerDatosDelUsuario">
         <fieldset>
-            <legend>Enter your personal information:</legend>
-
-        
-
+            <legend>Enter your Email:</legend>
 
            <!--  <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
@@ -310,6 +307,14 @@ $total_input = $_GET['total_input'];
                                             <input type="text" class="form-control" id="email_register" name="email_register" placeholder="">
                                         </div>
                                         <div class="form-group">
+                                            <label for="formGroupExampleInput">Name</label>
+                                            <input type="text" class="form-control" id="name_register" name="name_register" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Phone</label>
+                                            <input type="text" class="form-control" id="phone_register" name="phone_register" placeholder="">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="formGroupExampleInput">Password</label>
                                             <input type="password" class="form-control" id="password_register" name="password_register" placeholder="">
                                         </div>
@@ -370,7 +375,7 @@ $total_input = $_GET['total_input'];
 			<ul class="linksCont">
 				<li><a href="#"><?= $lang == 'es' ? F_ADR_ES : F_ADR_EN ?>
                 </a></li>
-				<li><a href="#"> +51 992 034 855</a></li>
+				<li><a href="#"> +51 963 332 647</a></li>
              
 				<li><a href="#">info@arapaimaexpeditions.com</a></li>
 			 
@@ -395,8 +400,7 @@ $total_input = $_GET['total_input'];
 </footer>
 <script>
         const base_url = "<?= base_url(); ?>";
-      
-    </script>
+</script>
     <script src="js/general.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>

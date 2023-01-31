@@ -45,7 +45,7 @@ if(isset($_SESSION['languague_'])){
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51992034855&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 992 034 855</a></li>
+                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647</a></li>
                   </ul>
                   <ul class="idioma">
                     <li><a href="index.php?lang=en">Engish</a></li>
@@ -190,7 +190,7 @@ if(isset($_SESSION['languague_'])){
 			<ul class="linksCont">
 				<li><a href="#"><?= $lang == 'es' ? F_ADR_ES : F_ADR_EN ?>
                 </a></li>
-				<li><a href="#"> +51 992 034 855</a></li>
+				<li><a href="#"> +51 963 332 647</a></li>
              
 				<li><a href="#">info@arapaimaexpeditions.com</a></li>
 			 

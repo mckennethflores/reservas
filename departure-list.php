@@ -54,7 +54,7 @@ $conexion2 = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Prob
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51992034855&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 992 034 855</a></li>
+                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647</a></li>
                   </ul>
                   <ul class="idioma">
                     <li><a href="index.php?lang=en">Engish</a></li>
@@ -194,7 +194,7 @@ $imagen = $reg['imagen'];
         <div class="col-md-3 divBox">
             <span>
                 <label for="fecha_salida_<?= $fechasalidaid; ?>" class="">
-                    <input  type="radio" name="fecha_salida" id="fecha_salida_<?= $fechasalidaid; ?>" value="value_<?= $fechasalidaid; ?>" onchange="focusBtn(<?= $fechasalidaid?>,<?= $programaid ?>, '<?= $nombre ?>')" class="radio" required ><?= $reg2['nombre']; ?>
+                    <input  type="radio" name="fecha_salida" id="fecha_salida_<?= $fechasalidaid; ?>" value="value_<?= $fechasalidaid; ?>" onchange="focusBtn(<?= $fechasalidaid?>,<?= $programaid ?>, '<?= $nombre ?>')" class="radio validCheckbox" required ><?= $reg2['nombre']; ?>
                 </label>
             </span>
         </div>
@@ -204,8 +204,8 @@ $imagen = $reg['imagen'];
     </div>   
    <!--  style="display: none;" -->
     <div class="espacio-25"></div>
-    <input type="text" name="input_program_fec_<?= $programaid ?>" id="input_program_fec_<?= $programaid ?>">
-    <input type="text" name="nombre_input<?= $programaid ?>" id="nombre_input<?= $programaid ?>" value="">
+    <input type="hidden" name="input_program_fec_<?= $programaid ?>" id="input_program_fec_<?= $programaid ?>">
+    <input type="hidden" name="nombre_input<?= $programaid ?>" id="nombre_input<?= $programaid ?>" value="">
     <input class="btn btn-success" onclick="btnProgramas(<?= $programaid ?>)"  type="button" value="<?= $lang == 'es' ? BT_F_S_ES : BT_F_S_EN ?>">
 </div>
 
@@ -246,7 +246,7 @@ mysqli_close($conexion);
 			<ul class="linksCont">
 				<li><a href="#"><?= $lang == 'es' ? F_ADR_ES : F_ADR_EN ?>
                 </a></li>
-				<li><a href="#"> +51 992 034 855</a></li>
+				<li><a href="#"> +51 963 332 647</a></li>
              
 				<li><a href="#">info@arapaimaexpeditions.com</a></li>
 			 

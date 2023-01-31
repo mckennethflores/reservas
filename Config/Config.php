@@ -2,7 +2,9 @@
 
 const BASE_URL = "http://localhost/arapaima";
 
-session_start();
+
+if(!isset($_SESSION)){session_start();}
+
 date_default_timezone_set('America/Lima');
 
 const DB_HOST = "localhost";
@@ -15,6 +17,7 @@ const DB_NAME = "kenneth2_arapaimadb";
 const DB_USER = "kenneth2_arapaimaus";
 const DB_PASSWORD = "t.zY8;Su89v@"; */
 
+define('WP_DEBUG', false);
 
 const P_PROCESO = 1;
 const P_FINALIZADO = 2;

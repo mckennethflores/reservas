@@ -14,7 +14,7 @@ $year = $_GET['year'];
 $program = $_GET['program'];
 $fechasalidaid = $_GET['fechasalidaid'];
 $nombreinput = $_GET['nombre_input'];
- 
+
 
 require_once("departure-reserve-form_fun.php");
 
@@ -53,7 +53,7 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51992034855&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 992 034 855</a></li>
+                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647</a></li>
                   </ul>
                   <ul class="idioma">
                     <li><a href="index.php?lang=en">Engish</a></li>
@@ -139,13 +139,13 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
 <div class="espacio-25"></div>
 <form action="" id="frmDepRes" name="frmDepRes" method="POST">
 
-                    <input type="text" name="month" id="month" value="<?= $month ?>">
-                    <input type="text" name="year" id="year" value="<?= $year ?>">
-                    <input type="text" name="program" id="program" value="<?= $program ?>">
-                    <input type="text" name="nombre_input" id="nombre_input" value="<?= $nombreinput ?>">
-                    <input type="text" name="fec" id="fec" value="<?= $fechasalidaid ?>">
+                    <input type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="month" id="month" value="<?= $month ?>">
+                    <input type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="year" id="year" value="<?= $year ?>">
+                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="program" id="program" value="<?= $program ?>">
+                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="nombre_input" id="nombre_input" value="<?= $nombreinput ?>">
+                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="fec" id="fec" value="<?= $fechasalidaid ?>">
                    <!-- <label for="cantidad">cantidad -->
-                   <input name="cantidad" id="cantidad_input" type="text" value="0">
+                   <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="cantidad" id="cantidad_input" value="0">
                    <!-- </label> -->
 
                 <div class="container">
@@ -180,10 +180,11 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                                     <h2><?= $lang == 'es' ? $nombre : $nombre_en ?></h2>
                                 </div>
                                 <div class="bod">
-                                    <input type="text" name="precio<?= $habitacionid ?>" id="precio<?= $habitacionid ?>" value="<?= $precio ?>">
-                                    <input type="text" name="numerodepersonas_input_<?= $habitacionid ?>" id="numerodepersonas_input_<?= $habitacionid ?>" value="<?= $personasporhabitacion ?>">
-                                    <input type="text"  id="resCantPorPre<?= $habitacionid ?>" value="<?= $personasporhabitacion*$precio ?>">
-                                    <input type="text"  class='precioOcultoCalcularJs' id="montoTotalCadaHabtacion<?= $habitacionid ?>" value="0">
+                                    <!-- <label for="">Id habitacion <?= $habitacionid ?></label> -->
+                                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="precio<?= $habitacionid ?>" id="precio<?= $habitacionid ?>" value="<?= $precio ?>">
+                                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="numerodepersonas_input_<?= $habitacionid ?>" id="numerodepersonas_input_<?= $habitacionid ?>" value="<?= $personasporhabitacion ?>">
+                                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>"  id="resCantPorPre<?= $habitacionid ?>" value="<?= $personasporhabitacion*$precio ?>">
+                                    <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>"  class='precioOcultoCalcularJs' id="montoTotalCadaHabtacion<?= $habitacionid ?>" value="0">
 
                                       <!--  captura el value1
                                     captura el value2
@@ -251,7 +252,7 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                         <div class="col-md-6">
                             <div class="prTot">
                                 Total precio de reservación <span class="priceReservation">$ 0</span>
-                                <input type="text" id="total_input" name="total_input" >
+                                <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" id="total_input" name="total_input" >
                             </div>
                             </div>
                             
@@ -299,7 +300,7 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
 			<ul class="linksCont">
 				<li><a href="#"><?= $lang == 'es' ? F_ADR_ES : F_ADR_EN ?>
                 </a></li>
-				<li><a href="#"> +51 992 034 855</a></li>
+				<li><a href="#"> +51 963 332 647</a></li>
              
 				<li><a href="#">info@arapaimaexpeditions.com</a></li>
 			 

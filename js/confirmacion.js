@@ -37,19 +37,25 @@ function fntEmailValidate(email){
         var email = gv("email_register");
         var pass = gv("password_register");
         var rpass = gv("rpassword_register");
+        var name = gv("name_register");
+        var phone = gv("phone_register");
        // console.log(pass,rpass);
         if(pass != rpass){
             alert("Las contraseñas ingresadas no coinciden");
         }
-        registrarUsuario(email,pass);
+      /*   console.log(name, phone);
+        return; */
+        registrarUsuario(email,pass,name,phone);
     });
 
-function registrarUsuario(email,pass){
-     console.log(email,pass);
+function registrarUsuario(email,pass,name,phone){
+  //   console.log(email,pass);
 
       $.post(base_url+"/confirmacion_fun.php?op=userRegister", {
                     "email_register": email,
-                    "password_register": pass
+                    "password_register": pass,
+                    "name_register": name,
+                    "phone_register": phone
                 },
                 function (data) {
                     
@@ -133,11 +139,11 @@ function confirmOrder(){
 
 function confirmOrderDos(){
 
-    var month  = document.querySelector("#month").value;
+/*     var month  = document.querySelector("#month").value;
     var year  = document.querySelector("#year").value;
     var program  = document.querySelector("#program").value;
     var fec  = document.querySelector("#fec").value;
-    var total_input  = document.querySelector("#total_input").value;
+    var total_input  = document.querySelector("#total_input").value; */
     var idusuario  = document.querySelector("#idusuario").value;
 
 
@@ -149,7 +155,7 @@ function confirmOrderDos(){
 
 
      guardaryeditar();
-   $(location).attr("href", "transferencia-bank.php?idusuario=".idusuario);
+   $(location).attr("href", base_url+"/transferencia-bank.php?idusuario="+idusuario);
 }
 
     function guardaryeditar() {
@@ -164,7 +170,7 @@ function confirmOrderDos(){
             console.log("enviando producto...");
         },
         success: function (data) {
-            console.log("Mensaje: " + data);
+            alert("Mensaje: " + data);
             /* Android.showToast('Se confirmo el pedido con exito'); */
         },
         error: function () {
