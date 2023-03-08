@@ -180,7 +180,7 @@ $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Probl
                                     <h2><?= $lang == 'es' ? $nombre : $nombre_en ?></h2>
                                 </div>
                                 <div class="bod">
-                                    <!-- <label for="">Id habitacion <?= $habitacionid ?></label> -->
+                                    <label for="">Id habitacion <?= $habitacionid ?></label>
                                     <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="precio<?= $habitacionid ?>" id="precio<?= $habitacionid ?>" value="<?= $precio ?>">
                                     <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" name="numerodepersonas_input_<?= $habitacionid ?>" id="numerodepersonas_input_<?= $habitacionid ?>" value="<?= $personasporhabitacion ?>">
                                     <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>"  id="resCantPorPre<?= $habitacionid ?>" value="<?= $personasporhabitacion*$precio ?>">

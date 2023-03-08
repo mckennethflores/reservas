@@ -99,7 +99,11 @@ function confirmOrder(){
 
                   /*   para acceder a los valores de un array es necesario utilizar corchetes */
                   //  console.log(objeto.login[0].idusuario); return;
+                  document.querySelector('#titleModal').innerHTML = "Bienvenido nuevamente: "+objeto.login[0].nomusuario;
+
                   console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+               //   alert("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+                  
                   document.querySelector("#email_login").value = objeto.login[0].emailusuario;
                   $("#modal-login").modal('show');
 
@@ -150,12 +154,32 @@ function confirmOrderDos(){
     let methodPay = $('input[name="methodPay"]:checked').val();
    // console.log(methodPay);
 
-    document.querySelector("#tipodepago").value = methodPay;
-    var tipodepago = document.querySelector("#tipodepago").value;
+   if(methodPay == 'Transferencia'){
+    //console.log("Seleciono Transferencia");
+
+        document.querySelector("#tipodepago").value = methodPay;
+        var tipodepago = document.querySelector("#tipodepago").value;
+        guardaryeditar();
+        $(location).attr("href", base_url+"/transferencia-bank.php?idusuario="+idusuario);
+
+    //return;
+   }else if (methodPay == 'Paypal') {
+    console.log("Seleciono Paypal");
+    // Paypal Method
+
+    //Descargar libreria
+    // Importar libreria
+    // Total venta, idcliente, nombre, email.
+    // Paypal (v,cl,no);
+    // paypal request = 200 ? "pedido generado exitosamente": "error";
+    // guardar datos en la base de datos.
 
 
-     guardaryeditar();
-   $(location).attr("href", base_url+"/transferencia-bank.php?idusuario="+idusuario);
+
+    return;
+   }
+
+
 }
 
     function guardaryeditar() {
@@ -206,6 +230,8 @@ let btnLoginUser = document.querySelector("#btnLoginUser");
                   /*   para acceder a los valores de un array es necesario utilizar corchetes */
                   //  console.log(objeto.login[0].idusuario); return;
                       alert("Bienvenido usuario");
+                   //   console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+                    //  document.querySelector('#titleModal').innerHTML = "Bienvenido "+objeto.login[0].nomusuario;
                       $("#modal-login").modal('hide');
 
                       document.querySelector("#idusuario").value = objeto.login[0].idusuario;

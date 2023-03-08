@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 31, 2023 at 04:24 PM
+-- Generation Time: Mar 08, 2023 at 06:57 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   `direccion` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
   `vuelto` decimal(11,2) DEFAULT NULL,
   PRIMARY KEY (`idpedido`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Dumping data for table `pedidos`
@@ -182,6 +182,8 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 
 INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `idestadopedido`, `tipodepago`, `recojoen`, `total`, `pagacon`, `idstore`, `subtotal`, `delivery`, `razonsocial`, `ruc`, `direccion`, `vuelto`) VALUES
 (15, 'PTV00-29', '29', '2023-01-27 16:03:50', '4', 'Pagoefectivo', 'Envio delivery', '107.20', '0.00', '321314', '112.20', '5.00', '', '', '', '0.00'),
+(41, 'ORD-555', '555', '2023-02-01 13:07:49', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(40, 'ORD-519', '519', '2023-02-01 12:44:38', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
 (39, 'ORD-554', '554', '2023-01-30 14:48:28', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
 (38, 'ORD-553', '553', '2023-01-30 14:42:24', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
 (37, 'ORD-550', '550', '2023-01-30 14:38:41', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
@@ -192,7 +194,20 @@ INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `
 (32, 'ORD-545', '545', '2023-01-30 13:17:00', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
 (31, 'ORD-544', '544', '2023-01-30 13:15:43', '4', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
 (30, 'ORD-543', '543', '2023-01-30 12:34:23', '4', 'Transferencia', 'PedidoOnline', '13200.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
-(29, 'ORD-519', '519', '2023-01-30 08:35:47', '4', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00');
+(29, 'ORD-519', '519', '2023-01-30 08:35:47', '4', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(42, 'ORD-556', '556', '2023-02-01 13:55:30', '1', 'Paypal', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(43, 'ORD-559', '559', '2023-02-01 14:03:22', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(44, 'ORD-560', '560', '2023-02-01 14:03:44', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(45, 'ORD-561', '561', '2023-02-01 14:15:03', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(46, 'ORD-562', '562', '2023-02-03 11:48:28', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(47, 'ORD-563', '563', '2023-02-03 16:28:18', '1', 'Transferencia', 'PedidoOnline', '7500.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(48, 'ORD-564', '564', '2023-02-03 19:00:33', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(49, 'ORD-565', '565', '2023-02-06 14:34:08', '1', 'Transferencia', 'PedidoOnline', '9800.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(50, 'ORD-566', '566', '2023-02-08 18:05:34', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(51, 'ORD-567', '567', '2023-02-13 11:02:35', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(52, 'ORD-568', '568', '2023-02-13 19:53:36', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(53, 'ORD-569', '569', '2023-02-21 16:39:00', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00'),
+(54, 'ORD-570', '570', '2023-02-28 16:17:42', '1', 'Transferencia', 'PedidoOnline', '3400.00', '0.00', '321314', '0.00', '0.00', '-', '-', '-', '0.00');
 
 -- --------------------------------------------------------
 
@@ -310,7 +325,7 @@ CREATE TABLE IF NOT EXISTS `sb_usuarios` (
   `tokenusuario` varchar(6) DEFAULT NULL,
   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idusuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=555 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=571 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sb_usuarios`
@@ -330,7 +345,23 @@ INSERT INTO `sb_usuarios` (`idusuario`, `dniusuario`, `nomusuario`, `sexousuario
 (543, '', '', '', '', 'oswaldgergregregreoelflori@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 12:34:22'),
 (542, '48039852', 'Wilson Gatica', 'M', '1', 'info@arapaimaexpeditions.com', 'lima', '123456', 1, 'perfil_default.jpg', 321314, 6, NULL, '2023-01-30 11:07:18'),
 (553, '', 'Jose', '', '147852639', 'oswsri@gmdfasdafdsail.com', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:42:14'),
-(554, '', 'Juan Perez P', '', '968574231', 'juanperez1@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:48:26');
+(554, '', 'Juan Perez P', '', '968574231', 'juanperez1@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-01-30 14:48:26'),
+(555, '', 'Juan', '', '987654321', 'oswaldo456i@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 13:07:40'),
+(556, '', 'kenneth', '', '938222552', 'oswaldoelflo12345ri@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 13:55:21'),
+(557, '', 'kenneth', '', '938222552', 'oswaldoelflo12345r1i@gmail.com', '', '1', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 13:55:51'),
+(558, '', 'Mckenneth Flores', '', '938222552', 'oswaldoe9876ori@gmail.com', '', '123', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 14:01:03'),
+(559, '', 'Mckenneth Flores', '', '938222552', 'osw56765hfgdhflori@gmail.com', '', '678', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 14:03:20'),
+(560, '', 'Mckenneth Flores', '', '938222552', 'osw56765hfgdhfl785ori@gmail.com', '', '7', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 14:03:39'),
+(561, '', 'Maria Fernanda NuÃ±ez', '', '940215001', 'oswaldo5t5t9oi9ri@gmail.com', '', '345', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-01 14:14:37'),
+(562, '', 'Mirella', '', '987654321', 'mirella@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-03 11:48:24'),
+(563, '', 'Ruben', '', '987654321', 'rubenchavez@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-03 16:28:13'),
+(564, '', 'Marco Flores', '', '938222552', 'oswaldmri@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-03 19:00:28'),
+(565, '', 'Mckenneth Flores', '', '938222552', 'oswal4444doelflori@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-06 14:34:01'),
+(566, '', 'kenneth', '', '938222552', 'oswaldo4747elflori@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-08 18:05:27'),
+(567, '', 'Miguel', '', '987654321', 'oswald435345345@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-13 11:02:31'),
+(568, '', 'Alexander', '', '987654321', 'oswaldoelflocdcdcd@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-13 19:53:32'),
+(569, '', 'Distribuidora de Zapatos XYZ', '', '0234567', 'oswaldftfgori@gmail.com', '', '123456', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-21 16:38:57'),
+(570, '', 'Juan Perez', '', '+51938222552', 'oswaldoelfsdlori@gmail.com', '', '1234', 1, 'noimage.jpg', 321314, 5, NULL, '2023-02-28 16:17:37');
 
 -- --------------------------------------------------------
 

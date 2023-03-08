@@ -107,25 +107,26 @@ function incrementar(variable,cabdisponi) {
     }
 
 function decrementar(variable,cabdisponi) {
+
     inputid = getIdValue(variable, 'parse_float');
   //  var cantidad = 0;
     var total = 0;
     if (inputid == 0) {
+       // document.querySelector("#btnDepResFrm").disabled = true;
       //  showMessage('.decrementar', variable, true, 'Como minimo puede elegir 1 habitaciones');
         return;
     }
     /* Capturo el monto de las habitaciones para mostrarlo */
-   var rescantporpre  = parseInt(document.querySelector("#resCantPorPre"+variable).value);
+    var rescantporpre  = parseInt(document.querySelector("#resCantPorPre"+variable).value);
 
     var totalporitem = parseInt(document.getElementById('montoTotalCadaHabtacion'+variable).value);
 
-   
-
  // var cantidad = parseInt(document.getElementById('cantidad_input').value);
-  var cantidad = parseInt(document.getElementById('input' + variable).value);
+var cantidad = parseInt(document.getElementById('input' + variable).value);
     //parseint
     total = totalporitem - rescantporpre;
     console.log(totalporitem, cantidad,rescantporpre); 
+
     console.log(total); 
 
     cantidad = inputid - 1;
@@ -136,6 +137,7 @@ function decrementar(variable,cabdisponi) {
     document.getElementById('montoTotalCadaHabtacion'+variable).value = total;
 
     sumar();
+
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 

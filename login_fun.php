@@ -1,6 +1,5 @@
 <?php
 
-
 require_once("Config/Config.php");
 require_once("Config/Global.php");
 $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
@@ -74,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["email_login"]) && iss
             }
             
            
-        
+            
 
            /*  $rspta=$usuario->verificar($dniusuarioa, $clavehash,$idtienda);
             $fetch=$rspta->fetch_object();

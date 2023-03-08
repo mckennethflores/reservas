@@ -17,7 +17,7 @@ const DB_NAME = "kenneth2_arapaimadb";
 const DB_USER = "kenneth2_arapaimaus";
 const DB_PASSWORD = "t.zY8;Su89v@"; */
 
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 const P_PROCESO = 1;
 const P_FINALIZADO = 2;
@@ -141,8 +141,8 @@ const T_R_EN = "REVIEWS";
 const R1_ES = "Mi viaje por el río Amazonas con la empresa Arapaima Expeditions fue una experiencia inolvidable. Tuve la oportunidad de ver la increíble fauna y flora del Amazonas y visitar algunas de las comunidades indígenas locales. La empresa fue muy respetuosa con el medio ambiente y las comunidades indígenas, y siempre se aseguraron de que todo estuviera en orden para garantizar nuestra seguridad y comodidad. Sin duda recomendaría este viaje a cualquiera interesado en explorar el Amazonas Peruano.";
 const R1_EN = "My trip through the Amazon River with the company Arapaima Expeditions was an unforgettable experience. I had the opportunity to see the incredible fauna and flora of the Amazon and visit some of the local indigenous communities. The company was very respectful of the environment and the indigenous communities, and they always made sure that everything was in order to guarantee our safety and comfort. I would definitely recommend this trip to anyone interested in exploring the Peruvian Amazon.";
 
-const R2_ES = "Los recomiendo!. Arapaima fue una experiencia inolvidable, los mejores";
-const R2_EN = "I recommend them! Arapaima was an unforgettable experience, the best";
+const R2_ES = "Recomiendo encarecidamente los servicios de Arapaima Expeditions. Hice un viaje de crucero con ellos a la selva de Iquitos, Perú y fue la mejor experiencia de mi vida. El equipo de Arapaima fue muy profesional y amable, siempre estuvieron dispuestos a ayudarnos. Las actividades fueron emocionantes y nos permitieron ver de cerca la selva. También nos ofrecieron una variedad de alojamientos y servicios de calidad. Estoy muy satisfecho con mi viaje con Arapaima Expeditions y lo recomiendo sin dudarlo.";
+const R2_EN = "I am Luis and I highly recommend the services of Arapaima Expeditions. I took a cruise trip with them to the jungle of Iquitos, Peru and it was the best experience of my life. The Arapaima team was very professional and friendly, always willing to help us. The activities were exciting and allowed us to see the jungle up close. They also offered us a variety of quality accommodations and services. I am very satisfied with my trip with Arapaima Expeditions and recommend it without hesitation.";
 
 
 

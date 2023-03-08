@@ -69,7 +69,7 @@ function btnProgramas(programaid){
       let fechasalidaid = $('input[name="fecha_salida"]:checked').val();
       // console.log(Fechadesalidaid);
 
-      //  var fechasalidaid  = document.querySelector("#input_program_fec_"+programaid).value;
+    // var fechasalidaid  = document.querySelector("#input_program_fec_"+programaid).value;
         var nombre_input  = document.querySelector("#nombre_input"+programaid).value;
     // console.log(fechasalidaid, "#input_program_fec_"+programaid);
         window.location.assign("departure-reserve-form.php?month="+Month+"&year="+Year+"&program="+programaid+"&fechasalidaid="+fechasalidaid+"&nombre_input="+nombre_input); 

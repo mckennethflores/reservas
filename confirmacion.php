@@ -161,7 +161,7 @@ $total_input = $_GET['total_input'];
     <!-- *************************    Confirmacion    ***************************-->
     <!-- ************************************************************************-->
 
-    <div class="col-md-6 ConfL" id="divContainerDatosDelUsuario">
+    <div class="col-md-6 ConfL center" id="divContainerDatosDelUsuario">
         <fieldset>
             <legend>Enter your Email:</legend>
 
@@ -185,7 +185,7 @@ $total_input = $_GET['total_input'];
         </fieldset>
 
     </div>
-    <div class="col-md-6 ConfR hidden" id="divContainerMetodoDePago">
+    <div class="col-md-6 ConfR hidden " id="divContainerMetodoDePago">
 
     <fieldset>
         <legend>Elegir metodo de pago</legend>
@@ -246,8 +246,8 @@ $total_input = $_GET['total_input'];
 <!-- Modal Login -->
 <div id="modal-login" class="modal fade modal-default" tabindex="-1" role="dialog" data-backdrop="static">
 				  <div class="modal-dialog modal-xl" role="document">
-				    <div class="modal-content ">
-				      <div class="modal-header">
+				    <div class="modal-content">
+				      <div class="modal-header"> <h6 id="titleModal"> </h6>
 				        <h5 class="modal-title">Inicia sesión</h5>
 				        <button type="button" class="close" data-dismiss="modal" onclick="closeModal('login')" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
@@ -408,6 +408,8 @@ $total_input = $_GET['total_input'];
    <script src="js/bootstrap.min.js"></script>
    <script src="js/confirmacion.js"></script>
 <!--    <script src="js/bootstrap.min.js.map"></script> -->
-
+<style>
+ .center { margin: 0 auto !important; display: block !important; }
+</style>
 </body>
 </html>

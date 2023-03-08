@@ -4,9 +4,6 @@ require_once("Config/Config.php");
 $conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die("Problemas con la conexión");
 
 // Modelo
-
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET["programaid"])) {
 
     $programaid = $_GET["programaid"];

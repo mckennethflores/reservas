@@ -3,7 +3,6 @@
 		Funciones Android
     ********************************* */
 
-
 if (strlen(session_id()) < 1) 
   session_start();
 ?>
@@ -100,6 +99,20 @@ if (strlen(session_id()) < 1)
                 <li id="lPedidos"><a href="pedidos.php"><i class="fa fa-circle-o"></i> Pedidos</a></li>
               <!--   <li id="lPedidosGeneral"><a href="pedidos_general.php"><i class="fa fa-circle-o"></i> Pedidos tiendas</a></li>
                 <li id="lZonas"><a href="zonas.php"><i class="fa fa-circle-o"></i> Zonas / Tarifas</a></li> -->
+              </ul>
+            </li>
+            <li id="mPaquetes" class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Paquetes</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="lPaquetes"><a href="paquetes.php"><i class="fa fa-circle-o"></i> Paquetes</a></li>
+                <!-- <li id="lSublineas"><a href="sublinea.php"><i class="fa fa-circle-o"></i> Sublinea</a></li>
+                <li id="lMarcas"><a href="marca.php"><i class="fa fa-circle-o"></i> Marca</a></li>
+                <li id="lProductos"><a href="producto.php"><i class="fa fa-circle-o"></i> Productos</a></li> -->
+              
               </ul>
             </li>
             <!-- <li id="mAlmacen" class="treeview">

@@ -199,7 +199,7 @@ $IDUSUARIO = $_GET['idusuario'];
             <div class="col-md-12 btn1Center">
             <!--     <input class="btn btn-primary" id="" type="submit" value="SALIR"> -->
 
-                <a class="btn btn-primary" href="index.php">SALIR</a>
+                <a class="btn btn-primary" href="index.php">Continuar Comprando</a>
             </div>
         </div>
     </div>
