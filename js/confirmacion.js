@@ -260,13 +260,13 @@ function confirmOrderDos(){
         const input11 = document.createElement('input');
         input11.type = 'hidden';
         input11.name = 'return';
-        input11.value = './buy_now_button/receptor.php';
+        input11.value = 'http://localhost:8000/buy_now_button/receptor.php';
         form.appendChild(input11);
         
         const input12 = document.createElement('input');
         input12.type = 'hidden';
         input12.name = 'cancel_return';
-        input12.value = './buy_now_button/pago_cancelado.php';
+        input12.value = 'http://localhost:8000/buy_now_button/pago_cancelado.php';
         form.appendChild(input12);
         
         /* const input13 = document.createElement('input');
