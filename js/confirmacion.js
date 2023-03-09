@@ -165,6 +165,33 @@ function confirmOrderDos(){
     //return;
    }else if (methodPay == 'Paypal') {
     console.log("Seleciono Paypal");
+
+
+    // let mi_formulario = document.getElementById('id_de_mi_formulario');
+
+    let formData = new FormData();
+        formData.append('email_usuario', 'hola@gmail.com');
+        formData.append('monto', '500');
+        formData.append('currency', 'PEN');
+        formData.append('logo', 'http://images/logo.png');
+        formData.append('pagina_de_respuesta', 'http://response_paypal.php');
+        formData.append('token_de_autenticacion', 'dfas4dd65fa1s6ddfa51sd6fda5s1d6as5d1f');
+
+
+
+        fetch('buy_now_button/borrador/borrador_recepcion_de_post.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            window.location.href = './buy_now_button/borrador/borrador_recepcion_de_post.php';
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    
     // Paypal Method
 
     //Descargar libreria

@@ -1,6 +1,9 @@
 <?php
 
-const BASE_URL = "http://localhost/arapaima";
+
+const BASE_URL = "http://localhost:8000/";
+//const BASE_URL = "http://localhost/arapaima";
+
 
 
 if(!isset($_SESSION)){session_start();}
@@ -17,7 +20,7 @@ const DB_NAME = "kenneth2_arapaimadb";
 const DB_USER = "kenneth2_arapaimaus";
 const DB_PASSWORD = "t.zY8;Su89v@"; */
 
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 const P_PROCESO = 1;
 const P_FINALIZADO = 2;
