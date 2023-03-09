@@ -58,9 +58,9 @@
 
 
 	<script src="js/departure-reserve-form.js"></script>
+	<script src="js/confirmacion.js"></script>
 	<!-- 
 	<script src="js/bootstrap.min.js.map"></script>
-	<script src="js/confirmacion.js"></script>
 	<script src="js/login.js"></script>
 	<script src="js/paquetes.js"></script>
 	<script src="js/pedidos.js"></script>

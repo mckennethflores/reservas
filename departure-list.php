@@ -152,7 +152,13 @@ $imagen = $reg['imagen'];
 <!-- ************************************************************************-->
 <?php
 }
-
 mysqli_close($conexion);
+?>
+</div>
+</div>
+
+
+<?php
+
 const base_url = "<?= base_url(); ?>";
 require_once(__DIR__.'./templates/first_footer.php'); 

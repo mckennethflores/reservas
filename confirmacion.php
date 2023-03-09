@@ -37,7 +37,7 @@ $total_input = $_GET['total_input'];
     <!-- ************************************************************** -->
     <!-- *************************  portada  ************************* -->
     <!-- ************************************************************** -->
-    <div class="espacio-25"></div>
+<div class="espacio-25"></div>
 <section class="bnSeleccione">
     <div class="capaSeleccione">
         <h1 class="bannerTitSeleccione">arapaima expeditions</h1>
@@ -61,7 +61,7 @@ $total_input = $_GET['total_input'];
             <li class="active">Seleccione habitación</li>
             <li class="line active"></li>
             <li class="active">Confirmation</li>
-            </ul>
+        </ul>
     </div>
 
     <div class="espacio"></div>
@@ -78,43 +78,30 @@ $total_input = $_GET['total_input'];
 <div class="espacio-25"></div>
 <form action="" id="formulario" name="formulario" method="post">
     <div class="container">
-        <div class="row">
-        
-                    <input type="hidden" name="month" id="month" value="<?= $month ?>">
-                    <input type="hidden" name="year" id="year" value="<?= $year ?>">
-                    <input type="hidden" name="program" id="program" value="<?= $program ?>">
-                    <input type="hidden" name="fec" id="fec" value="<?= $fec ?>">
-                    <input type="hidden" name="total_input" id="total_input" value="<?= $total_input ?>">
-                    <input type="hidden" name="idusuario" id="idusuario" value="">
-                    <input type="hidden" name="tipodepago" id="tipodepago" value="">
+        <div class="row">        
+            <input type="hidden" name="month" id="month" value="<?= $month ?>">
+            <input type="hidden" name="year" id="year" value="<?= $year ?>">
+            <input type="hidden" name="program" id="program" value="<?= $program ?>">
+            <input type="hidden" name="fec" id="fec" value="<?= $fec ?>">
+            <input type="hidden" name="total_input" id="total_input" value="<?= $total_input ?>">
+            <input type="hidden" name="idusuario" id="idusuario" value="">
+            <input type="hidden" name="tipodepago" id="tipodepago" value="">
 
     <!-- ************************************************************************-->
     <!-- *************************    Confirmacion    ***************************-->
     <!-- ************************************************************************-->
 
-    <div class="col-md-6 ConfL center" id="divContainerDatosDelUsuario">
-        <fieldset>
-            <legend>Enter your Email:</legend>
-
-           <!--  <div class="form-group">
-                    <label for="formGroupExampleInput">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Juan P.">
-            </div> -->
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control validEmail" id="email_input" name="email_input" aria-describedby="emailHelp" placeholder="Enter email">
-               <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-            </div>
-           <!--  <div class="form-group">
-                <label for="formGroupExampleInput">Celular</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="987654321">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Ciudad</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Lima">
-            </div> -->
-        </fieldset>
-
+    <div class="col-md-6 ConfL center mx-auto" id="divContainerDatosDelUsuario">        
+            <fieldset>
+                <legend>Enter your Email:</legend>
+    
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control validEmail" id="email_input" name="email_input" aria-describedby="emailHelp" placeholder="Enter email">
+                   
+                </div>
+            </fieldset>      
+        
     </div>
     <div class="col-md-6 ConfR hidden " id="divContainerMetodoDePago">
 
@@ -126,12 +113,6 @@ $total_input = $_GET['total_input'];
                 checked>
         <label for="transfer">Transferencia Bancaria</label>
         </div>
-
-        <!-- <div>
-        <input type="radio" id="dewey" name="methodPay" value="dewey">
-        <label for="dewey">Pago con VISA</label>
-        </div> -->
-
         <div>
         <input type="radio" id="paypal" name="methodPay" value="Paypal">
         <label for="paypal">Pago con Paypal</label>
