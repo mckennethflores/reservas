@@ -169,7 +169,7 @@ function confirmOrderDos(){
 
     // let mi_formulario = document.getElementById('id_de_mi_formulario');
 
-    let formData = new FormData();
+/*     let formData = new FormData();
         formData.append('email_usuario', 'hola@gmail.com');
         formData.append('monto', '500');
         formData.append('currency', 'PEN');
@@ -189,7 +189,33 @@ function confirmOrderDos(){
         })
         .catch(error => {
             console.error(error);
-        });
+        }); */
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = './buy_now_button/borrador/borrador_recepcion_de_post.php';
+        
+        const input1 = document.createElement('input');
+        input1.type = 'text';
+        input1.name = 'nombre';
+        input1.value = 'Juan';
+        form.appendChild(input1);
+        
+        const input2 = document.createElement('input');
+        input2.type = 'text';
+        input2.name = 'apellido';
+        input2.value = 'Pérez';
+        form.appendChild(input2);
+        
+        const input3 = document.createElement('input');
+        input3.type = 'text';
+        input3.name = 'edad';
+        input3.value = '30';
+        form.appendChild(input3);
+        
+        document.body.appendChild(form);
+        
+        form.submit();
+        //window.location.href = 'https://example.com/pagina-de-destino';
 
     
     // Paypal Method
