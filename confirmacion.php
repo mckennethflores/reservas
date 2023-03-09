@@ -255,8 +255,15 @@ $total_input = $_GET['total_input'];
 				</div>
 <!-- /Modal Register -->
 
-
-
+<!-- <script src="js/script.js"></script>
+<script src="js/confirmacion.js"></script>
+ -->
+<script src="js/general.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/confirmacion.js"></script>
     <!-- ************************************************************** -->
     <!-- *************************  informacion statica  ************************* -->
     <!-- ************************************************************** -->    
