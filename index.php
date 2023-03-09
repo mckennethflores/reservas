@@ -75,6 +75,6 @@ if(isset($_SESSION['languague_'])){
     <!-- ************************************************************** -->
     <!-- *************************  /portada  ************************* -->
     <!-- ************************************************************** -->
-
+    <script src="js/inicio.js"></script>   
 <?php require_once(__DIR__.'./templates/first_static_information.php'); ?>
 <?php require_once(__DIR__.'./templates/first_footer.php'); ?>

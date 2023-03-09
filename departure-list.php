@@ -157,8 +157,8 @@ mysqli_close($conexion);
 </div>
 </div>
 
+<script src="js/departure-list.js"></script>
 
 <?php
-
 const base_url = "<?= base_url(); ?>";
 require_once(__DIR__.'./templates/first_footer.php'); 

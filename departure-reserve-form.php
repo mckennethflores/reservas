@@ -208,4 +208,8 @@ require_once(__DIR__.'./templates/first_header.php');
     <!-- ************************************************************** -->    
 
 
+    <script src="js/script.js"></script>
+    <script src="js/departure-reserve-form.js"></script>
+
+
 <?php require_once(__DIR__.'./templates/first_footer.php'); ?>

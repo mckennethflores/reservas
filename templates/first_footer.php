@@ -47,26 +47,16 @@
 	</div>
 </footer>
 
-
-
-<!-- <script src="js/general.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/confirmacion.js"></script> -->
-
+	<script src="js/general.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/script.js"></script>	
+	<script src="js/bootstrap.min.js"></script>    
+	
 <!-- 
 	<script src="js/departure-reserve-form.js"></script>
 	<script src="js/confirmacion.js"></script> -->
 
-
-	
-    
-    
-    
-   
-   
 	<!-- 
 	<script src="js/bootstrap.min.js.map"></script>
 	<script src="js/login.js"></script>
