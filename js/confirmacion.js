@@ -190,27 +190,90 @@ function confirmOrderDos(){
         .catch(error => {
             console.error(error);
         }); */
+
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = './buy_now_button/borrador/borrador_recepcion_de_post.php';
+        form.action = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+        form.id = 'form_pay';
         
         const input1 = document.createElement('input');
-        input1.type = 'text';
-        input1.name = 'nombre';
-        input1.value = 'Juan';
+        input1.type = 'hidden';
+        input1.name = 'business';
+        input1.value = 'sb-wxcaf25239092@business.example.com';
         form.appendChild(input1);
         
         const input2 = document.createElement('input');
-        input2.type = 'text';
-        input2.name = 'apellido';
-        input2.value = 'Pérez';
+        input2.type = 'hidden';
+        input2.name = 'cmd';
+        input2.value = '_xclick';
         form.appendChild(input2);
         
         const input3 = document.createElement('input');
         input3.type = 'text';
-        input3.name = 'edad';
-        input3.value = '30';
+        input3.name = 'item_name';
+        input3.value = 'Lampara de escritorio';
         form.appendChild(input3);
+        
+        
+        const input4 = document.createElement('input');
+        input4.type = 'hidden';
+        input4.name = 'lc';
+        input4.value = 'es_ES';
+        form.appendChild(input4);
+        
+        const input5 = document.createElement('input');
+        input5.type = 'text';
+        input5.name = 'amount';
+        input5.value = '13.00';
+        form.appendChild(input5);
+        
+        const input6 = document.createElement('input');
+        input6.type = 'hidden';
+        input6.name = 'currency_code';
+        input6.value = 'EUR';
+        form.appendChild(input6);
+        
+        const input7 = document.createElement('input');
+        input7.type = 'text';
+        input7.name = 'quantity';
+        input7.value = '2';
+        form.appendChild(input7);
+        
+        const input8 = document.createElement('input');
+        input8.type = 'hidden';
+        input8.name = 'item_number';
+        input8.value = '1';
+        form.appendChild(input8);
+        
+        const input9 = document.createElement('input');
+        input9.type = 'hidden';
+        input9.name = 'no_shipping';
+        input9.value = '1';
+        form.appendChild(input9);
+        
+        const input10 = document.createElement('input');
+        input10.type = 'hidden';
+        input10.name = 'image_url';
+        input10.value = 'https://picsum.photos/150/150';
+        form.appendChild(input10);
+        
+        const input11 = document.createElement('input');
+        input11.type = 'hidden';
+        input11.name = 'return';
+        input11.value = './buy_now_button/receptor.php';
+        form.appendChild(input11);
+        
+        const input12 = document.createElement('input');
+        input12.type = 'hidden';
+        input12.name = 'cancel_return';
+        input12.value = './buy_now_button/pago_cancelado.php';
+        form.appendChild(input12);
+        
+        /* const input13 = document.createElement('input');
+        input13.type = 'hidden';
+        input13.name = 'currency_code';
+        input13.value = 'EUR';
+        form.appendChild(input13); */
         
         document.body.appendChild(form);
         

@@ -1,5 +1,5 @@
 <?php
-$baseUrl = 'http://localhost:8005';
+$baseUrl = 'http://localhost:8000';
 
 // Para cambiar al entorno de producción usar: www.paypal.com
 $paypal_hostname = 'www.sandbox.paypal.com';
