@@ -558,6 +558,13 @@ body > footer > div.contenedor1 > div:nth-child(3) > ul > li:nth-child(3) a:befo
     width: 1.3em;
 }
 body > footer > div.contenedor1 > div:nth-child(3) > ul > li:nth-child(4) a:before{
+    content: "\f232";
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.3em;
+    width: 1.3em;
+}
+body > footer > div.contenedor1 > div:nth-child(3) > ul > li:nth-child(5) a:before{
     content: "\f003";
     font-family: FontAwesome;
     display: inline-block;

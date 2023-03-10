@@ -37,7 +37,21 @@
                 </div>
                 <div class="col-md-2">
                     <ul class="social">
-                        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"><i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647</a></li>
+                        <li>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:">
+                                <i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647
+                            </a>                        
+                        </li>
+                        <!-- <li>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=51952233511&text=ARAPAIMA%20Amazon%20Cruice:">
+                                <i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 952 233 511
+                            </a>                        
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=51965986621&text=ARAPAIMA%20Amazon%20Cruice:">
+                                <i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 965 986 621
+                            </a>                        
+                        </li> -->
                   </ul>
                   <ul class="idioma">
                     <li><a href="index.php?lang=en">English</a></li>
@@ -51,7 +65,7 @@
             <div class="header-mb">
                 <img class="logo-mb" src="img/logo-small.png" alt="Arapaima Expeditions">
                 <ul class="eng">
-                        <li><a href="index.php?lang=en">Engish</a></li>
+                        <li><a href="index.php?lang=en">English</a></li>
                         <li><a href="index.php?lang=es">Español</a></li>
                 </ul>
                 <i id="hamburguer" class="fa fa-bars" aria-hidden="true"></i>
