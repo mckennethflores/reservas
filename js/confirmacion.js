@@ -199,7 +199,7 @@ function confirmOrderDos(){
         const input1 = document.createElement('input');
         input1.type = 'hidden';
         input1.name = 'business';
-        input1.value = 'sb-wxcaf25239092@business.example.com';
+        input1.value = data_to_fill.email_business;
         form.appendChild(input1);
         
         const input2 = document.createElement('input');
@@ -211,32 +211,32 @@ function confirmOrderDos(){
         const input3 = document.createElement('input');
         input3.type = 'text';
         input3.name = 'item_name';
-        input3.value = 'Lampara de escritorio';
+        input3.value = data_to_fill.item_name;
         form.appendChild(input3);
         
         
         const input4 = document.createElement('input');
         input4.type = 'hidden';
         input4.name = 'lc';
-        input4.value = 'es_ES';
+        input4.value = data_to_fill.language_lc;
         form.appendChild(input4);
         
         const input5 = document.createElement('input');
         input5.type = 'text';
-        input5.name = 'amount';
-        input5.value = '13.00';
+        input5.name = 'amount';        
+        input5.value = data_to_fill.amount;
         form.appendChild(input5);
         
         const input6 = document.createElement('input');
         input6.type = 'hidden';
         input6.name = 'currency_code';
-        input6.value = 'EUR';
+        input6.value = data_to_fill.currency;
         form.appendChild(input6);
         
         const input7 = document.createElement('input');
         input7.type = 'text';
         input7.name = 'quantity';
-        input7.value = '2';
+        input7.value = '1';
         form.appendChild(input7);
         
         const input8 = document.createElement('input');
@@ -254,19 +254,19 @@ function confirmOrderDos(){
         const input10 = document.createElement('input');
         input10.type = 'hidden';
         input10.name = 'image_url';
-        input10.value = 'https://picsum.photos/150/150';
+        input10.value = data_to_fill.image_url;
         form.appendChild(input10);
         
         const input11 = document.createElement('input');
         input11.type = 'hidden';
         input11.name = 'return';
-        input11.value = 'http://localhost:8000/buy_now_button/receptor.php';
+        input11.value = data_to_fill.success_return;
         form.appendChild(input11);
         
         const input12 = document.createElement('input');
         input12.type = 'hidden';
         input12.name = 'cancel_return';
-        input12.value = 'http://localhost:8000/buy_now_button/pago_cancelado.php';
+        input12.value = data_to_fill.cancel_return;
         form.appendChild(input12);
         
         /* const input13 = document.createElement('input');

@@ -184,7 +184,7 @@ require_once(__DIR__.'./templates/first_header.php');
                     <div class="row">
                         <div class="col-md-6">
                             <div class="prTot">
-                                Total precio de reservación <span class="priceReservation">$ 0</span>
+                            <?= $lang == 'es' ? 'Total precio de reservación' : 'Total reservation price' ?>: $ <span class="priceReservation"> 0</span>
                                 <input  type="<?= WP_DEBUG == true ? "text" : "hidden" ?>" id="total_input" name="total_input" >
                             </div>
                             </div>
