@@ -244,12 +244,12 @@ $total_input = $_GET['total_input'];
 <script> 
     const base_url = "<?= base_url(); ?>"; 
     const data_to_fill = <?php print(json_encode([
-        'language_lc'=> ($lang == 'es') ? 'es_ES' : 'en_US',
+        'language_lc'   => ($lang == 'es') ? 'es_ES' : 'en_US',
         'email_business'=> 'sb-wxcaf25239092@business.example.com',
-        'currency'=> 'USD',
-        'amount'=> $_GET['total_input'],
-        'item_name'=> ($lang == 'es') ? 'Plan elegido' : 'Chosen plan',
-        'image_url'=> BASE_URL.'/img/logo-small.png',
+        'currency'      => 'USD',
+        'amount'        => $_GET['total_input'],
+        'item_name'     => ($lang == 'es') ? 'Plan elegido' : 'Chosen plan',
+        'image_url'     => BASE_URL.'/img/logo-small.png',
         'success_return'=> BASE_URL.'/buy_now_button/receptor.php',
         'cancel_return' => BASE_URL.'/buy_now_button/pago_cancelado.php',
     ])); ?>; 
