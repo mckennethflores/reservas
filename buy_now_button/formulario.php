@@ -1,5 +1,7 @@
 <?php
-$baseUrl = 'http://localhost:8005';
+require_once("../Config/Config.php");
+
+$baseUrl = BASE_URL;
 ?>
 
 <h1>Ejemplo <small>Formulario de pago</small></h1>

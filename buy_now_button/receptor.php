@@ -1,14 +1,14 @@
 <?php
-$baseUrl = 'http://localhost:8000';
+require_once("../Config/Config.php");
+
+$baseUrl = BASE_URL;
 
 // Para cambiar al entorno de producción usar: www.paypal.com
-$paypal_hostname = 'www.sandbox.paypal.com';
+$paypal_hostname = PAYPAL_HOSTNAME;
+$pdt_identity_token = PDT_IDENTITY_TOKEN;
 
-// El token lo obtenemos en las opciones de nuestra cuenta Paypal cuando activamos PDT
-//$pdt_identity_token = 'tu_token_de_identidad';
-$pdt_identity_token = '9DFeN5QARGEBO0BHRp5JiKP9WTbz8iHDnsrWCMt_Vl1KZQGUGNhiG0iRSE8';
-var_dump(json_encode($_GET));
-
+print(json_encode($_GET));
+ 
 $tx = $_GET['tx'];
 
 $query = "cmd=_notify-synch&tx=$tx&at=$pdt_identity_token";
@@ -34,7 +34,7 @@ curl_close($request);
 
 if (!$response) {
     //HTTP ERROR
-    echo "Error";
+    // echo "Error";
     return;
 }
 

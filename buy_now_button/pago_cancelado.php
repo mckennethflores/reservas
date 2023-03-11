@@ -1,5 +1,7 @@
 <?php
-$baseUrl = 'http://localhost:8000';
+require_once("../Config/Config.php");
+
+$baseUrl = BASE_URL;
 ?>
 
 <h2>Pedido cancelado</h2>

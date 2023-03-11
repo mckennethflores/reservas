@@ -320,6 +320,18 @@ const US_TITLE_EN = 'Us';
 const US_ES =  'Arapaima Expeditions es una empresa líder en turismo para viajes en cruceros a Iquitos, Perú. Estamos comprometidos a ofrecer a nuestros viajeros una experiencia única y memorable. Ofrecemos una variedad de experiencias de viaje en cruceros únicas, desde el hospital de los delfines de Iquitos hasta la selva amazónica y el río Amazonas. Nuestros cruceros incluyen alojamiento de lujo, comidas gourmet, actividades emocionantes y un equipo de guías profesionales. Estamos comprometidos a ofrecer a nuestros viajeros la mejor experiencia de viaje. Estamos comprometidos a respetar el medio ambiente y a contribuir a la preservación de la selva amazónica y sus paisajes. Nuestras operaciones son sostenibles y respetamos las prácticas';
 const US_EN =  'Arapaima Expeditions is a leading tourism company offering cruise trips to Iquitos, Peru. We are committed to providing our travelers with a unique and memorable experience. We offer a variety of unique cruise travel experiences, from the dolphin hospital in Iquitos to the Amazon rainforest and the Amazon River. Our cruises include luxury accommodation, gourmet meals, exciting activities, and a team of professional guides. We are committed to providing our travelers with the best travel experience. We are committed to respecting the environment and contributing to the preservation of the Amazon rainforest and its landscapes. Our operations are sustainable, and we respect environmental practices.';
 
+/**
+ * Receptor: 
+ */
+
+// Para cambiar al entorno de producción usar: www.paypal.com
+const PAYPAL_HOSTNAME		= 'www.sandbox.paypal.com';
+
+// El token lo obtenemos en las opciones de nuestra cuenta Paypal cuando activamos PDT
+// $pdt_identity_token = 'tu_token_de_identidad';
+const PDT_IDENTITY_TOKEN	= '9DFeN5QARGEBO0BHRp5JiKP9WTbz8iHDnsrWCMt_Vl1KZQGUGNhiG0iRSE8';
+
+
 
 
 
