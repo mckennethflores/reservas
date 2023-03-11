@@ -14,24 +14,15 @@
     <h3> <?= $lang == 'es' ? T2_ES : T2_EN ?> </h3>
 </section>
 <section class="callToAction3">
-    
     <div class="divImageText1">
         <div class="dIleft"><img src="img/logo-small.png" alt=""></div>
         <div class="dIright"></div>
     </div>
     <div class="divImageText2">
         <div class="dI2left ">
-            <p>Nuestra embarcación el arapaima, ofrece a los huéspedes 
-
-                la oportunidad de sumergirse en la belleza y la maravilla 
-                
-                de la selva tropical mientras disfrutan de un lujo sin igual. 
-                
-                Esta embarcación única les brinda la oportunidad de experimentar 
-                
-                la naturaleza y el confort al mismo tiempo.</p>
+            <p><?= $lang == 'es' ? TEXT_OF_OUR_CRUISE_ES : TEXT_OF_OUR_CRUISE_EN ?> </p>
         </div>
-        <div class="dI2right"><input id="btnSearch2" type="button" value="BUSCAR"></div>
+        <div class="dI2right"><input id="btnSearch2" type="button" value="<?= $lang == 'es' ? SEARCH_BUTTON_ES : SEARCH_BUTTON_EN ?> "></div>
     </div>
 </section>
 <section id="ourActivities">

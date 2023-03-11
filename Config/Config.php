@@ -78,12 +78,41 @@ const NAV_SERVICE3_EN = "Rates";
 const NAV_CONTACT_EN = "Contact";
 
 
+const MONTHS_OF_THE_YEAR_SELECTION_ES = 
+'<option value="1">ENERO</option>
+<option value="2">FEBRERO</option>
+<option value="3">MARZO</option>
+<option value="4">ABRIL</option>
+<option value="5">MAYO</option>
+<option value="6">JUNIO</option>
+<option value="7">JULIO</option>
+<option value="8">AGOSTO</option>
+<option value="9">SETIEMBRE</option>
+<option value="10">OCTUBRE</option>
+<option value="11">NOVIEMBRE</option>
+<option value="12">DICIEMBRE</option>';
+
+const MONTHS_OF_THE_YEAR_SELECTION_EN = 
+'<option value="1">JANUARY</option>
+<option value="2">FEBRUARY</option>
+<option value="3">MARCH</option>
+<option value="4">APRIL</option>
+<option value="5">MAY</option>
+<option value="6">JUNE</option>
+<option value="7">JULY</option>
+<option value="8">AUGUST</option>
+<option value="9">SEPTEMBER</option>
+<option value="10">OCTOBER</option>
+<option value="11">NOVEMBER</option>
+<option value="12">DECEMBER</option>';
+
+
 /*  ****************************************/
 /*  ************** Front-Page ************** */
 /*  ****************************************/
 
 const PORT_TIT_EN = "EMBARK IN A UNIQUE ADVENTURE IN A LIFETIME ALONG THE AMAZON RIVER";
-const PORT_TIT_ES = "EMBARGATE EN UNA AVENTURA ÚNICA EN LA VIDA POR EL RIO AMAZONAS";
+const PORT_TIT_ES = "EMBÁRCATE EN UNA AVENTURA ÚNICA EN LA VIDA POR EL RIO AMAZONAS";
 
 /*  ****************************************/
 /*  ************** Buttons  ************** */
@@ -109,6 +138,17 @@ const CTA_EN = "BOOK AND FIND YOUR TRIP NOW!";
 
 const T2_ES = "NUESTRO CRUCERO";
 const T2_EN = "OUR CRUISE";
+
+
+const SEARCH_BUTTON_ES = 'BUSCAR';
+const SEARCH_BUTTON_EN = 'SEARCH';
+
+const TEXT_OF_OUR_CRUISE_ES = 'Nuestra embarcación el arapaima, ofrece a los huéspedes la oportunidad de sumergirse en la belleza y la maravilla de la selva tropical mientras disfrutan de un lujo sin igual. 
+Esta embarcación única les brinda la oportunidad de experimentar la naturaleza y el confort al mismo tiempo.';
+const TEXT_OF_OUR_CRUISE_EN = 'Our boat, the arapaima, offers guests the opportunity to immerse themselves in the beauty and wonder of the rainforest while enjoying unparalleled luxury.
+This unique boat gives you the opportunity to experience nature and comfort at the same time.';
+
+
 
 const T3_ES = "NUESTRAS ACTIVIDADES";
 const T3_EN = "OUR ACTIVITIES";
@@ -167,6 +207,25 @@ const F_S_EN = "Please select the departure date";
 const BT_F_S_ES = "Continuar";
 const BT_F_S_EN = "Continue";
 
+
+/*  ****************************************/
+/*  ************** Departure List  ************** */
+/*  ****************************************/
+
+const FIND_YOUR_CRUISE_ES = 'Encuentra tu crucero';
+const FIND_YOUR_CRUISE_EN = 'Find your cruise';
+
+const SELECT_THE_DATE_ES = 'Selecciona la fecha';
+const SELECT_THE_DATE_EN = 'Select the date';
+
+const SELECT_ROOM_ES = 'Seleccione habitación';
+const SELECT_ROOM_EN = 'Select room';
+
+const CONFIRMATION_ES = 'Confirmación';
+const CONFIRMATION_EN = 'Confirmation';
+
+
+
 // departure reserve
 
 const D_1_ES = "por persona";
@@ -181,19 +240,45 @@ const D_3_EN = "people per room";
 const D_4_ES = "Numero de cabañas";
 const D_4_EN = "number of cabins";
 
-
-
 const C_ES = "Contacto";
 const C_EN = "Contact-us";
-
 
 const N_ES = "Nosotros";
 const N_EN = "About-us";
 
 
+/* Confirmación */
+const CHOOSE_PAYMENT_METHOD_ES = 'Elegir método de pago';
+const CHOOSE_PAYMENT_METHOD_EN = 'Choose payment method';
+
+const WIRE_TRANSFER_ES = 'Transferencia Bancaria';
+const WIRE_TRANSFER_EN = 'Wire transfer';
+
+const PAYMENT_WITH_PAYPAL_ES = 'Pago con PayPal';
+const PAYMENT_WITH_PAYPAL_EN = 'Payment with paypal';
+
+
+/* Transferencia */
+const REGISTERED_ORDER_ES	=	'Felicidades Su pedido se ha registrado satisfactoriamente.';
+const REGISTERED_ORDER_EN	=	'Congratulations! Your order has been registered successfully.';
+
+const ACCOUNT_NUMBERS_ES	=	'Deposite a nuestros siguientes números de cuenta:';
+const ACCOUNT_NUMBERS_EN	=	'Deposit to our following account numbers:';
+
+const CUSTOMER_ES	=	'Cliente';
+const CUSTOMER_EN	=	'Customer';
+
+const ORDER_DATE_ES	=	'Fecha del pedido';
+const ORDER_DATE_EN	=	'Order date';
+
+const PRICE_ES	=	'Precio';
+const PRICE_EN	=	'Price';
+
+
+
+
 /* Form */
 
- 
 const FRM_N_ES = "Nombre";
 const FRM_N_EN = "Name";
 
@@ -209,6 +294,32 @@ const FRM_M_EN = "Message ";
 
 const FRM_BT_ES = "Enviar Mensaje";
 const FRM_BT_EN = "Send Message ";
+ 
+
+
+/**
+ * Pagina nosotros
+ */
+
+const MISSION_TITLE_ES = 'Nuestra Misión';
+const MISSION_TITLE_EN = 'Our Mission';
+
+
+const MISSION_ES =  'Arapaima Expeditions se dedica a brindar experiencias únicas de viaje en crucero a la selva amazónica de Iquitos, Perú. Nuestra meta es proporcionar a nuestros clientes una experiencia de viaje inolvidable, mientras se mantienen seguros y saludables. Trabajamos de cerca con la comunidad local para promover la educación, el cuidado medioambiental y la sostenibilidad, para mantener la belleza y la diversidad de la selva para las generaciones futuras.';
+const MISSION_EN =  'Arapaima Expeditions is dedicated to providing unique cruise travel experiences in the Amazon jungle of Iquitos, Peru. Our goal is to provide our customers with an unforgettable travel experience while keeping them safe and healthy. We work closely with the local community to promote education, environmental care, and sustainability to maintain the beauty and diversity of the jungle for future generations.';
+
+const VISION_TITLE_ES = 'Nuestra Visión';
+const VISION_TITLE_EN = 'Our vision';
+
+const VISION_ES =  'Nuestra visión es ser la empresa de cruceros de primera clase en la selva amazónica de Iquitos, Perú, haciendo que los viajes sean seguros y divertidos, educativos y respetuosos con el medio ambiente. Queremos ser la primera elección para aquellos que desean explorar la selva de una manera única y memorable. Estamos comprometidos a la sostenibilidad ambiental, así como a la promoción de la educación y el cuidado de la vida silvestre.';
+const VISION_EN =  'Our vision is to be the premier cruise company in the Amazon jungle of Iquitos, Peru, making travel safe and fun, educational and environmentally respectful. We want to be the first choice for those who want to explore the jungle in a unique and memorable way. We are committed to environmental sustainability as well as promoting education and wildlife conservation.';
+
+const US_TITLE_ES = 'Nosotros';
+const US_TITLE_EN = 'Us';
+
+const US_ES =  'Arapaima Expeditions es una empresa líder en turismo para viajes en cruceros a Iquitos, Perú. Estamos comprometidos a ofrecer a nuestros viajeros una experiencia única y memorable. Ofrecemos una variedad de experiencias de viaje en cruceros únicas, desde el hospital de los delfines de Iquitos hasta la selva amazónica y el río Amazonas. Nuestros cruceros incluyen alojamiento de lujo, comidas gourmet, actividades emocionantes y un equipo de guías profesionales. Estamos comprometidos a ofrecer a nuestros viajeros la mejor experiencia de viaje. Estamos comprometidos a respetar el medio ambiente y a contribuir a la preservación de la selva amazónica y sus paisajes. Nuestras operaciones son sostenibles y respetamos las prácticas';
+const US_EN =  'Arapaima Expeditions is a leading tourism company offering cruise trips to Iquitos, Peru. We are committed to providing our travelers with a unique and memorable experience. We offer a variety of unique cruise travel experiences, from the dolphin hospital in Iquitos to the Amazon rainforest and the Amazon River. Our cruises include luxury accommodation, gourmet meals, exciting activities, and a team of professional guides. We are committed to providing our travelers with the best travel experience. We are committed to respecting the environment and contributing to the preservation of the Amazon rainforest and its landscapes. Our operations are sustainable, and we respect environmental practices.';
+
 
 
 
@@ -224,4 +335,3 @@ function limpiarCadena($str){
 	return htmlspecialchars($str);
 }
 
-?>

@@ -106,13 +106,12 @@ $IDUSUARIO = $_GET['idusuario'];
     <!-- ************************************************************** -->    
 
 
-   
 <div class="espacio-25"></div>
 <form action="index.php" method="post">
     <div class="container">
         <div class="row">
             <div class="congratu">
-            <p class="text-center tit"> Felicidades Su pedido se ha registrado satisfactoriamente</p>
+            <p class="text-center tit"><?= $lang == 'es' ? REGISTERED_ORDER_ES : REGISTERED_ORDER_EN ?></p>
             </div>
 <?php
 
@@ -143,7 +142,7 @@ $IDUSUARIO = $_GET['idusuario'];
         <p class="order text-center"><b>Pedido: N°: <span><?= $reg2["idpedido"] ?></span></b> </p>
 
 
-        <p class="congr">Deposite a nuestros siguientes numeros de cuenta:</p>
+        <p class="congr"><?= $lang == 'es' ? REGISTERED_ORDER_ES : REGISTERED_ORDER_EN ?>:</p>
 
     <!-- ************************************************************************-->
     <!-- *************************    Confirmacion    ***************************-->
@@ -174,23 +173,19 @@ $IDUSUARIO = $_GET['idusuario'];
                 </div>
     <!-- ************************************************************************-->
     <!-- *************************    /Confirmacion    ***************************-->
-    <!-- ************************************************************************-->
+    <!-- ************************************************************************-->                          
+    
 
-
- 
-                          
-                         
         </div>
     </div>
     <div class="espacio"></div>
 <div class="container">
     <div class="row">
-        <p>Cliente: <span><?= $reg2["nomusuario"]; ?></span></p>
-        <p>Fecha del pedido: <span>  <?= $reg2["fecha_"]; ?></span></p>
-        <div class="totalShop">
-                          Precio: S/ <?= $reg2["total"]; ?>
-                          <br>
-                          </div>
+        <p><?= $lang == 'es' ? CUSTOMER_ES : CUSTOMER_EN ?>: <span><?= $reg2["nomusuario"]; ?></span></p>
+        <p><?= $lang == 'es' ? ORDER_DATE_ES : ORDER_DATE_EN ?>: <span>  <?= $reg2["fecha_"]; ?></span></p>
+        <div class="totalShop"> <?= $lang == 'es' ? PRICE_ES : PRICE_EN ?>: S/ <?= $reg2["total"]; ?>
+        <br>
+        </div>
     </div>
 </div>
     <div class="container">

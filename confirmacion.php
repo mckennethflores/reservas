@@ -52,13 +52,13 @@ $total_input = $_GET['total_input'];
 
     <div class="container-fluid barraSeleccione">
         <ul class="availability-breadcrumb">
-            <li class="active">Encuentra tu crucero</li>
+            <li class="active"><?= $lang == 'es' ? FIND_YOUR_CRUISE_ES : FIND_YOUR_CRUISE_EN ?></li>
             <li class="line active"></li>
-            <li class="active">Selecciona la fecha</li>
-            <li class="line active"></li>
-            <li class="active">Seleccione habitación</li>
-            <li class="line active"></li>
-            <li class="active">Confirmation</li>
+            <li class="active"><?= $lang == 'es' ? SELECT_THE_DATE_ES : SELECT_THE_DATE_EN ?></li>
+            <li class="line "></li>
+            <li class="active"><?= $lang == 'es' ? SELECT_ROOM_ES : SELECT_ROOM_EN ?></li>
+            <li class="line"></li>
+            <li class="active"><?= $lang == 'es' ? CONFIRMATION_ES : CONFIRMATION_EN ?></li>
         </ul>
     </div>
 
@@ -67,7 +67,7 @@ $total_input = $_GET['total_input'];
     <div class="container">
         <div class="row">
             <div class="col-md-3 dBck">
-               <a href="">< Atras</a> 
+               <a href="">< <?= $lang == 'es' ? 'Atras' : 'Back' ?></a>
             </div>
             <div class="col-md-9"></div>
         </div>
@@ -101,14 +101,14 @@ $total_input = $_GET['total_input'];
             </div>
             <div class="col-md-6 ConfR hidden" id="divContainerMetodoDePago">
                 <fieldset>
-                    <legend>Elegir metodo de pago</legend>        
+                    <legend><?= $lang == 'es' ? CHOOSE_PAYMENT_METHOD_ES : CHOOSE_PAYMENT_METHOD_EN ?></legend>        
                     <div>
                         <input type="radio" id="transfer" name="methodPay" value="Transferencia" checked>
-                        <label for="transfer">Transferencia Bancaria</label>
+                        <label for="transfer"><?= $lang == 'es' ? WIRE_TRANSFER_ES : WIRE_TRANSFER_EN ?></label>
                     </div>
                     <div>
                         <input type="radio" id="paypal" name="methodPay" value="Paypal">
-                        <label for="paypal">Pago con Paypal</label>
+                        <label for="paypal"><?= $lang == 'es' ? PAYMENT_WITH_PAYPAL_ES : PAYMENT_WITH_PAYPAL_EN ?></label>
                     </div>
                 </fieldset>
             </div>

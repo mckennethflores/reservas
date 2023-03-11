@@ -13,9 +13,10 @@ if(isset($_SESSION['languague_'])){
     $lang = $_SESSION['languague_'];
     //session_destroy();
 }
-?>
 
+?>
 <?php require_once(__DIR__.'./templates/first_header.php'); ?>
+
     <!-- ************************************************************** -->
     <!-- *************************  portada  ************************* -->
     <!-- ************************************************************** -->
@@ -32,18 +33,7 @@ if(isset($_SESSION['languague_'])){
               </div>
               <div class="mdown">
                 <select class="optMonth" name="optMonth" id="optMonth">
-                  <option value="1">ENERO</option>
-                  <option value="2">FEBRERO</option>
-                  <option value="3">MARZO</option>
-                  <option value="4">ABRIL</option>
-                  <option value="5">MAYO</option>
-                  <option value="6">JUNIO</option>
-                  <option value="7">JULIO</option>
-                  <option value="8">AGOSTO</option>
-                  <option value="9">SETIEMBRE</option>
-                  <option value="10">OCTUBRE</option>
-                  <option value="11">NOVIEMBRE</option>
-                  <option value="12">DICIEMBRE</option>
+                  <?= $lang == 'es' ? MONTHS_OF_THE_YEAR_SELECTION_ES : MONTHS_OF_THE_YEAR_SELECTION_EN ?>
                 </select>
               </div>
             </div>

@@ -37,14 +37,14 @@ require_once(__DIR__.'./templates/first_header.php');
 
     <div class="container-fluid barraSeleccione">
         <ul class="availability-breadcrumb">
-            <li class="active">Encuentra tu crucero</li>
+            <li class="active"><?= $lang == 'es' ? FIND_YOUR_CRUISE_ES : FIND_YOUR_CRUISE_EN ?></li>
             <li class="line active"></li>
-            <li class="active">Selecciona la fecha</li>
-            <li class="line active"></li>
-            <li class="active">Seleccione habitación</li>
+            <li class="active"><?= $lang == 'es' ? SELECT_THE_DATE_ES : SELECT_THE_DATE_EN ?></li>
+            <li class="line "></li>
+            <li class="active"><?= $lang == 'es' ? SELECT_ROOM_ES : SELECT_ROOM_EN ?></li>
             <li class="line"></li>
-            <li>Confirmation</li>
-            </ul>
+            <li><?= $lang == 'es' ? CONFIRMATION_ES : CONFIRMATION_EN ?></li>
+        </ul>
     </div>
 
     <div class="espacio"></div>
