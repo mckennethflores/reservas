@@ -5,8 +5,8 @@ require_once("Config/Global.php");
 
 
 if(isset($_SESSION['languague_'])){
-    
     $lang = $_SESSION['languague_'];
+    
 }else{
     $_SESSION['languague_'] = "es";
     $lang = $_SESSION['languague_'];
@@ -130,7 +130,7 @@ $IDUSUARIO = $_GET['idusuario'];
     pedidos.idusuario
     FROM pedidos 
            INNER JOIN sb_usuarios ON sb_usuarios.idusuario = pedidos.idusuario
-    
+
     WHERE pedidos.idusuario='$IDUSUARIO' ORDER BY  pedidos.idpedido DESC LIMIT 1") or
     die("Problemas en el select:" . mysqli_error($conexion));
 

@@ -2,15 +2,36 @@
 require_once("../Config/Config.php");
 
 $baseUrl = BASE_URL;
-
 // Para cambiar al entorno de producción usar: www.paypal.com
 $paypal_hostname = PAYPAL_HOSTNAME;
 $pdt_identity_token = PDT_IDENTITY_TOKEN;
 
-print(json_encode($_GET));
- 
+
+
 $tx = $_GET['tx'];
 
+?>
+
+<script src="../js/general.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/script.js"></script>	
+<script src="../js/bootstrap.min.js"></script>    
+<script src="../js/bootstrap.min.js"></script>
+
+<script>
+    const base_url = <?php print($baseUrl);?>;
+</script>
+
+<script src="../js/receptor.js.js"></script>
+
+<?php
+print(json_encode($_GET));
+
+
+
+
+/* 
 $query = "cmd=_notify-synch&tx=$tx&at=$pdt_identity_token";
 
 $request = curl_init();
@@ -70,3 +91,4 @@ if (strcmp($lines[0], "SUCCESS") == 0) {
     echo "FAIL";
     return;
 }
+ */

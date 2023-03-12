@@ -95,26 +95,27 @@ function confirmOrder(){
 
 
             var objeto = JSON.parse(data);
-                   if(objeto.message == 'success' && objeto.success == '1'){
+                if(objeto.message == 'success' && objeto.success == '1'){
 
-                  /*   para acceder a los valores de un array es necesario utilizar corchetes */
-                  //  console.log(objeto.login[0].idusuario); return;
-                  document.querySelector('#titleModal').innerHTML = "Bienvenido nuevamente: "+objeto.login[0].nomusuario;
+                        /* para acceder a los valores de un array es necesario utilizar corchetes */
+                        //  console.log(objeto.login[0].idusuario); return;
+                        document.querySelector('#titleModal').innerHTML = "Bienvenido nuevamente: "+objeto.login[0].nomusuario;
 
-                  console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
-               //   alert("Bienvenido de nuevo "+objeto.login[0].nomusuario);
-                  
-                  document.querySelector("#email_login").value = objeto.login[0].emailusuario;
-                  $("#modal-login").modal('show');
+                        console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+                        // alert("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+                    
+                        document.querySelector("#email_login").value = objeto.login[0].emailusuario;
+                        $("#modal-login").modal('show');
 
-                   }else if (objeto.message == 'error' && objeto.success == '0'){
+                    } else if (objeto.message == 'error' && objeto.success == '0'){
 
-                    $("#modal-register").modal('show');
-                   var email_input = document.querySelector("#email_input").value;
-                   document.querySelector("#email_register").value = email_input;
-                   }else{
-                    alert("El sistema no responde, vuelva a ingresar en unos segundos...");
-                   }
+                        $("#modal-register").modal('show');
+                        var email_input = document.querySelector("#email_input").value;
+                        document.querySelector("#email_register").value = email_input;
+
+                    } else {
+                        alert("El sistema no responde, vuelva a ingresar en unos segundos...");
+                    }
 
 
            /*  var objeto = JSON.parse(data);
@@ -141,20 +142,19 @@ function confirmOrder(){
 }
 
 
-function confirmOrderDos(){
+function confirmOrderDos() {
 
-/*     var month  = document.querySelector("#month").value;
+    /* var month  = document.querySelector("#month").value;
     var year  = document.querySelector("#year").value;
     var program  = document.querySelector("#program").value;
     var fec  = document.querySelector("#fec").value;
     var total_input  = document.querySelector("#total_input").value; */
     var idusuario  = document.querySelector("#idusuario").value;
 
-
     let methodPay = $('input[name="methodPay"]:checked').val();
    // console.log(methodPay);
 
-   if(methodPay == 'Transferencia'){
+    if(methodPay == 'Transferencia') {
     //console.log("Seleciono Transferencia");
 
         document.querySelector("#tipodepago").value = methodPay;
@@ -163,13 +163,17 @@ function confirmOrderDos(){
         $(location).attr("href", base_url+"/transferencia-bank.php?idusuario="+idusuario);
 
     //return;
-   }else if (methodPay == 'Paypal') {
-    console.log("Seleciono Paypal");
+    } else if (methodPay == 'Paypal') {
+   
+        document.querySelector("#tipodepago").value = methodPay;
+        guardaryeditarPedidoPaypal();
+        console.log("Seleciono Paypal");
 
 
     // let mi_formulario = document.getElementById('id_de_mi_formulario');
 
-/*     let formData = new FormData();
+/*     
+        let formData = new FormData();
         formData.append('email_usuario', 'hola@gmail.com');
         formData.append('monto', '500');
         formData.append('currency', 'PEN');
@@ -297,6 +301,13 @@ function confirmOrderDos(){
 
 
 }
+/* 
+Seleccionar paypal
+monto, id,
+Redirige a una pagina.
+obtiene el array del id. */
+
+
 
     function guardaryeditar() {
         var formData = new FormData($("#formulario")[0]);

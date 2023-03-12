@@ -91,16 +91,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["email_login"]) && iss
         }
 }
 
+//?op=listarproductostemporales
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["idusuario"])) {
 
-    $month=isset($_POST["month"])? limpiarCadena($_POST["month"]):"";
-    $year=isset($_POST["year"])? limpiarCadena($_POST["year"]):"";
-    $program=isset($_POST["program"])? limpiarCadena($_POST["program"]):"";
-    $fec=isset($_POST["fec"])? limpiarCadena($_POST["fec"]):"";
-    $total=isset($_POST["total_input"])? limpiarCadena($_POST["total_input"]):"";
-    $idusuario=isset($_POST["idusuario"])? limpiarCadena($_POST["idusuario"]):"";
-    $tipodepago=isset($_POST["tipodepago"])? limpiarCadena($_POST["tipodepago"]):"";
+    $month      = isset($_POST["month"])        ? limpiarCadena($_POST["month"])        : "";
+    $year       = isset($_POST["year"])         ? limpiarCadena($_POST["year"])         : "";
+    $program    = isset($_POST["program"])      ? limpiarCadena($_POST["program"])      : "";
+    $fec        = isset($_POST["fec"])          ? limpiarCadena($_POST["fec"])          : "";
+    $total      = isset($_POST["total_input"])  ? limpiarCadena($_POST["total_input"])  : "";
+    $idusuario  = isset($_POST["idusuario"])    ? limpiarCadena($_POST["idusuario"])    : "";
+    $tipodepago = isset($_POST["tipodepago"])   ? limpiarCadena($_POST["tipodepago"])   : "";
 
     switch ($_GET["op"]){
         case 'listarproductostemporales':
@@ -126,6 +128,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["idusuario"])) {
              }
             }
                 $rspta=listarproductostemporales($idusuario,$tipodepago, $recojoen ="PedidoOnline",$total,$pagacon = "0.00","321314",$subtotal = "0.00",$delivery= "0.00",$razonsoc = "-",$ruc = "-",$direccion = "-",$vuelto = "0.00");
+                echo $rspta ? "Pedido registrado": "Pedido no se puedo registrar";
+
+        break;
+
+        case 'guardarproductospaypal':
+
+             function guardarproductospaypal($idusuario,$tipodepago = "Paypal",$recojoen,$total,$pagacon,$idstore,$subtotal,$delivery,$razonsocial,$ruc,$direccion,$vuelto)
+            {
+                 $sql7="SELECT idpedido, idestadopedido FROM pedidos WHERE idusuario = '$idusuario' ORDER BY  idpedido DESC LIMIT 1";
+                 $verifyExistOrdersPending=ejecutarConsulta($sql7);
+                 $idestadopedido = P_NOPEDIDO;
+                 while ($reg=$verifyExistOrdersPending->fetch_object()){
+                     $idestadopedido=$reg->idestadopedido;
+                 }
+               //  echo $info = "info: $idestadopedido";
+             if($idestadopedido != P_PROCESO)
+             {         
+                 $fecha = date('Y-m-d H:i:s');
+
+                 $sql2="INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `idestadopedido`, `tipodepago`, `recojoen`, `total`, `pagacon`, `idstore`, `subtotal`, `delivery`, `razonsocial`, `ruc`, `direccion`, `vuelto`)
+                      VALUES (NULL, 'ORD-$idusuario','$idusuario','$fecha','1','$tipodepago','$recojoen','$total','$pagacon','$idstore','$subtotal','$delivery','$razonsocial','$ruc','$direccion','$vuelto')";
+                return ejecutarConsulta($sql2);
+              //  return;
+
+             }
+            }
+                $rspta=guardarproductospaypal($idusuario,$tipodepago = "Paypal", $recojoen ="PedidoOnline",$total,$pagacon = "0.00","321314",$subtotal = "0.00",$delivery= "0.00",$razonsoc = "-",$ruc = "-",$direccion = "-",$vuelto = "0.00");
                 echo $rspta ? "Pedido registrado": "Pedido no se puedo registrar";
 
         break;
