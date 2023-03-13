@@ -10,13 +10,50 @@ $pdt_identity_token = PDT_IDENTITY_TOKEN;
 
 $tx = $_GET['tx'];
 
-
+$datos_get = $_GET;
 
 ?>
+
+<div id="all"></div>
+
+<?php
+ob_start();
+?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Recibo</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Amount:            </strong> <?php print($datos_get['amount']) ;?> </p>
+                    <p><strong>Status:            </strong> <?php print($datos_get['payment_status']) ;?> </p>
+                    <p><strong>Transaction ID:    </strong> <?php print($datos_get['tx']) ;?> </p>
+                    <p><strong>Currency:          </strong> <?php print($datos_get['mc_currency']) ;?> </p>
+                    <p><strong>Payment Date:      </strong> <?php print($datos_get['payment_date']) ;?> </p>
+                    <p><strong>Item Name:         </strong> <?php print($datos_get['item_name']) ;?> </p>
+                    <p><strong>Payment Gross:     </strong> <?php print($datos_get['payment_gross']) ;?> </p>
+                    <p><strong>Payer Email:       </strong> <?php print($datos_get['payer_email']) ;?> </p>
+                    <p><strong>First Name:        </strong> <?php print($datos_get['first_name']) ;?> </p>
+                    <p><strong>Last Name:         </strong> <?php print($datos_get['last_name']) ;?> </p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="<?php print(BASE_URL);?>" class="btn btn-primary">Regresar a inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+$receipt_string = ob_get_clean();
+?>
+
 <script>
-    const get   = <?php print(json_encode($_GET));?>;
-    const post  = <?php print(json_encode($_POST));?>;
-    console.log(get);
+    const receipt_string    = `<?php print($receipt_string);?>`;
+    const get               = <?php print(json_encode($_GET));?>;
+    const post              = <?php print(json_encode($_POST));?>;
+    // console.log(get);
 </script>
 
 <script src="../js/general.js"></script>
@@ -32,7 +69,7 @@ $tx = $_GET['tx'];
 <script src="../js/receptor.js"></script>
 
 <?php
-print(json_encode($_GET));
+
 
 
 

@@ -12,6 +12,11 @@ function save_order_in_database()
     .then(response => response.text())
     .then(data => {
         console.log(data);
+
+        let all = document.getElementById('all');
+        all.innerHTML = receipt_string;
+        //all.append(receipt_string);
+        
         //alert("Mensaje: " + data);        
     })
     .catch(error => console.error(error));
