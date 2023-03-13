@@ -10,20 +10,26 @@ $pdt_identity_token = PDT_IDENTITY_TOKEN;
 
 $tx = $_GET['tx'];
 
+
+
 ?>
+<script>
+    const get   = <?php print(json_encode($_GET));?>;
+    const post  = <?php print(json_encode($_POST));?>;
+    console.log(get);
+</script>
 
 <script src="../js/general.js"></script>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/jquery.min.js"></script>
-<script src="../js/script.js"></script>	
 <script src="../js/bootstrap.min.js"></script>    
 <script src="../js/bootstrap.min.js"></script>
 
 <script>
-    const base_url = <?php print($baseUrl);?>;
+    const base_url = <?php print("'".$baseUrl."'");?>;
 </script>
 
-<script src="../js/receptor.js.js"></script>
+<script src="../js/receptor.js"></script>
 
 <?php
 print(json_encode($_GET));

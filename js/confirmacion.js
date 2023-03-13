@@ -163,37 +163,13 @@ function confirmOrderDos() {
         $(location).attr("href", base_url+"/transferencia-bank.php?idusuario="+idusuario);
 
     //return;
-    } else if (methodPay == 'Paypal') {
+    } else if (methodPay === 'Paypal') {
    
         document.querySelector("#tipodepago").value = methodPay;
-        guardaryeditarPedidoPaypal();
+        // guardaryeditarPedidoPaypal();
         console.log("Seleciono Paypal");
 
-
-    // let mi_formulario = document.getElementById('id_de_mi_formulario');
-
-/*     
-        let formData = new FormData();
-        formData.append('email_usuario', 'hola@gmail.com');
-        formData.append('monto', '500');
-        formData.append('currency', 'PEN');
-        formData.append('logo', 'http://images/logo.png');
-        formData.append('pagina_de_respuesta', 'http://response_paypal.php');
-        formData.append('token_de_autenticacion', 'dfas4dd65fa1s6ddfa51sd6fda5s1d6as5d1f');
-
-
-
-        fetch('buy_now_button/borrador/borrador_recepcion_de_post.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            window.location.href = './buy_now_button/borrador/borrador_recepcion_de_post.php';
-        })
-        .catch(error => {
-            console.error(error);
-        }); */
+        let idusuario  = document.querySelector("#idusuario").value;
 
         const form = document.createElement('form');
         form.method = 'POST';
@@ -264,7 +240,7 @@ function confirmOrderDos() {
         const input11 = document.createElement('input');
         input11.type = 'hidden';
         input11.name = 'return';
-        input11.value = data_to_fill.success_return;
+        input11.value = data_to_fill.success_return + '?amount=' + data_to_fill.amount + '&' + 'idusuario=' + idusuario;
         form.appendChild(input11);
         
         const input12 = document.createElement('input');
@@ -340,7 +316,7 @@ let btnLoginUser = document.querySelector("#btnLoginUser");
             var email_login  = document.querySelector("#email_login").value;
             var password_login  = document.querySelector("#password_login").value;
 
-           /*  dniusuarioa = $("#dniusuarioa").val();
+            /* dniusuarioa = $("#dniusuarioa").val();
             claveusuarioa = $("#claveusuarioa").val();
             idtienda = $("#idtienda").val(); */
         
@@ -350,19 +326,19 @@ let btnLoginUser = document.querySelector("#btnLoginUser");
                 },
                 function (data) {
                     
-              //     console.log(data); return;
+                // console.log(data); return;
                    var objeto = JSON.parse(data);
                    if(objeto.message == 'success' && objeto.success == '1'){
 
                   /*   para acceder a los valores de un array es necesario utilizar corchetes */
                   //  console.log(objeto.login[0].idusuario); return;
                       alert("Bienvenido usuario");
-                   //   console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
+                    // console.log("Bienvenido de nuevo "+objeto.login[0].nomusuario);
                     //  document.querySelector('#titleModal').innerHTML = "Bienvenido "+objeto.login[0].nomusuario;
                       $("#modal-login").modal('hide');
 
                       document.querySelector("#idusuario").value = objeto.login[0].idusuario;
-                       
+
                       $('#divContainerDatosDelUsuario').addClass("hidden");
                       $('#botnConfirmarCompra').addClass("hidden");
                       $('#divContainerMetodoDePago').removeClass("hidden");

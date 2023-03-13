@@ -119,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["idusuario"])) {
              if($idestadopedido != P_PROCESO)
              {         
                  $fecha = date('Y-m-d H:i:s');
+                 print_r(array(NULL, 'ORD-'.$idusuario, $idusuario, $fecha, 1, $tipodepago, $recojoen, $total, $pagacon, $idstore, $subtotal, $delivery, $razonsocial, $ruc, $direccion, $vuelto));
 
                  $sql2="INSERT INTO `pedidos` (`idpedido`, `codigopedido`, `idusuario`, `fechapedido`, `idestadopedido`, `tipodepago`, `recojoen`, `total`, `pagacon`, `idstore`, `subtotal`, `delivery`, `razonsocial`, `ruc`, `direccion`, `vuelto`)
                       VALUES (NULL, 'ORD-$idusuario','$idusuario','$fecha','1','$tipodepago','$recojoen','$total','$pagacon','$idstore','$subtotal','$delivery','$razonsocial','$ruc','$direccion','$vuelto')";
@@ -128,6 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["idusuario"])) {
              }
             }
                 $rspta=listarproductostemporales($idusuario,$tipodepago, $recojoen ="PedidoOnline",$total,$pagacon = "0.00","321314",$subtotal = "0.00",$delivery= "0.00",$razonsoc = "-",$ruc = "-",$direccion = "-",$vuelto = "0.00");
+                print_r($rspta);
                 echo $rspta ? "Pedido registrado": "Pedido no se puedo registrar";
 
         break;
