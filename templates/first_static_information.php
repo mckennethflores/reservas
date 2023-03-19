@@ -15,7 +15,7 @@
 </section>
 <section class="callToAction3">
     <div class="divImageText1">
-        <div class="dIleft"><img src="img/logo-small.png" alt=""></div>
+        <div class="dIleft"><img src="img/logo.png" alt=""></div>
         <div class="dIright"></div>
     </div>
     <div class="divImageText2">

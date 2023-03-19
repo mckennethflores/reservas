@@ -249,7 +249,7 @@ $total_input = $_GET['total_input'];
         'currency'      => 'USD',
         'amount'        => $_GET['total_input'],
         'item_name'     => ($lang == 'es') ? 'Plan elegido' : 'Chosen plan',
-        'image_url'     => BASE_URL.'/img/logo-small.png',
+        'image_url'     => BASE_URL.'/img/logo.png',
         'success_return'=> BASE_URL.'/buy_now_button/receptor.php',
         'cancel_return' => BASE_URL.'/buy_now_button/pago_cancelado.php',
     ])); ?>; 

@@ -53,7 +53,7 @@
         <div id="mobile"  class="container-fluid header" >
 
             <div class="header-mb">
-                <img class="logo-mb" src="img/logo-small.png" alt="Arapaima Expeditions">
+                <img class="logo-mb" src="img/logo.png" alt="Arapaima Expeditions">
 <!--                 <ul class="eng">
                         <li><a href="index.php?lang=en">English</a></li>
                         <li><a href="index.php?lang=es">Español</a></li>

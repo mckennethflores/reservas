@@ -160,7 +160,7 @@ const OA_1_EN = "EXCURSION TO THE <br> COMMUNAL RESERVE";
 const OA_2_ES = "Aprender a manejar<br>es uno de los logros<br>más emocionantes";
 const OA_2_EN = "sighting <br> of flora and fauna";
 
-const OA_3_ES = "Tienes el poder<br>de tomar<br>decisiones inteligentes";
+const OA_3_ES = "Tienes el poder de<br>tomar decisiones<br>inteligentes";
 const OA_3_EN = "Excursion to the <br>jungle of Los Espejos";
 
 const OA_4_ES = "¡No te detengas!";
@@ -304,19 +304,21 @@ const MISSION_TITLE_ES = 'Nuestra Misión';
 const MISSION_TITLE_EN = 'Our Mission';
 
 
-const MISSION_ES =  'Luva Escuela se dedica a brindar experiencias únicas de viaje en crucero a la selva amazónica de Iquitos, Perú. Nuestra meta es proporcionar a nuestros clientes una experiencia de viaje inolvidable, mientras se mantienen seguros y saludables. Trabajamos de cerca con la comunidad local para promover la educación, el cuidado medioambiental y la sostenibilidad, para mantener la belleza y la diversidad de la selva para las generaciones futuras.';
+const MISSION_ES =  'La misión de Luva es brindar una enseñanza de conducción personalizada, de calidad y segura a sus alumnos, para que puedan conducir de manera confiable y responsable.';
 const MISSION_EN =  'Luva Escuela is dedicated to providing unique cruise travel experiences in the Amazon jungle of Iquitos, Peru. Our goal is to provide our customers with an unforgettable travel experience while keeping them safe and healthy. We work closely with the local community to promote education, environmental care, and sustainability to maintain the beauty and diversity of the jungle for future generations.';
 
 const VISION_TITLE_ES = 'Nuestra Visión';
 const VISION_TITLE_EN = 'Our vision';
 
-const VISION_ES =  'Nuestra visión es ser la empresa de cruceros de primera clase en la selva amazónica de Iquitos, Perú, haciendo que los viajes sean seguros y divertidos, educativos y respetuosos con el medio ambiente. Queremos ser la primera elección para aquellos que desean explorar la selva de una manera única y memorable. Estamos comprometidos a la sostenibilidad ambiental, así como a la promoción de la educación y el cuidado de la vida silvestre.';
+const VISION_ES =  'La visión de Luva es convertirse en la escuela de conducción líder en Lima, ofreciendo servicios innovadores y digitales para satisfacer las necesidades de sus alumnos.';
 const VISION_EN =  'Our vision is to be the premier cruise company in the Amazon jungle of Iquitos, Peru, making travel safe and fun, educational and environmentally respectful. We want to be the first choice for those who want to explore the jungle in a unique and memorable way. We are committed to environmental sustainability as well as promoting education and wildlife conservation.';
 
 const US_TITLE_ES = 'Nosotros';
 const US_TITLE_EN = 'Us';
 
-const US_ES =  'Luva Escuela es una empresa líder en turismo para viajes en cruceros a Iquitos, Perú. Estamos comprometidos a ofrecer a nuestros viajeros una experiencia única y memorable. Ofrecemos una variedad de experiencias de viaje en cruceros únicas, desde el hospital de los delfines de Iquitos hasta la selva amazónica y el río Amazonas. Nuestros cruceros incluyen alojamiento de lujo, comidas gourmet, actividades emocionantes y un equipo de guías profesionales. Estamos comprometidos a ofrecer a nuestros viajeros la mejor experiencia de viaje. Estamos comprometidos a respetar el medio ambiente y a contribuir a la preservación de la selva amazónica y sus paisajes. Nuestras operaciones son sostenibles y respetamos las prácticas';
+const US_ES =  'En Luva, nos enfocamos en brindar una enseñanza personalizada y de calidad, para que nuestros alumnos aprendan a conducir de manera segura y confiable. Contamos con un equipo de profesores altamente capacitados y diversos modelos de automóviles para que nuestros alumnos puedan practicar. Además, nos encontramos en constante evolución y actualización, por lo que la digitalización de nuestros servicios nos permitirá una mayor comodidad para nuestros alumnos.
+
+Nos hemos dado a conocer principalmente a través de los años y la recomendación de nuestros clientes satisfechos. Sin embargo, estamos expandiendo nuestros canales de comunicación a través de la digitalización de nuestros servicios, lo que nos permitirá llegar a una audiencia más amplia. Ahora estamos activos en las redes sociales y otros medios digitales para mantenernos en contacto con nuestros alumnos y futuros clientes. En Luva, nos apasiona enseñar a conducir y queremos compartir nuestra pasión con todos aquellos que deseen aprender.';
 const US_EN =  'Luva Escuela is a leading tourism company offering cruise trips to Iquitos, Peru. We are committed to providing our travelers with a unique and memorable experience. We offer a variety of unique cruise travel experiences, from the dolphin hospital in Iquitos to the Amazon rainforest and the Amazon River. Our cruises include luxury accommodation, gourmet meals, exciting activities, and a team of professional guides. We are committed to providing our travelers with the best travel experience. We are committed to respecting the environment and contributing to the preservation of the Amazon rainforest and its landscapes. Our operations are sustainable, and we respect environmental practices.';
 
 /**
