@@ -24,15 +24,15 @@
                 </a></li>
 				
 				<li>
-					<a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"></i> (+51) 963 332 647
+					<a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:"></i> (+51) 987 654 321
 					</a>                        
 				</li>
 				<li>
-					<a target="_blank" href="https://api.whatsapp.com/send?phone=51952233511&text=ARAPAIMA%20Amazon%20Cruice:"></i> (+51) 952 233 511
+					<a target="_blank" href="https://api.whatsapp.com/send?phone=51952233511&text=ARAPAIMA%20Amazon%20Cruice:"></i> (+51) 987 654 321
 					</a>                        
 				</li>
 				<li>
-					<a target="_blank" href="https://api.whatsapp.com/send?phone=51965986621&text=ARAPAIMA%20Amazon%20Cruice:"></i> (+51) 965 986 621
+					<a target="_blank" href="https://api.whatsapp.com/send?phone=51965986621&text=ARAPAIMA%20Amazon%20Cruice:"></i> (+51) 987 654 321
 					</a>                        
 				</li>
              

@@ -386,7 +386,7 @@
 		<div class="box1">
 			<h3>Contact</h3>
 			<ul class="linksCont">
-				<li><a href="#">Calle Alfonso Ugarte N°547 Iquitos Perú
+				<li><a href="#">Dirección, ciudad, distrito, jiron.
                 </a></li>
 				<li><a href="#"> +51 963 332 647</a></li>
              

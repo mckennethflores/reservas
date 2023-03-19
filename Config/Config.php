@@ -194,7 +194,7 @@ const F_EN = "Explore and navigate the <br> waters of the Amazon River aboard th
 const F_2_ES = "Contacto";
 const F_2_EN = "Contact";
 
-const F_ADR_ES = "Calle Alfonso Ugarte N°547 Iquitos Perú";
+const F_ADR_ES = "Dirección, ciudad, distrito, jiron.";
 const F_ADR_EN = "Alfonso Ugarte Street N°547 Iquitos Peru";
 
 const F_T_ES = "Redes Sociales";
