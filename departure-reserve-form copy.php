@@ -192,10 +192,10 @@
         ¡Es una oportunidad única que no deberías perderte! </p>
 </section>
 <section class="callToAction">
-     <h2>>> reserva y busca tu viaje ya! <<</h2>
+     <h2>>> Reserva y busca tu profesor ya! <<</h2>
 </section>
 <section class="callToAction4">
-    <h3> Nuestro crucero </h3>
+    <h3> Nuestros autos </h3>
 </section>
 <section class="callToAction3">
     
@@ -229,7 +229,7 @@
         <!-- ********************** -->
         <div class="act_box">
             <div class="titulo">
-                <h4>excursion a la <br> recerva comunal</h4>
+                <h4></h4>
             </div>
             <div class="imgBox">
                 <img src="img/imagen1.jpg" alt="">
@@ -372,10 +372,7 @@
 	<div class="contenedor1">
 		<div class="box1">
 		<a href="#"><img src="img/logo-small.png" alt=""></a>
-        <span>Explore y surque las aguas <br> del rio Amazonas a bordo del <br>
-            Crucero Arapaima Expeditions. <br> Vive la experiencia!
-
-        </span>
+        <span>La mejor forma de aprender a conducir es con Luva</span>
 		</div>
 		<div class="box1">
 			<h3>Arapaima</h3>
@@ -393,7 +390,7 @@
                 </a></li>
 				<li><a href="#"> +51 963 332 647</a></li>
              
-				<li><a href="#">info@arapaimaexpeditions.com</a></li>
+				<li><a href="#">info@luva.com</a></li>
 			 
 			</ul>
 		</div>

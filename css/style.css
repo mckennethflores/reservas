@@ -31,10 +31,14 @@
     --gray: #34495e;
     --darkgray: #2c3e50;
     --primary: #008566;
+
+    
+    --luva-blanco: #fff;
+    --luva-negro: #000;
   }
 
  .container-fluid.header {
-    background: var(--primary);
+    background: var(--luva-blanco);
 
 }
 ul.idioma li {
@@ -85,7 +89,7 @@ ul.menu li {
     display: inline-block;
 }
 ul.menu li a {
-   color: #fff;
+   color: var(--luva-negro);
    text-decoration: none;
    display: inline-block;
 }
@@ -96,7 +100,7 @@ ul.social li {
 }
 
 ul.social li a {
-    color: #fff;
+    color: var(--luva-negro);
     text-decoration: none;
     display: inline-block;
  }
@@ -222,7 +226,7 @@ input#btnSearch {
     height: 3em;
     border-radius: 0.25em;
     overflow: hidden;
-    background: var(--primary);
+    background: var(--luva-blanco);
 }
 /* select */
 
@@ -236,7 +240,7 @@ input#btnSearch {
     flex: 1;
     padding: 0 1em;
     color: #fff;
-    background-color: var(--primary);
+    background-color: var(--luva-blanco);
     background-image: none;
     cursor: pointer;
   }
@@ -252,7 +256,7 @@ input#btnSearch {
     height: 3em;
     border-radius: 0.25em;
     overflow: hidden;
-    background: var(--primary);
+    background: var(--luva-blanco);
 }
   /* Arrow */
 
@@ -284,7 +288,7 @@ input#btnSearch {
     flex: 1;
     padding: 0 1em;
     color: #fff;
-    background-color: var(--primary);
+    background-color: var(--luva-blanco);
     background-image: none;
     cursor: pointer;
   }
@@ -300,7 +304,7 @@ input#btnSearch {
     height: 3em;
     border-radius: 0.25em;
     overflow: hidden;
-    background: var(--primary);
+    background: var(--luva-blanco);
 }
   /* Arrow */
 
@@ -674,7 +678,7 @@ ul.linksocial3 {
     text-decoration: none;
 }
 .compa span {
-    color: #ffffff;
+    color: var(--luva-negro);
 }
 /* /footer */
 .rbLeft img {
@@ -755,7 +759,7 @@ legend {
 }
 .tit{
     font-size: 2rem;
-    color: var(--primary);
+    color: var(--luva-blanco);
     font-weight: bold;
 }
 
@@ -959,8 +963,9 @@ section.banner {
         text-transform: uppercase;
     }
     img.logo {
-        height: 112px;
+        height: 85px;
     }
+    
     li.active {
         padding: 0px 0px 0px 8px;
     }
@@ -1022,7 +1027,7 @@ section.banner {
         text-transform: uppercase;
         font-style: italic;
         font-weight: bold;
-        color: var(--primary);
+        color: var(--luva-blanco);
     }
     .availability-breadcrumb li:before {
      
@@ -1030,7 +1035,7 @@ section.banner {
         margin-right: 8px;
         content: "\25CF";
         font-family: FontAwesome;
-        color: var(--primary);
+        color: var(--luva-blanco);
         font-size: 1.3rem;
     }
     ul.availability-breadcrumb {
@@ -1071,7 +1076,7 @@ section.banner {
         height: 390px;
     }
     .col-md-6.divProgR h3 {
-        color: var(--primary);
+        color: var(--luva-blanco);
         font-size: 1.3rem;
         vertical-align: top;
     }
@@ -1085,11 +1090,11 @@ section.banner {
         padding: 6px;
     }
     .dBck a{
-        color: var(--primary);
+        color: var(--luva-blanco);
         text-decoration: none;
     }
     .dProg {
-        color: var(--primary);
+        color: var(--luva-blanco);
     
         font-weight: bold;
     }
@@ -1109,12 +1114,12 @@ margin-bottom: 24px;
         display: flex;
     }
     .tit h2 {
-        color: var(--primary);
+        color: var(--luva-blanco);
         font-size: 1.7rem;
         padding-top: 7px;
     }
     .bodLPrice{
-        color: var(--primary);
+        color: var(--luva-blanco);
         font-size: .9rem;
         font-weight: 600;
     }
@@ -1146,7 +1151,7 @@ margin-bottom: 24px;
         width: 100%;
     }
     .prTot .priceReservation {
-        color: var(--primary);
+        color: var(--luva-blanco);
     }
     .prTot {
         color: red;
@@ -1168,7 +1173,7 @@ margin-bottom: 24px;
         border-radius: 50%;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em var(--primary);
+        box-shadow: inset 1em 1em var(--luva-blanco);
       }
       
       input[type="radio"]:checked::before {

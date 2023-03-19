@@ -6,11 +6,10 @@
 		<div class="box1">
 		<a href="#"><img src="img/logo.png" alt=""></a>
         <span><?= $lang == 'es' ? F_ES : F_EN ?>
-
         </span>
 		</div>
 		<div class="box1">
-			<h3>Arapaima</h3>
+			<h3>Luva</h3>
 			<ul class="links">
             <li><a href="nosotros.php"><?= $lang == 'es' ? NAV_ABOUT_ES : NAV_ABOUT_EN ?></a></li>
 
@@ -37,7 +36,7 @@
 					</a>                        
 				</li>
              
-				<li><a href="#">info@arapaimaexpeditions.com</a></li>
+				<li><a href="#">info@luva.com</a></li>
 			 
 			</ul>
 		</div>
@@ -52,7 +51,7 @@
 		</div>
 	</div>
 	<div class="contenedor2">
-		<div class="compa"> <span>ARAPAIMA EXPEDITIONS  © | All rights reserved 2023</span></div>
+		<div class="compa"> <span>Luva EXPEDITIONS  © | All rights reserved 2023</span></div>
 		<div class="copyr"> <a href="#">Powered By FR SYSTEM S.A.C.</a></div>
 
 

@@ -2,7 +2,7 @@
 
 
 const BASE_URL = "http://localhost:8000/";
-//const BASE_URL = "http://localhost/arapaima";
+//const BASE_URL = "http://localhost/Luva";
 
 
 
@@ -11,13 +11,13 @@ if(!isset($_SESSION)){session_start();}
 date_default_timezone_set('America/Lima');
 
 const DB_HOST = "localhost";
-const DB_NAME = "arapaima";
+const DB_NAME = "Luva";
 const DB_USER = "root";
 const DB_PASSWORD = "";
 define("DB_ENCODE","utf8");
 /* const DB_HOST = "localhost";
-const DB_NAME = "kenneth2_arapaimadb";
-const DB_USER = "kenneth2_arapaimaus";
+const DB_NAME = "kenneth2_Luvadb";
+const DB_USER = "kenneth2_Luvaus";
 const DB_PASSWORD = "t.zY8;Su89v@"; */
 
 define('WP_DEBUG', false);
@@ -35,11 +35,11 @@ const SPM = ",";
 const MONEY = "S/ ";
 
 	//Datos envio de correo
-	const EMAIL = "info@arapaimaexpeditions.com";
+	const EMAIL = "info@Luvaexpedition.com";
 	const NOMBRE_REMITENTE = "Tienda Virtual";
-	const EMAIL_REMITENTE = "no-reply@arapaimaexpeditions.com";
-	const NOMBRE_EMPRESA = "ARAPAIMA EXPEDITIONS";
-	const WEB_EMPRESA = "www.arapaimaexpeditions.com";
+	const EMAIL_REMITENTE = "no-reply@Luvaexpedition.com";
+	const NOMBRE_EMPRESA = "Luva Escuela";
+	const WEB_EMPRESA = "www.Luvaexpedition.com";
 /* 	+1 (954) 630-5627 */
 
 	const EMAIL_RECIBE = "oswaldoelflori@gmail.com";
@@ -51,8 +51,8 @@ const MONEY = "S/ ";
 
 	//SEO
 
-	const T_SEO = "ARAPAIMA EXPEDITIONS tours por el Perú ";
-	const D_SEO = "Arapaima Paquetes Turisticos en Perú, viajes a todo el Perú, Tour en Lima";
+	const T_SEO = "Luva Escuela tours por el Perú ";
+	const D_SEO = "Luva Paquetes Turisticos en Perú, viajes a todo el Perú, Tour en Lima";
 
 
     
@@ -65,7 +65,7 @@ const MONEY = "S/ ";
 
 const NAV_HOME_ES = "Inicio";
 const NAV_ABOUT_ES = "Nosotros";
-const NAV_SERVICE1_ES = "Crucero";
+const NAV_SERVICE1_ES = "Plataforma";
 const NAV_SERVICE2_ES = "Actividades";
 const NAV_SERVICE3_ES = "Tarifas";
 const NAV_CONTACT_ES = "Contacto";
@@ -112,7 +112,7 @@ const MONTHS_OF_THE_YEAR_SELECTION_EN =
 /*  ****************************************/
 
 const PORT_TIT_EN = "EMBARK IN A UNIQUE ADVENTURE IN A LIFETIME ALONG THE AMAZON RIVER";
-const PORT_TIT_ES = "EMBÁRCATE EN UNA AVENTURA ÚNICA EN LA VIDA POR EL RIO AMAZONAS";
+const PORT_TIT_ES = "Aprende a conducir con seguridad y confianza con Luva";
 
 /*  ****************************************/
 /*  ************** Buttons  ************** */
@@ -125,27 +125,26 @@ const BTN_YEAR_ES = "Año";
 const BTN_SEAR_ES = "Buscar";
 const BTN_SEAR_EN = "Search";
 
-const TIT_ES = "ARAPAIMA Expedición";
-const TIT_EN = "ARAPAIMA EXPEDITIONS";
+const TIT_ES = "Luva Escuela";
+const TIT_EN = "Luva Escuela";
 
-const T_TXT_ES = "Nuestro viaje es una oportunidad única de ver algunos de los paisajes más impresionantes y disfrutar de la naturaleza en todo su esplendor. Los bosques exuberantes y la vida salvaje se combinan con las interminables extensiones del río para ofrecerte una experiencia verdaderamente mágica. Navega por el río en nuestra embarcacion mientras disfrutas de la belleza salvaje sin límites.
-¡Es una oportunidad única que no deberías perderte!";
+const T_TXT_ES = "Luva es una escuela de conductores en Lima, Perú, comprometida en ofrecer una experiencia de aprendizaje personalizada y de calidad. Ofrecemos una flota de modelos de automóviles para practicar y estamos en proceso de digitalización para matricularte y pagar en línea. ¡Aprender a conducir nunca había sido tan emocionante!";
 const T_TXT_EN = "Our trip is a unique opportunity to see some of the most impressive landscapes and enjoy nature in all its splendor. Lush forests and wildlife combine with the endless stretches of the river to offer you a truly magical experience. Navigate the river in our boat while enjoying the wild beauty without limits.
 It is a unique opportunity that you should not miss!";
 
-const CTA_ES = "RESERVA Y BUSCA TU VIAJE YA!";
+const CTA_ES = "RESERVA ELIGE A TU PROFESOR YA!";
 const CTA_EN = "BOOK AND FIND YOUR TRIP NOW!";
 
-const T2_ES = "NUESTRO CRUCERO";
+const T2_ES = "NUESTRO AUTOS";
 const T2_EN = "OUR CRUISE";
 
 
 const SEARCH_BUTTON_ES = 'BUSCAR';
 const SEARCH_BUTTON_EN = 'SEARCH';
 
-const TEXT_OF_OUR_CRUISE_ES = 'Nuestra embarcación el arapaima, ofrece a los huéspedes la oportunidad de sumergirse en la belleza y la maravilla de la selva tropical mientras disfrutan de un lujo sin igual. 
+const TEXT_OF_OUR_CRUISE_ES = 'Nuestra embarcación el Luva, ofrece a los huéspedes la oportunidad de sumergirse en la belleza y la maravilla de la selva tropical mientras disfrutan de un lujo sin igual. 
 Esta embarcación única les brinda la oportunidad de experimentar la naturaleza y el confort al mismo tiempo.';
-const TEXT_OF_OUR_CRUISE_EN = 'Our boat, the arapaima, offers guests the opportunity to immerse themselves in the beauty and wonder of the rainforest while enjoying unparalleled luxury.
+const TEXT_OF_OUR_CRUISE_EN = 'Our boat, the Luva, offers guests the opportunity to immerse themselves in the beauty and wonder of the rainforest while enjoying unparalleled luxury.
 This unique boat gives you the opportunity to experience nature and comfort at the same time.';
 
 
@@ -155,22 +154,22 @@ const T3_EN = "OUR ACTIVITIES";
 
 
 
-const OA_1_ES = "EXCURSION A LA <br> RECERVA COMUNAL";
+const OA_1_ES = "Estás dando un paso</br>más hacia la libertad";
 const OA_1_EN = "EXCURSION TO THE <br> COMMUNAL RESERVE";
 
-const OA_2_ES = "avistamiento <br> de flora y <br>fauna";
+const OA_2_ES = "Aprender a manejar<br>es uno de los logros<br>más emocionantes";
 const OA_2_EN = "sighting <br> of flora and fauna";
 
-const OA_3_ES = "excursión a la <br>selva de <br>los espejos";
+const OA_3_ES = "Tienes el poder<br>de tomar<br>decisiones inteligentes";
 const OA_3_EN = "Excursion to the <br>jungle of Los Espejos";
 
-const OA_4_ES = "Pesca de <br>pirañas";
+const OA_4_ES = "¡No te detengas!";
 const OA_4_EN = "Fishing for <br> piranhas";
 
-const OA_5_ES = "Visita comunidad <br>de puerto prado";
+const OA_5_ES = "Cada práctica es<br>una oportunidad<br>para mejorar";
 const OA_5_EN = "Visit the community <br> of Puerto Prado";
 
-const OA_6_ES = "visita al centro de <br>rescate de los <br>manaties";
+const OA_6_ES = "Puedes superarlo con<br>paciencia, práctica";
 const OA_6_EN = "visit to the <br>rescue center of the <br>manatees";
 
 
@@ -181,16 +180,16 @@ const OA_6_EN = "visit to the <br>rescue center of the <br>manatees";
 const T_R_ES = "OPINIONES DE NUESTROS CLIENTES";
 const T_R_EN = "REVIEWS";
 
-const R1_ES = "Mi viaje por el río Amazonas con la empresa Arapaima Expeditions fue una experiencia inolvidable. Tuve la oportunidad de ver la increíble fauna y flora del Amazonas y visitar algunas de las comunidades indígenas locales. La empresa fue muy respetuosa con el medio ambiente y las comunidades indígenas, y siempre se aseguraron de que todo estuviera en orden para garantizar nuestra seguridad y comodidad. Sin duda recomendaría este viaje a cualquiera interesado en explorar el Amazonas Peruano.";
-const R1_EN = "My trip through the Amazon River with the company Arapaima Expeditions was an unforgettable experience. I had the opportunity to see the incredible fauna and flora of the Amazon and visit some of the local indigenous communities. The company was very respectful of the environment and the indigenous communities, and they always made sure that everything was in order to guarantee our safety and comfort. I would definitely recommend this trip to anyone interested in exploring the Peruvian Amazon.";
+const R1_ES = "Estoy muy agradecido con Luva por enseñarme a conducir de manera segura y responsable. Mi profesor fue muy paciente y experimentado, y me dio la confianza que necesitaba para tomar el control del vehículo. Aprendí mucho en las clases teóricas y prácticas, y siento que ahora estoy preparado para conducir en cualquier situación. Recomendaría Luva a cualquier persona que quiera aprender a conducir con una escuela de calidad y con un enfoque en la seguridad vial";
+const R1_EN = "My trip through the Amazon River with the company Luva Escuela was an unforgettable experience. I had the opportunity to see the incredible fauna and flora of the Amazon and visit some of the local indigenous communities. The company was very respectful of the environment and the indigenous communities, and they always made sure that everything was in order to guarantee our safety and comfort. I would definitely recommend this trip to anyone interested in exploring the Peruvian Amazon.";
 
-const R2_ES = "Recomiendo encarecidamente los servicios de Arapaima Expeditions. Hice un viaje de crucero con ellos a la selva de Iquitos, Perú y fue la mejor experiencia de mi vida. El equipo de Arapaima fue muy profesional y amable, siempre estuvieron dispuestos a ayudarnos. Las actividades fueron emocionantes y nos permitieron ver de cerca la selva. También nos ofrecieron una variedad de alojamientos y servicios de calidad. Estoy muy satisfecho con mi viaje con Arapaima Expeditions y lo recomiendo sin dudarlo.";
-const R2_EN = "I am Luis and I highly recommend the services of Arapaima Expeditions. I took a cruise trip with them to the jungle of Iquitos, Peru and it was the best experience of my life. The Arapaima team was very professional and friendly, always willing to help us. The activities were exciting and allowed us to see the jungle up close. They also offered us a variety of quality accommodations and services. I am very satisfied with my trip with Arapaima Expeditions and recommend it without hesitation.";
+const R2_ES = "Luva fue la mejor elección que pude haber hecho para aprender a conducir. Me sentí muy cómoda desde el primer momento, ya que mi profesora fue muy amable y profesional. Las clases teóricas fueron muy informativas y me ayudaron a comprender las reglas de tráfico y las mejores prácticas de conducción. En las clases prácticas, tuve la oportunidad de conducir varios modelos de vehículos y aprender a maniobrar en diferentes situaciones. Ahora me siento segura y confiada cuando conduzco en la carretera. Si buscas una escuela de conductores de calidad, Luva es la mejor opción.";
+const R2_EN = "I am Luis and I highly recommend the services of Luva Escuela. I took a cruise trip with them to the jungle of Iquitos, Peru and it was the best experience of my life. The Luva team was very professional and friendly, always willing to help us. The activities were exciting and allowed us to see the jungle up close. They also offered us a variety of quality accommodations and services. I am very satisfied with my trip with Luva Escuela and recommend it without hesitation.";
 
 
 
-const F_ES = "Explore y surque las aguas <br> del rio Amazonas a bordo del <br> Crucero Arapaima Expeditions. <br> Vive la experiencia!";
-const F_EN = "Explore and navigate the <br> waters of the Amazon River aboard the <br>Arapaima Expeditions Cruise. <br> Live the experience!";
+const F_ES = "Conduce con éxito gracias a Luva";
+const F_EN = "Explore and navigate the <br> waters of the Amazon River aboard the <br>Luva Escuela Cruise. <br> Live the experience!";
 
 const F_2_ES = "Contacto";
 const F_2_EN = "Contact";
@@ -305,8 +304,8 @@ const MISSION_TITLE_ES = 'Nuestra Misión';
 const MISSION_TITLE_EN = 'Our Mission';
 
 
-const MISSION_ES =  'Arapaima Expeditions se dedica a brindar experiencias únicas de viaje en crucero a la selva amazónica de Iquitos, Perú. Nuestra meta es proporcionar a nuestros clientes una experiencia de viaje inolvidable, mientras se mantienen seguros y saludables. Trabajamos de cerca con la comunidad local para promover la educación, el cuidado medioambiental y la sostenibilidad, para mantener la belleza y la diversidad de la selva para las generaciones futuras.';
-const MISSION_EN =  'Arapaima Expeditions is dedicated to providing unique cruise travel experiences in the Amazon jungle of Iquitos, Peru. Our goal is to provide our customers with an unforgettable travel experience while keeping them safe and healthy. We work closely with the local community to promote education, environmental care, and sustainability to maintain the beauty and diversity of the jungle for future generations.';
+const MISSION_ES =  'Luva Escuela se dedica a brindar experiencias únicas de viaje en crucero a la selva amazónica de Iquitos, Perú. Nuestra meta es proporcionar a nuestros clientes una experiencia de viaje inolvidable, mientras se mantienen seguros y saludables. Trabajamos de cerca con la comunidad local para promover la educación, el cuidado medioambiental y la sostenibilidad, para mantener la belleza y la diversidad de la selva para las generaciones futuras.';
+const MISSION_EN =  'Luva Escuela is dedicated to providing unique cruise travel experiences in the Amazon jungle of Iquitos, Peru. Our goal is to provide our customers with an unforgettable travel experience while keeping them safe and healthy. We work closely with the local community to promote education, environmental care, and sustainability to maintain the beauty and diversity of the jungle for future generations.';
 
 const VISION_TITLE_ES = 'Nuestra Visión';
 const VISION_TITLE_EN = 'Our vision';
@@ -317,8 +316,8 @@ const VISION_EN =  'Our vision is to be the premier cruise company in the Amazon
 const US_TITLE_ES = 'Nosotros';
 const US_TITLE_EN = 'Us';
 
-const US_ES =  'Arapaima Expeditions es una empresa líder en turismo para viajes en cruceros a Iquitos, Perú. Estamos comprometidos a ofrecer a nuestros viajeros una experiencia única y memorable. Ofrecemos una variedad de experiencias de viaje en cruceros únicas, desde el hospital de los delfines de Iquitos hasta la selva amazónica y el río Amazonas. Nuestros cruceros incluyen alojamiento de lujo, comidas gourmet, actividades emocionantes y un equipo de guías profesionales. Estamos comprometidos a ofrecer a nuestros viajeros la mejor experiencia de viaje. Estamos comprometidos a respetar el medio ambiente y a contribuir a la preservación de la selva amazónica y sus paisajes. Nuestras operaciones son sostenibles y respetamos las prácticas';
-const US_EN =  'Arapaima Expeditions is a leading tourism company offering cruise trips to Iquitos, Peru. We are committed to providing our travelers with a unique and memorable experience. We offer a variety of unique cruise travel experiences, from the dolphin hospital in Iquitos to the Amazon rainforest and the Amazon River. Our cruises include luxury accommodation, gourmet meals, exciting activities, and a team of professional guides. We are committed to providing our travelers with the best travel experience. We are committed to respecting the environment and contributing to the preservation of the Amazon rainforest and its landscapes. Our operations are sustainable, and we respect environmental practices.';
+const US_ES =  'Luva Escuela es una empresa líder en turismo para viajes en cruceros a Iquitos, Perú. Estamos comprometidos a ofrecer a nuestros viajeros una experiencia única y memorable. Ofrecemos una variedad de experiencias de viaje en cruceros únicas, desde el hospital de los delfines de Iquitos hasta la selva amazónica y el río Amazonas. Nuestros cruceros incluyen alojamiento de lujo, comidas gourmet, actividades emocionantes y un equipo de guías profesionales. Estamos comprometidos a ofrecer a nuestros viajeros la mejor experiencia de viaje. Estamos comprometidos a respetar el medio ambiente y a contribuir a la preservación de la selva amazónica y sus paisajes. Nuestras operaciones son sostenibles y respetamos las prácticas';
+const US_EN =  'Luva Escuela is a leading tourism company offering cruise trips to Iquitos, Peru. We are committed to providing our travelers with a unique and memorable experience. We offer a variety of unique cruise travel experiences, from the dolphin hospital in Iquitos to the Amazon rainforest and the Amazon River. Our cruises include luxury accommodation, gourmet meals, exciting activities, and a team of professional guides. We are committed to providing our travelers with the best travel experience. We are committed to respecting the environment and contributing to the preservation of the Amazon rainforest and its landscapes. Our operations are sustainable, and we respect environmental practices.';
 
 /**
  * Receptor: 

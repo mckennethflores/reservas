@@ -26,7 +26,7 @@ if(isset($_SESSION['languague_'])){
           <div class="layerUp">
             <h1>"<?= $lang == 'es' ? PORT_TIT_ES : PORT_TIT_EN ?>"</h1>
           </div>
-          <div class="layerDown">
+          <!-- <div class="layerDown">
             <div class="month">
               <div class="mup">
                 <span><?= $lang == 'es' ? BTN_MONTH_ES : BTN_MONTH_EN ?></span>
@@ -53,13 +53,14 @@ if(isset($_SESSION['languague_'])){
             <div class="search">
               <input id="btnSearch" type="button" value="<?= $lang == 'es' ? BTN_SEAR_ES : BTN_SEAR_EN ?>">
             </div>
-          </div>
+          </div> -->
         </div>
-        <video id="video" width="100%"  autoplay muted>
+        <img src="img/auto.png" width="100%" alt="">
+        <!-- <video id="video" width="100%"  autoplay muted>
           <source src="img/Video2.mp4" type="video/mp4">
           <source src="img/video2.wmv" type="video/wmv">
         Your browser does not support the video tag.
-        </video>
+        </video> -->
       </div>
 
     <!-- ************************************************************** -->
