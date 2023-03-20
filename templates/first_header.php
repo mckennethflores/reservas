@@ -38,8 +38,8 @@
                 <div class="col-md-2">
                     <ul class="social">
                         <li>
-                            <a target="_blank" href="https://api.whatsapp.com/send?phone=51963332647&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:">
-                                <i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) 963 332 647
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=51<?= PHONE ?>&text=Hola%20Arapaima,%20deseo%20mas%20informaci%C3%B3n%20mi%20nombre%20es:">
+                                <i class="fa fa-whatsapp " aria-hidden="true"></i> (+51) <?= PHONE ?>
                             </a>                        
                         </li>
                         <!-- <li>

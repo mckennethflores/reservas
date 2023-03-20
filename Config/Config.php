@@ -34,6 +34,9 @@ const SPM = ",";
 
 const MONEY = "S/ ";
 
+
+const PHONE = "952233511";
+
 	//Datos envio de correo
 	const EMAIL = "info@arapaimaexpeditions.com";
 	const NOMBRE_REMITENTE = "Tienda Virtual";
