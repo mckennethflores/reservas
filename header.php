@@ -114,6 +114,13 @@ if (strlen(session_id()) < 1)
                 <li id="lProductos"><a href="producto.php"><i class="fa fa-circle-o"></i> Productos</a></li> -->
               
               </ul>
+              <ul class="treeview-menu">
+                <li id="lPaquetes"><a href="fechas.php"><i class="fa fa-circle-o"></i> Fechas</a></li>
+                <!-- <li id="lSublineas"><a href="sublinea.php"><i class="fa fa-circle-o"></i> Sublinea</a></li>
+                <li id="lMarcas"><a href="marca.php"><i class="fa fa-circle-o"></i> Marca</a></li>
+                <li id="lProductos"><a href="producto.php"><i class="fa fa-circle-o"></i> Productos</a></li> -->
+              
+              </ul>
             </li>
             <!-- <li id="mAlmacen" class="treeview">
               <a href="#">

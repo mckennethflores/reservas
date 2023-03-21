@@ -21,8 +21,8 @@ function init() {
 
 	});
 
-	$('#mPaquetes').addClass("treeview active");
-	$('#lPaquetes').addClass("active");
+	$('#mFechas').addClass("treeview active");
+	$('#lFechas').addClass("active");
 
 }
 
@@ -57,7 +57,7 @@ function cancelarform() {
 }
 
 function listar() {
-	tabla = $('#tblPaquetes').dataTable({
+	tabla = $('#tblFechas').dataTable({
 		"aProcessing": true,
 		"aServerSide": true,
 		dom: 'Bfrtip',
@@ -68,7 +68,7 @@ function listar() {
 			'pdf'
 		],
 		"ajax": {
-			url: base_url+'/ajax/paquetes.php?op=listar',
+			url: base_url+'/ajax/fechas.php?op=listar',
 			type: "get",
 			dataType: "json",
 			error: function (e) {
@@ -170,7 +170,9 @@ function activar(idpedido) {
 init();
 
 
-fetch('/ajax/paquetes.php?op=listar')
+
+/* 
+fetch('/ajax/fechas.php?op=listar')
   .then(response => response.text())
   .then(data => {
     // Aquí procesamos los datos obtenidos
@@ -179,4 +181,4 @@ fetch('/ajax/paquetes.php?op=listar')
   .catch(error => {
     // Aquí manejamos los errores
     console.error(error);
-  });
+  }); */

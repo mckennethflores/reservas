@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once "../modelos/Paquetes.php";
-$nombre_ = "Paquete";
-$paquetes = new Paquetes();
+require_once "../modelos/Fechas.php";
+$nombre_ = "Fecha";
+$fechas = new Fechas();
 
 $id=isset($_POST["id"])? limpiarCadena($_POST["id"]):"";
 
@@ -18,33 +18,37 @@ $monedapedido=isset($_POST["monedapedido"])? limpiarCadena($_POST["monedapedido"
         case 'guardaryeditar':
 
             if(empty($idpedido)){
-                $rspta=$paquetes->insertar($programa, $programa_en, $nombre, $nombre_en, $precio, $imagen);
+                $rspta=$fechas->insertar($programa, $programa_en, $nombre, $nombre_en, $precio, $imagen);
                 echo $rspta ? "$nombre_ registrado": "El $nombre_ no se puedo registrar";
             }else{
-                $rspta=$paquetes->editar($id, $programa, $programa_en, $nombre, $nombre_en, $precio, $imagen);
+                $rspta=$fechas->editar($id, $programa, $programa_en, $nombre, $nombre_en, $precio, $imagen);
                 echo $rspta ? "$nombre_ actualizado": "El $nombre_ no se puedo actualizar";
             }
         break;
 
         case 'desactivar';
-                $rspta=$paquetes->desactivar($idpedido);
+                $rspta=$fechas->desactivar($idpedido);
                 echo $rspta ? "Pedido desactivado": "El pedido no se puedo desactivar";
         break;
         
         case 'activar':
-            $rspta=$paquetes->activar($idpedido);
+            $rspta=$fechas->activar($idpedido);
             echo $rspta ? "Pedido activado": "El pedido no se puedo activar";
         break;
 
         case 'mostrar':
-            $rspta=$paquetes->mostrar($idpedido);
+            $rspta=$fechas->mostrar($idpedido);
             echo json_encode($rspta);
         break;
-        
-        case 'listar':
-            $rspta=$paquetes->listar();
-            $data= Array();
 
+        case 'listar':
+            $rspta=$fechas->listar();
+            $data= Array();
+            /* $array_resultados = mysqli_fetch_all($rspta, MYSQLI_ASSOC);
+            var_dump($array_resultados); */
+
+
+            
             while ($reg=$rspta->fetch_object()){
                 $url='../reportes/exTicket.php?id=';
                 //  $cliente = $reg->idusuario;
@@ -53,12 +57,12 @@ $monedapedido=isset($_POST["monedapedido"])? limpiarCadena($_POST["monedapedido"
                     ' <button class="btn btn-danger" onclick="desactivar('.$reg->id.')"><i class="fa fa-close"></i></button>':
                     ' <button class="btn btn-warning" onclick="mostrar('.$reg->id.','.$reg->id.')"><i class="fa fa fa-eye"></i></button>'.
                     ' <button class="btn btn-primary" onclick="activar('.$reg->id.')"><i class="fa fa-check"></i></button>',
-                    "1"=>$reg->programa,
-                    "2"=>$reg->programa_en,
-                    "3"=>$reg->nombre,    
-                    "4"=>$reg->nombre_en,
+                    "1"=>$reg->fechas_salida_nombre,
+                    "2"=>$reg->programa,
+                    "3"=>$reg->nombre_paquete, 
+                    /* "4"=>$reg->nombre_en,
                     "5"=>$reg->precio,
-                    "6"=>$reg->imagen 
+                    "6"=>$reg->imagen  */
                 );
             }
             $results = array(
@@ -70,7 +74,7 @@ $monedapedido=isset($_POST["monedapedido"])? limpiarCadena($_POST["monedapedido"
         break;
 
         case 'listarpedidosgeneral':
-            $rspta=$paquetes->listarpedidosgeneral();
+            $rspta=$fechas->listarpedidosgeneral();
             $data= Array();
 
             while ($reg=$rspta->fetch_object()){
@@ -104,7 +108,7 @@ $monedapedido=isset($_POST["monedapedido"])? limpiarCadena($_POST["monedapedido"
             $id=$_GET['id'];
             $idcliente=$_GET['idcliente'];
     
-            $rspta = $paquetes->mostrardetallepedido($id);
+            $rspta = $fechas->mostrardetallepedido($id);
             $total=0;
             echo '<thead style="background-color:#A9D0F5">
                  <th>Opciones</th> <th>Artículo</th> <th>Cantidad</th> <th>Precio</th> <th>Subtotal</th>
@@ -127,7 +131,7 @@ $monedapedido=isset($_POST["monedapedido"])? limpiarCadena($_POST["monedapedido"
                     </th> 
                   </tr>';
             
-                $rspta2=$paquetes->listarpedidos_delivery($idcliente);
+                $rspta2=$fechas->listarpedidos_delivery($idcliente);
                 while ($reg = $rspta2->fetch_object())
                 {            
                 echo '<tr>
@@ -138,7 +142,7 @@ $monedapedido=isset($_POST["monedapedido"])? limpiarCadena($_POST["monedapedido"
                         <th><h4 id="total">S/'.$reg->delivery.'</h4><input type="hidden" name="total_compra" id="total_compra"></th> 
                     </tr>';
                 }
-                $rspta=$paquetes->listarpedidos_delivery($idcliente);
+                $rspta=$fechas->listarpedidos_delivery($idcliente);
 
                 while ($reg = $rspta->fetch_object())
                 {
